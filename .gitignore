@@ -1,0 +1,6 @@
+# Don't commit cache or saves
+game/saves/*
+game/cache/*
+
+# Don't commit PyCharm folder
+.idea

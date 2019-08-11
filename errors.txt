@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 872: expected 'comma or end of line' not found.
+    with vpunch
+    ^
+
+File "game/script.rpy", line 901: expected statement.
+    move reg:
+            ^
+
+Ren'Py Version: Ren'Py 7.3.2.320
+Sat Aug 10 20:20:58 2019
