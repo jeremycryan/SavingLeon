@@ -76,7 +76,7 @@ label start:
 
     python:
         mc_name = renpy.input("What is your name?")
-        mc_name = mc_name.strip()
+        mc_name = mc_name.strip().capitalize()
         if not mc_name:
             mc_name = "Gargle-flargle"
 
@@ -98,6 +98,8 @@ label start:
             jump Reg5
         "More than you can imagine":
             jump Reg9
+        "First date":
+            jump Reg11
 
     label intro:
         scene interrogation_room with fade_to_black
@@ -133,8 +135,8 @@ label start:
         scene interrogation_room with fade_to_black
         show aden neutral at center
         cl "Mr. Li, are you ready to begin?"
-        a "I’m ready!"
-        cl "Alright Mr. Li, I’m going to be asking you some questions about yourself and the occurrences of and leading up to the events of April 27, 2019."
+        a "I'm ready!"
+        cl "Alright Mr. Li, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the events of April 27, 2019."
         cl "You are sworn under the same oath that you will be for the upcoming trial. Is that clear?"
         a "Yup."
         cl "Mr. Li, I will need a clear yes or no please."
@@ -146,19 +148,19 @@ label start:
         cl "You are a student, yes?"
         a "Oh, yes."
         cl "At what school?"
-        a "Bellington High School. I’m a freshman there."
+        a "Bellington High School. I'm a freshman there."
         cl "Thank you. Can you tell me about your relationship to the victim, Mr. Li?"
         a "He was one of my very best friends! We played on the same soccer team together."
         cl "Which soccer team was this?"
-        a "Well, we weren’t {i}exactly{/i} on the same team. I mean, I guess we were for one game. For most of the season, he was on varsity and I was on JV. Alternate."
+        a "Well, we weren't {i}exactly{/i} on the same team. I mean, I guess we were for one game. For most of the season, he was on varsity and I was on JV. Alternate."
         cl "Mr. Li, I need you to state clearly what soccer team you and the victim were on."
         a "Oh, yes, sorry, of course! We played for the Bellington High School Tigers."
         cl "Can you tell me about your relationship with [mc_name]?"
         a "We were also friends, or... something like that at least."
         cl "Can you please elaborate?"
-        a "The day we met was... transformative. No, that’s not the right word for it."
-        a "I’m just... I’m just trying to say it was an important day. Not because of anything in particular I did, but because she said something to me that... stuck with me."
-        a "It was this last September, near the beginning of the school year. It was the day of the soccer tryouts. I don’t know how, but I still remember it so clearly."
+        a "The day we met was... transformative. No, that's not the right word for it."
+        a "I'm just... I'm just trying to say it was an important day. Not because of anything in particular I did, but because she said something to me that... stuck with me."
+        a "It was this last September, near the beginning of the school year. It was the day of the soccer tryouts. I don't know how, but I still remember it so clearly."
         "{i}I remember it too, Aden.{/i}"
         jump Aden3
 
@@ -167,22 +169,22 @@ label start:
         "{cps=8}{i}Briiiiiiiing!{/i}{/cps}"
         "{i}As the bell marking the end of sixth period rang through the hallways, I slowly began gathering my things. As I jammed the final notebook into my backpack, Leon appeared in the doorway of the classroom.{/i}"
         show leon neutral at center
-        l "Hey [mc_name]! What’s up?"
-        mc "Hey Leon. Not much... I’m just burned out from history class."
+        l "Hey [mc_name]! What's up?"
+        mc "Hey Leon. Not much... I'm just burned out from history class."
         l "Yeah, me too."
-        mc "Didn’t you finish all your history requirements last year?"
-        l "Oh, well, yeah... I just mean I’m --- I just remember what a bore history can be, heh! Memorizing all those dates. Blegh!"
-        l "I mean, when will I ever be in a position where I’ll need to know when the War of the Roses started?"
+        mc "Didn't you finish all your history requirements last year?"
+        l "Oh, well, yeah... I just mean I'm --- I just remember what a bore history can be, heh! Memorizing all those dates. Blegh!"
+        l "I mean, when will I ever be in a position where I'll need to know when the War of the Roses started?"
         l "Will someone ever point a gun to my head and threaten to pull the trigger unless I know what year the Battle of 1812 happened?"
         l "Or maybe high school is just trying to prepare us for Thursday Night Trivia?"
-        mc "Haha, I’m sure that’s it! I’m glad we’re being prepared for something so important."
-        l "It totally is important! I mean, how could we live without Thursday Night Trivia’s $500 cash prize to split among a team of six?"
-        mc "And ta-da, we’ve figured out the point of learning algebra."
-        l "Haha, yeah you get it! Uh, by the way... It’s warm cookie Wednesday at the school café. Want to go with me?"
+        mc "Haha, I'm sure that's it! I'm glad we're being prepared for something so important."
+        l "It totally is important! I mean, how could we live without Thursday Night Trivia's $500 cash prize to split among a team of six?"
+        mc "And ta-da, we've figured out the point of learning algebra."
+        l "Haha, yeah you get it! Uh, by the way... It's warm cookie Wednesday at the school café. Want to go with me?"
         mc "Sure!"
         show school_hallway with fade_to_black
         show leon neutral at center
-        l "Mmfp. I can’t stop eating these! Do you think the cookies taste so good because they’re overpriced? It’s probably just some sort of psychological --- {i}oof{/i}!"
+        l "Mmfp. I can't stop eating these! Do you think the cookies taste so good because they're overpriced? It's probably just some sort of psychological --- {i}oof{/i}!"
         show leon neutral:
             linear 0.5 leftish
         show reg neutral at center with moveinright
@@ -190,22 +192,22 @@ label start:
         "{i}Suddenly, two boys in athletic attire had appeared. One of them had put Leon in a headlock that he was struggling to escape from, and the other was slowly shaking his head in both humor and disappointment{/i}"
         l "Guys, knock it off!"
         "{i}Leon skillfully escaped from the hold.{/i}"
-        l "You’re gonna make me drop my unreasonably priced cookie!"
+        l "You're gonna make me drop my unreasonably priced cookie!"
         l "Uh, [mc_name], these are a couple of the guys on my soccer team. This is the captain, Nathaniel, and one of the midfielders, Reginald."
         mc "Hey Nate, hey Reg. Good to see you guys again."
         l "Oh, do you guys already know each other?"
-        r "First of all, don’t let me ever hear you call me Reginald. And secondly, yes, we have met. You see, me and your {i}girlfriend{/i} here ---"
-        l "What!? She’s not ---"
-        n "Reg, cut it out. Instead of teasing Leon, maybe we should be talking about how he’s eating loads of sugar right before tryouts? Leon, you’re going to have a sugar crash."
-        l "It’s warm cookie Wednesday though! Do you want a piece?"
+        r "First of all, don't let me ever hear you call me Reginald. And secondly, yes, we have met. You see, me and your {i}girlfriend{/i} here ---"
+        l "What!? She's not ---"
+        n "Reg, cut it out. Instead of teasing Leon, maybe we should be talking about how he's eating loads of sugar right before tryouts? Leon, you're going to have a sugar crash."
+        l "It's warm cookie Wednesday though! Do you want a piece?"
         n "No, thank you, I need to get back to my ever-so-important tabling duties."
-        "{i}Nate sat down at a foldable table that I’d neglected to notice earlier and beckoned Reg to join him. Attached to the front was a huge white sign reading {i}\"SOCCER TRYOUTS TODAY!\"{/i} in immaculate handwriting."
+        "{i}Nate sat down at a foldable table that I'd neglected to notice earlier and beckoned Reg to join him. Attached to the front was a huge white sign reading {i}\"SOCCER TRYOUTS TODAY!\"{/i} in immaculate handwriting."
         mc "Tryouts are this afternoon? Are people still signing up this late?"
         "{i}Reg sat down next to Nate and propped his feet on the table.{/i}"
         r "Not really. Coach just likes to make us sit here and suffer."
-        n "It’s not that bad, Reg."
-        r "Maybe not for you... you don’t have anything better to do!"
-        n "That’s not ---"
+        n "It's not that bad, Reg."
+        r "Maybe not for you... you don't have anything better to do!"
+        n "That's not ---"
         boy "{cps=8}{i}Woooooa!{/i}{/cps}"
         show leon neutral:
             linear 0.3 left
@@ -214,27 +216,27 @@ label start:
         show nate neutral:
             linear 0.3 center
         show aden smiling at right with moveinright
-        boy "There’s soccer tryouts? Can I sign up? When are they?"
+        boy "There's soccer tryouts? Can I sign up? When are they?"
         n "Hi! Yes, just put down your info here. Tryouts are this afternoon at 4:30."
-        boy "They’re today? That’s so soon!"
-        r "Yeah, not like we haven’t been in the hallway advertising for the past week --- ouch!"
+        boy "They're today? That's so soon!"
+        r "Yeah, not like we haven't been in the hallway advertising for the past week --- ouch!"
         "{i}Nate nudged Reg aggressively in the ribs, as the young boy began frantically scribbling on the sign-up sheet.{/i}"
-        n "Yeah, they’re today. No, that’s where your emergency contact name goes... your name goes over there. Aden, is it? Do you have any experience, Aden?"
-        a "Uhmm, I’ve watched soccer on TV!"
+        n "Yeah, they're today. No, that's where your emergency contact name goes... your name goes over there. Aden, is it? Do you have any experience, Aden?"
+        a "Uhmm, I've watched soccer on TV!"
         n "..."
         l "..."
-        r "Great! You’ve got everything you need to make --- ouch!"
+        r "Great! You've got everything you need to make --- ouch!"
         "{i}Nate nudged Reg in the ribs again, this time with double the force.{/i}"
-        l "Uh, hey, the team is like, really competitive. Like, we made it to the state semi-finals this year. Are you sure you’re feeling up to trying out for a team like that?"
-        a "Yeah, I’m sure! Anyone can try out right? I think if I work really, really hard and have a positive mental attitude I’ll be awesome!"
-        n "I don’t think it’s really that simple. Most players on the varsity team have at least six years of experience. We’ve all trained really hard for years."
-        r "What? You don’t want to see the kid make a fool of himself out there?"
-        n "Reg, stop it. Um, what’s your name again?"
+        l "Uh, hey, the team is like, really competitive. Like, we made it to the state semi-finals this year. Are you sure you're feeling up to trying out for a team like that?"
+        a "Yeah, I'm sure! Anyone can try out right? I think if I work really, really hard and have a positive mental attitude I'll be awesome!"
+        n "I don't think it's really that simple. Most players on the varsity team have at least six years of experience. We've all trained really hard for years."
+        r "What? You don't want to see the kid make a fool of himself out there?"
+        n "Reg, stop it. Um, what's your name again?"
         a "Aden!"
-        n "Aden, right, you look familiar. Aren’t you in the band? I remember you being really good on the sax."
-        n "Band practices are at the same time as soccer, so you’d have to quit band if you made the team. It would be a shame for the band to lose a player like you!"
-        l "Yeah, sorry Aden... I’d have to agree with Nate."
-        a "But I want to do something new and exciting! I think I’d have a lot of fun."
+        n "Aden, right, you look familiar. Aren't you in the band? I remember you being really good on the sax."
+        n "Band practices are at the same time as soccer, so you'd have to quit band if you made the team. It would be a shame for the band to lose a player like you!"
+        l "Yeah, sorry Aden... I'd have to agree with Nate."
+        a "But I want to do something new and exciting! I think I'd have a lot of fun."
         "{i}Aden suddenly turned his attention to me as though he was pleading for someone to agree with him.{/i}"
         mc "Aden, I think you should..."
         menu:
@@ -592,7 +594,7 @@ label start:
         menu:
             "Tell the truth":
                 #   Jump to correct thing
-                return
+                jump Reg15a
             "Cover for Reg":
                 jump Reg4
 
@@ -683,7 +685,7 @@ label start:
             "What should I do?"
             "Ask Nate for help":
                 #   Jump to place
-                return
+                jump Reg15b
             "Continue helping Reg alone":
                 jump Reg6
 
@@ -768,9 +770,9 @@ label start:
         menu:
             "What should I do?"
             "Practice with Aden":
-                return
+                jump Reg15ci
             "Go home with Serpens":
-                return
+                jump Reg15cii
             "Help the varsity team practice":
                 jump Reg8
 
@@ -890,7 +892,7 @@ label start:
         menu:
             "Whose party sounds more fun?"
             "Brian's":
-                return
+                jump Reg15d
             "Reg's":
                 jump Reg10
 
@@ -937,6 +939,439 @@ label start:
         r "Yeah, I think we were a bit preoccupied by, ya know, someone dying."
         cl "Reg, I know it's tough to talk about, but I really need you to answer the question honestly."
         r "Fine. I'll tell you what happened."
+        jump Reg11
+
+    label Reg11:
+        scene house_party_day with fade_to_black
+        show reg neutral at center
+        r "Thanks for volunteering to come early to help me set up."
+        mc "Yeah, no problem!"
+        r "I bet none of your other first dates involved vacuuming a five bedroom home, hehe!"
+        mc "Actually, this is my first date ever."
+        r "What? Really? If I knew that I would have bought you lobster or something!"
+        mc "It's fine, haha! I like spending time with you, regardless of what we're doing."
+        r "Well, I won't stand for it. We have some time before the party starts, so I'm going to make sure your first date is how a first date should be."
+        r "Finish setting out the snacks for the party, and I'll be back in ten minutes!"
+        hide reg with moveoutright
+        "{i}Reg grabbed his keys and sprinted out the door before I could protest.{/i}"
+        scene house_party_day with fade_to_black
+        show reg neutral at center
+        r "Okay, you can open your eyes."
+        "{i}In front of me was a scene right out of a rom-com. A small table covered in a white sheet was surrounding by two chairs and topped with plates, cups, utensils, a candle, and a single rose in a vase.{/i}"
+        "{i}Upon closer inspection, the rose appeared to be made of chocolate and covered in foil.{/i}"
+        r "The 7-11 on the corner didn't have any real flowers, but I did my best with what they had."
+        r "Come sit! I'm going to treat you to the three-course meal of your dreams... or at least the closest thing that a convenience store could supply. To start... Caesar salad!"
+        "{i}Reg reached into a plastic grocery bag and pulled out two pre-packaged salads and a handful of dressing packets.{/i}"
+        r "And for the main course... the seafood special!"
+        "{i}Reg reached into the plastic bag and pulled out a can of clam chowder, a bag of Swedish fish, and a package of goldfish crackers.{/i}"
+        r "And for desert... pie!"
+        "{i}Reg turned the bag upside down and two small Hostess pies fell onto the table.{/i}"
+        r "I know it's not exactly high-end, but---"
+        mc "I love it."
+        r "Huh?"
+        mc "I love it. This is the best first date I could have hoped for."
+        "{i}Reg looked at me with surprise, which quickly turned to embarrassment, then to a smile.{/i}"
+        "{i}He reached a hand cautiously toward my face, paused, and then set it against my cheek. I felt my face flush under his touch.{/i}"
+        "{i}Slowly, his fingers dropped from my face to my shoulder, then all the way down my arm to my hand where they intertwined with my own. Gently, he tugged my hand, pulling my upper body toward his.{/i}"
+        hide reg with moveoutleft
+        "{i}Our lips met for the first time, and my heartbeat crescendoed. For a moment, time froze. Then, as soon as it began, it was over, and Reg pulled away again.{/i}"
+        show reg neutral at center with moveinleft
+        r "[mc_name]?"
+        "{i}My heart was beating so fast, I was afraid he would hear it.{/i}"
+        mc "Yes?"
+        r "Will you go out with me?"
+        mc "Um, you mean---"
+        r "Yeah, I do mean."
+        mc "Well..."
+        menu:
+            "Be Reg's girlfriend?"
+            "Yes":
+                jump Reg12
+            "No":
+                jump Reg15e
+
+    label Reg12:
+        mc "Yeah, Reg. I'll be your girlfriend."
+        "{i}Reg blushed, forcing a straight face.{/i}"
+        r "Okay. Sweet."
+        mc "Shall we eat?"
+        r "Yeah."
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        cl "So, the two of you entered a romantic relationship on April 27?"
+        r "Yeah, the same day as my party."
+        cl "So what happened between you and [mc_name] the night of the party?"
+        r "Well, we decided that the party would be a good place to go public---"
+        cl "Go public?"
+        r "Yeah. Like, tell our friends we were dating. You know, our big reveal."
+        cl "Understood. Please continue."
+        r "Everyone on the varsity soccer team was invited. I even invited a couple alums, like Brian."
+        cl "You're talking about Brian Giang?"
+        r "Yes."
+        cl "Thank you, please continue."
+        r "So, I was really excited for all the guys to see me with a pretty girl on my arm."
+        cl "Who are you referring to when you say \"all the guys?\""
+        r "The varsity soccer team. Nate, Leon, the rest. Do you want me to give you the roster?"
+        cl "No, that's fine. Please continue."
+        r "No, this is good. Do keep interrupting. At this rate I'll be here through graduation."
+        cl "I'm sorry, Reginald. The floor is yours."
+        r "..."
+        cl "Sorry... Reg."
+        r "There you go. As I was saying, I was really excited to see everyone there and to announce my new girlfriend."
+        r "So, as you can imagine, I was pretty peeved when a certain someone decided not to show up..."
+
+    label Reg13:
+        scene house_party_night with fade_to_black
+        "{i}Base thumping, people dancing, the smell of the booze Brian brought filling the air. The varsity soccer team sure knows how to party!{/i}"
+        show reg neutral at center
+        r "You having a good time, [mc_name]?"
+        mc "Yeah!"
+        r "Awesome. Have you seen Leon?"
+        mc "No, I haven't. Sorry."
+        r "Hey guys! Has anyone seen Leon?"
+        "{i}There was no response from the masses.{/i}"
+        r "What the hell? It's almost 10pm. He should be here by now."
+        mc "Have you texted him?"
+        r "I'm just gonna give him a call."
+        "{i}Reg pulled out a phone, searched his contacts for Leon, and pressed call. The phone rang twice, and then Leon answered in a groggy voice.{/i}"
+        l "Hello?"
+        r "Were you sleeping, dude?"
+        l "Uh, yeah?"
+        r "What the fuck, man!? Why aren't you here?"
+        l "Where?"
+        r "At my party, dumbass!"
+        l "That's happening?"
+        r "Yeah, it's happening! You said you'd be here!"
+        l "Yeah, but---"
+        r "Get your ass over here, dude!"
+        l "I'm sorry dude, Aden said it was cancelled."
+        r "Aden!? That scrawny freshman kid who embarrassed himself at tryouts? He wasn't even invited!"
+        r "Why the hell would he tell you it was cancelled!? You're so full of shit, Leon!"
+        "{i}Reg kicked a table leg.{/i}"
+        mc "Reg, calm down!"
+        r "Leon, you are literally the only person on the team who didn't show up tonight. You know how much work I've put into planning this! You know that I've been looking forward to this!"
+        r "I even have a really important announcement, and you couldn't even be bothered to come. "
+        l "Reg, it isn't like that---"
+        r "Just shut up and be here within the next 20 minutes. And you're gonna make this up to me, okay?"
+        "{i}Reg hung up the phone and aggressively shoved it into his pocket.{/i}"
+        mc "You alright?"
+        r "Yeah, I'm just pissed off. Forgetting is one thing, but lying about it? Why would he do that?"
+        mc "I'm sure he didn't mean it. Let's just go enjoy the party, okay?"
+        r "Okay."
+        scene house_party_night with fade_to_black
+        show reg neutral at center
+        r "Jeez, do you see that?"
+        mc "See what?"
+        r "Leon finally showed up... he's been here under and hour and he's already wasted."
+        mc "Really? He doesn't even drink."
+        r "Well, apparently he does."
+        mc "You're being kind of hard on him, aren't you?"
+        r "Let's just forget it and have a good time."
+        l "{cps=8}Loooooook{/cps} who it is!"
+        show reg:
+            linear 0.3 leftish
+        show leon neutral at rightish with moveinright
+        "{i}Leon made his way through the crowd to where Reg and I were. He clumsily put an arm around my shoulder.{/i}"
+        l "Juuuuuust the lady I was hoping to see!"
+        mc "Hey, Leon. You okay?"
+        l "I'm greeeeeat! So good to see you, mmmm... [mc_name]"
+        "{i}Leon laughed and draped himself on me more aggressively. Reg stepped toward him with a glare.{/i}"
+        r "What's the big idea, Leon?"
+        mc "Reg, it's okay---"
+        l "No- nothing, maaaan. Just hanging with m'{cps=8}laaaaady!{/cps}"
+        "{i}Leon sloppily leaned in an kissed me on the cheek. Reg's face turned red, and he grabbed Leon's jacket to pull him off of me.{/i}"
+        r "Hey! That's my girlfriend, you asshole!"
+        mc "Reg, please let him go! He's just drunk."
+        r "That's no excuse for touching you without your consent!"
+        l "Huuuuuh? Girlfriend?"
+        mc "Yeah. Reg and I are together, Leon."
+        "{i}Leon's face filled with disappointment as he staggered a few steps backward, escaping from Reg's grasp.{/i}"
+        l "Together?"
+        mc "We were trying to find a better way to announce it, but yeah."
+        l "But... I... I don't understand."
+        mc "What don't you understand?"
+        l "I don't- I don't understand why you don't like meeeeee."
+        "{i}I was too in shock to respond. Leon looked so heartbroken. His entire being looked deflated. Utterly devastated.{/i}"
+        "{i}I had no idea how to respond. Suddenly Leon was on the ground and Reg was standing over him, bellowing into his face.{/i}"
+        r "What the fuck are you doing, man? You're supposed to be happy for me, and instead you've ruined this entire night!"
+        "{i}The sounds of the crowd died down as everyone turned their attention to the drama unfolding on the dance floor.{/i}"
+        r "You blew off my party for God knows what reason. You lied to me about it."
+        r "You finally showed up, only to get shit-faced and slobber all over my girlfriend. And now you have the audacity to lay on the floor like you're a victim!"
+        r "All evening you've been acting like a terrible friend!"
+        "{i}Leon looked away shamefully.{/i}"
+        r "Pick yourself up. Pick yourself up!"
+        "{i}Brian helped Leon to his feet.{/i}"
+        r "And for God's sake, stop drinking!"
+        hide leon with moveoutright
+        show reg:
+            linear 0.3 center
+        "{i}Leon walked into the crowd, his head down. Reg turned back toward me.{/i}"
+        r "I'm sorry to yell in front of you."
+        mc "Are you sure you aren't being too hard on him?"
+        r "No. He was out of line."
+        mc "Okay... do you want to go dance?"
+        r "I'm not really in the partying mood anymore."
+        mc "I understand."
+        "{i}Reg gently put a hand around my waist.{/i}"
+        r "I care about you a lot, so... it makes me really angry to see someone... touching you like that."
+        mc "Yeah, but---"
+        r "I know, I know. I have to work on that."
+        "{i}Reg pulled me closer.{/i}"
+        r "Hey... do you want to maybe... "
+        "{i}Reg leaned in to whisper in my ear.{/i}"
+        r "...go upstairs with me?"
+        "{i}My heart skipped a beat and my face flushed. Reg's lips brushed my cheek and I felt myself wanting to be drawn deeper into his arms.{/i}"
+        show leon neutral at left with moveinleft
+        "{i}Just then, I made eye contact with Leon across the room. He stared for a moment with an expression I couldn't understand, then quickly turned away and disappeared into the crowd again.{/i}"
+        hide leon with moveoutleft
+        mc "Reg, I think you should talk to Leon."
+        r "What? Why?"
+        mc "The two of you have been friends for years. I hate seeing you two at odds."
+        r "Please, let's not talk about this. I can talk to him tomorrow."
+        r "Please. Come upstairs."
+        menu:
+            "What should I do?"
+            "Go upstairs with Reg":
+                jump Reg14
+            "Encourage Reg to make up with Leon":
+                jump Reg15f
+
+    label Reg14:
+        mc "Okay. Let's go upstairs."
+        "{i}Reg tugged gently on my hands and led me up the stairs and into his bedroom, locking the door behind him. He didn't turn on the light.{/i}"
+        "{i}Carefully, he led me to his bed, and we sat down on the foot of it. His hands wandered up my arms and came to rest on either side of my neck.{/i}"
+        "{i}Through the dark I could see him look into my eyes for just a moment, then he pulled me into a deep kiss. I closed my eyes and let our bodies embrace each other.{/i}"
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        cl "So, did you and [mc_name] have sexual intercourse that night?"
+        r "I'm not one to kiss and tell."
+        cl "Very well. Were you with [mc_name] through the night of April 27?"
+        r "Yes. Through to the morning. She left around 6am."
+        cl "Were you with anyone else that night?"
+        r "Nope. [mc_name] and I were in my room until morning."
+        cl "Do you know anything about the current whereabouts of [mc_name]?"
+        r "I do not."
+        cl "Thank you, Mr. Na. No further questions."
+        return
+
+    label Reg15a:
+        mc "He just walked in."
+        "{i}The teacher shrugged at Reg while he glared daggers at me. She quickly changed her attendance sheet, then resumed teaching.{/i}"
+        r "Thanks for that, asswipe."
+        mc "Maybe try being on time?"
+        "{i}He turned to face me, raising his voice slightly.{/i}"
+        r "I was supposed to have soccer tryouts this afternoon, and now I won't be allowed to go because I'll be in detention. I'm gonna miss my senior year on the team, so yeah, thanks for that, asswipe."
+        teacher "Reg, are you distracting your classmates?"
+        r "Not as much as you're distracting them by incorrectly replacing sin(-x) with -csc(x)."
+        "{i}The teacher turned to examine the board, then quickly started erasing her work. Reg gathered his belongings and headed toward the door.{/i}"
+        teacher "Hey, Reg, where are you going?"
+        r "Out."
+        hide reg with moveoutright
+        "{i}Reg disappeared into the hallway, making sure to flip me the bird on his way out. He's definitely a charmer.{/i}"
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "I didn't talk to her much after that. We just saw each other in class. We eventually ended up on decent terms, but we weren't friends or anything."
+        cl "Does that mean she didn't go to your party on April 27?"
+        r "No, she didn't."
+        cl "Did you see her at all on April 27?"
+        r "No. I was throwing a party."
+        cl "And who can verify where you were during the party?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15b:
+        mc "I'm gonna call Nate right now and ask for his help."
+        r "Don't worry about it."
+        mc "It's no problem---"
+        r "I said don't worry about it!"
+        r "You're clearly either playing dumb or you really don't understand what's going on here, and if you don't understand what's happening by now, then you are a hopeless cause."
+        mc "I thought I was starting to get it."
+        "{i}Reg burst into exasperated laughter.{/i}"
+        r "Oh my God! Are you seriously this dense?"
+        mc "I thought---"
+        r "I think we should study on our own from now on, okay?"
+        mc "But---"
+        r "Please, [mc_name]. Just leave."
+        hide reg with moveoutright
+        "{i}In silence, I left. We didn't study together again.{/i}"
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        cl "I'm confused... why did you cut off the study sessions?"
+        r "I was only doing them in the first place because I liked her. Clearly she didn't like me back or else she would have picked up on it."
+        cl "Did the two of you at least remain friends?"
+        r "We were friendly. It took a little while for me to get over her, but after that we would chat in class every now and then."
+        r "We weren't close friends or anything though."
+        cl "Did she go to your party on April 27?"
+        r "No, she didn't."
+        cl "Did you see her at all on April 27?"
+        r "No. I was throwing a party."
+        cl "And who can verify where you were during the party?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15ci:
+        mc "I will stay and help you practice, Aden."
+        a "Really!? This is gonna be so much fun!"
+        mc "It's going to be hard work though, Aden. You have to be prepared to train hard if you want to be as good as the varsity players."
+        a "I will! I promise! Thank you so much!"
+        r "[mc_name], are you sure?"
+        s "Yeah, I can drive you home, no problem."
+        mc "No, you go ahead Serpens. I appreciate the offer, but I'm okay."
+        r "Alright, whatever you say..."
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "I didn't talk to her much after that. I mean, obviously she was fonder of Aden than she was of me. We remained friends, but nothing else really happened."
+        cl "Does that mean she didn't go to your party on April 27?"
+        r "No, she didn't."
+        cl "Did you see her at all on April 27?"
+        r "No. I was throwing a party."
+        cl "And who can verify where you were during the party?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15cii:
+        mc "I have a lot of homework to do, so I'm gonna just catch a ride with Serpens."
+        a "Oh, okay... well maybe another time!"
+        mc "Yeah. Maybe another time."
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "I didn't talk to her much after that. I mean, obviously she was fonder of Serpens than she was of me. We remained friends, but nothing else really happened."
+        cl "Does that mean she didn't go to your party on April 27?"
+        r "No, she didn't."
+        cl "Did you see her at all on April 27?"
+        r "No. I was throwing a party."
+        cl "And who can verify where you were during the party?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15d:
+        mc "Brian's party sounds fun!"
+        b "Well, I promised only the hottest girls would be at my party, so of course you'll be there."
+        r "Brian, you're not even on the team anymore! I'm going to throw the varsity team party, and you can't do anything about it because you.{w=0.2} Are.{w=0.2} Not.{w=0.2} On.{w=0.2} The.{w=0.2} Team!"
+        b "Okay, fine. Chill out."
+        r "Neither of you are invited."
+        mc "Hey, no need to be like that, Reg."
+        r "Well, you clearly like Brian more than you like me, so just hang out with him that night. I'm sure you guys will have a great time getting drunk and looking at hot girls."
+        mc "Reg---"
+        r "Piss off."
+        hide reg with moveoutleft
+        show brian:
+            linear 0.3 center
+        "{i}Reg stormed off into a crowd of cheering fans as Brian and I looked at each other in shock. I don't fully understand what set him off, but I don't know as I'll be able to repair it before the party.{/i}"
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "It seems kind of silly now, but at the time I was really jealous of Brian."
+        r "I was still mad about it when the party rolled around, so I didn't invite either of them, but since then we've all made up."
+        cl "Does that mean she didn't go to your party on April 27?"
+        r "No, she didn't."
+        cl "Did you see her at all on April 27?"
+        r "No. I was throwing a party."
+        cl "And who can verify where you were during the party?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15e:
+        mc "I'm sorry, but... I just don't feel the same way."
+        r "...are you serious?"
+        mc "I'm sorry."
+        r "Why did you say yes to a date then?"
+        mc "I figured it was a friend date or something."
+        r "Why on earth would you assume it was a friend date? Who even wastes their time on friend dates anyway?"
+        mc "I'm sorry, Reg---"
+        r "Did you seriously not know how I feel about you?"
+        mc "No, I didn't."
+        r "I've been throwing and throwing and throwing hints, and seriously nothing stuck?"
+        mc "I'm sorry Reg, but I just didn't know!"
+        r "I don't know if it's more upsetting to think that you led me on only to throw me away like garbage, or to think that you are actually so dense that you couldn't tell how I feel! Seriously!"
+        mc "Reg---"
+        r "You should leave."
+        mc "But---"
+        r "Now! And don't come back for the party. Don't come back. Ever."
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "She really broke my heart. I seriously thought she felt the same way toward me. It ruined the whole party for me."
+        r "Liking someone who doesn't like you back... it hurts."
+        cl "Did she come back for the party?"
+        r "No. She may be dense, but she was smart enough not to do that."
+        cl "Do you still have feelings for her?"
+        r "Someone important to me once said “you cannot stop loving someone.” Now, I don't know much about love, but whatever I felt for [mc_name]... I don't think I can stop feeling that."
+        cl "Did you see her at any other point the night of April 27, 2019 or at any point after that?"
+        r "No. That was the last I saw her."
+        cl "So, [mc_name] remains without an alibi. Reg, can anyone verify your whereabouts that night?"
+        r "Literally anyone on the varsity soccer team. Except Leon."
+        cl "Okay, that will be all. Thanks for your time Mr. Na."
+        r "Thanks for wasting my time, it was my pleasure."
+        hide reg with moveoutright
+        cl "He's definitely a charmer."
+        return
+
+    label Reg15f:
+        mc "You should really try to make up with Leon. It's not good to let these things linger for too long. "
+        r "Please, [mc_name]... I don't want to ruin the magic of the night."
+        mc "It'll be ruined if the party ends and you guys aren't friends anymore."
+        r "Is Leon really your top priority right now? I'm baring myself to you right now, and you're focused on another guy?"
+        mc "No, Reg---"
+        r "First he throws himself all over you, then he basically confesses his love for you, and now you want to go run to him to make sure he's okay? Do you like him, or do you like me?"
+        mc "Reg, stop. You're misinterpreting things."
+        r "Oh, jeez, you can't even give me a straight answer. God dammit! You do like him, don't you?"
+        "{i}Reg laughs sarcastically.{/i}"
+        r "Guess what, [mc_name]? I knew all along how he feels about you. He talks about you all the time, and he's been doing that for years."
+        r "You wanna know why I didn't tell you? I figured that if you knew he liked you that you would choose him over me."
+        r "He's known you since you were kids, so he's got a huge advantage. The only reason I had a leg up on him was because I wasn't afraid to go after what I like."
+        r "I made it clear that I liked you, so you saw me as an option. Leon didn't communicate his feelings, so you never saw him as anything more than a friend. Well, looks like I lost my advantage."
+        "{i}A loud bang drew my attention back to the dance floor. Leon had opened the front door with so much force that it hit the wall and bounced back against him.{/i}"
+        "{i}His face was red and there were tears on his cheeks. He stumbled out into the night, leaving the door open behind him.{/i}"
+        mc "Reg, Leon just left and he looked really upset."
+        r "Are you seriously bringing up Leon once a-fucking-gain?"
+        mc "Reg, I think this is serious. He's in no state to be wandering around on his own."
+        r "Then I give up. Go after him. Go to your new boyfriend."
+        r "Get married. Have some kids. I don't care anymore."
+        mc "Reg, your behavior is really selfish."
+        r "One more reason to dump me and go date Mr. Perfect Leon."
+        mc "Reg, I'm going to go check on Leon. It's not because I like him, okay? I like you! I'm dating YOU, Reg!"
+        mc "But just because I'm not dating Leon doesn't mean I can let him be in danger. Please, Reg. Be here when I get back."
+        scene interrogation_room with fade_to_black
+        show reg neutral at center
+        r "She never came back."
+        cl "I'm sorry, Reginald."
+        r "It's still Reg."
+        cl "My apologies, Reg."
+        r "I just... I felt so useless. I'd finally managed to find a person who I really cared about. She made me a better person, and I felt happiest when she was around."
+        r "I also felt furious. Leon had managed to ruin my party and take away the one person who meant everything to me."
+        cl "Did this anger cause you to consider being violent toward him?"
+        r "What? Of course not!"
+        cl "..."
+        r "You aren't seriously suggesting something, are you?"
+        cl "Is there anyone who can verify your location for the rest of the night? After Leon and [mc_name] left?"
+        r "Well, no... I was so upset that I went to my room to be alone."
+        cl "Reginald Na remains without an alibi. Thank you for your time, Mr. Na. You'll be hearing from us shortly."
+        r "You can't be serious. I didn't hurt anyone! Please, you have to believe me!"
+        cl "Mr. Na, I recommend you refrain from speaking until you've had a chance to talk with your lawyer."
+        r "My lawyer? No, this isn't happening."
+        cl "You will be escorted from the premises now."
+        r "This isn't happening..."
+        hide reg neutral with dissolve
+        r "This isn't happening..."
         return
 
 
