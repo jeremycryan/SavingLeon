@@ -100,6 +100,14 @@ label start:
             jump Reg9
         "First date":
             jump Reg11
+        "Meeting Brian":
+            jump Brian2
+        "Always time for a coffee pun":
+            jump Brian5
+        "People hiding their feelings":
+            jump Brian9
+        "One guy in particular":
+            jump Brian11
 
     label intro:
         scene interrogation_room with fade_to_black
@@ -1314,7 +1322,7 @@ label start:
         cl "Did she come back for the party?"
         r "No. She may be dense, but she was smart enough not to do that."
         cl "Do you still have feelings for her?"
-        r "Someone important to me once said “you cannot stop loving someone.” Now, I don't know much about love, but whatever I felt for [mc_name]... I don't think I can stop feeling that."
+        r "Someone important to me once said "you cannot stop loving someone." Now, I don't know much about love, but whatever I felt for [mc_name]... I don't think I can stop feeling that."
         cl "Did you see her at any other point the night of April 27, 2019 or at any point after that?"
         r "No. That was the last I saw her."
         cl "So, [mc_name] remains without an alibi. Reg, can anyone verify your whereabouts that night?"
@@ -1372,6 +1380,838 @@ label start:
         r "This isn't happening..."
         hide reg neutral with dissolve
         r "This isn't happening..."
+        return
+
+    label Brian2:
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        cl "Mr. Giang, are you ready to begin?"
+        b "Yes."
+        cl "Alright Mr. Giang, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the evening of April 27, 2019."
+        cl "You are sworn under the same oath that you will be for the upcoming trial. Is this clear?"
+        b "Yes, I understand."
+        cl "Excellent. Let's begin. Can you start by stating for the record your full name and age?"
+        b "I'm Brian Giang, age 19."
+        cl "And your occupation?"
+        b "I'm a student at Bellington University, but I also work at a coffee shop near the high school. It's called Coffee Waves."
+        cl "Oh, I love that place!"
+        b "Yeah, me too. I get free drinks and a lot of cute high school girls come in. That's actually how I met [mc_name]. She came in one day with Leon."
+        cl "This is Leon Hewett So?"
+        b "Yes. Leon and I were on the soccer team together last year, before I graduated from the high school."
+        cl "Thanks for verifying. Can you tell me about the day you met [mc_name] when she came with Leon to Coffee Waves?"
+        b "Yeah, definitely! It was a Wednesday, I think."
+        b "I of course recognized when Leon when he came in, but he brought with him this absolutely gorgeous friend I'd never met. Oh, man, she was wearing these jean shorts---"
+        cl "Brian, focus."
+        b "Okay, okay, sorry. I'll try to limit the extraneous comments."
+        jump Brian3
+
+    label Brian3:
+        scene classroom with fade_to_black
+        "{i}{cps=8}Briiiiiiiing.{/cps}{/i}"
+        "{i}The bell announcing the beginning of lunch period woke me from a half-snooze. As I began putting my belongings into my backpack. I felt a hand on my shoulder.{/i}"
+        show leon neutral at center
+        "{i}I turned around to see Leon standing over me.{/i}"
+        l "Hey, [mc_name]."
+        mc "Hey Leon!"
+        l "Want to grab a drink at Coffee Waves?"
+        mc "Sure! I could certainly use the caffeine."
+        l "Alright, let's go. I can drive."
+        scene coffee_shop with fade_to_black
+        show leon neutral at center
+        l "Oh hey, Brian is working today! Have you met him?"
+        mc "No, I don't think so."
+        l "Hey Brian!"
+        show brian neutral at rightish with moveinright
+        show leon:
+            linear 0.3 leftish
+        b "{cps=8}Yoooooooo{/cps}, Leon! How's it going dude?"
+        l "I'm good. Soccer tryouts are coming up next week."
+        b "You feel ready?"
+        l "Well, for some of us varsity guys it's just a formality. I've been on the team for two years, so I'm not super worried."
+        b "Well, don't underestimate the new freshmen. One of them might take your spot!"
+        l "Alright, man. I won't."
+        "{i}Leon gestured in my direction.{/i}"
+        l "Hey, I wanted to introduce you to my friend [mc_name]."
+        b "Oh, [mc_name] is it? Nice to meet you. I'm Brian."
+        "{i}Brian smiled at me with what he probably intended to be a sexy smolder.{/i}"
+        b "They call me a coffee maestro because I grind so fine."
+        l "Brian, stop joking around and just take our order."
+        b "Okay, fine. What can I get you?"
+        l "I'll take a pumpkin spice latte."
+        b "AH, we've got ourselves a basic one! How about you, hot-tea?"
+        l "Brian, knock it off with the coffee puns!"
+        mc "Um, I's actually not sure what I want... any recommendations from either of you?"
+        l "The pumpkin spice here is fantastic!"
+        b "I'm quite fond of the caramel macchiato."
+        mc "Hmmmm, those both sound good. I'm going to go with..."
+        menu:
+            "What should I order?"
+            "Caramel macchiato":
+                jump Brian4
+            "Pumpkin spice":
+                jump Brian15a
+
+    label Brian4:
+        mc "I'll take a caramel macchiato. I've never had one, so I'm curious how it tastes."
+        b "Excellent choice! I'll need to hear your opinion once you've tried it."
+        mc "I'll let you know before we leave!"
+        b "Actually... let me talk to my boss. He might let me take my break a little early today so I can hang out with you for 15 minutes. Gimme a few minutes."
+        hide brian with moveoutright
+        show leon:
+            linear 0.3 center
+        "{i}Leon and I dropped our cash on the counter and claimed a small table in the otherwise empty coffee shop.{/i}"
+        l "He's a character."
+        mc "Seems like it! What's with all the uncomfortable pick-up lines?"
+        l "He does that to everyone. He's a jokester."
+        mc "Gotcha."
+        show brian neutral at rightish with moveinright
+        show leon:
+            linear 0.3 leftish
+        "{i}Brian reappeared by the table holding a try with three drinks. He placed each drink carefully on the table, and then sat in the chair next to mine.{/i}"
+        b "So, what do you think?"
+        "{i}I took a sip of my drink.{/i}"
+        mc "It's delicious!"
+        b "I know, right? I gave you an extra pump of caramel."
+        "{i}He leaned toward me and dropped his voice to a whisper.{/i}"
+        b "{size=-10}Don't tell my boss.{/size}"
+        mc "Your secret is safe with me."
+        b "How's yours, Leon?"
+        l "It's tasty!"
+        b "Fantastic. I really am a coffee genius."
+        "{i}He turned to me and grabbed one of my hands.{/i}"
+        b "I guess that's why it fells like there's something {i}brewing{/i} between the two of us."
+        l "Brian, chill it with the coffee pickup lines!"
+        b "Dude, I'm just messing with you. I'm not trying to steal your girl."
+        l "My--- my girl?"
+        b "You seriously think I would do you dirty like that? Naw, man. I may be a bit of a player, but I would never go after another guy's girlfriend."
+        l "What?! We're not... she's not..."
+        b "Wait, aren't you guys dating?"
+        mc "Uh, no... we're just friends."
+        b "Oh, my bad, dude. I just assumed by the way you interacted that something was going on."
+        l "Oh, no. We've just been friends for a long time."
+        b "Ah, I see. Then you wouldn't mind if I took a shot at her?"
+        "{i}Brian raised an eyebrow suggestively.{/i}"
+        l "Do you ever quit this act of yours?"
+        b "Never."
+        "{i}Brian realized he's been holding my hand this entire time and quickly dropped it in embarrassment.{/i}"
+        b "Well, I think it's about time I went back to work. But hey, it was nice meeting you [mc_name]! Come back to see me soon."
+        mc "I'll certainly try!"
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "She came to the coffee shop every now and then after that day. When she did, I would always make sure to chat her up, flirt a little, do my thing... What can I say?"
+        b "She was cute, and I'm a jokester at heart. I wasn't being serious anyway."
+        cl "Did anything else notable happen the other times she came to the coffee shop?"
+        b "Yeah, there's one event I can think of that was noteworthy. The day [mc_name] had the misfortune of running into my ex."
+        jump Brian5
+
+    label Brian5:
+        scene school_parking_lot with fade_to_black
+        "{i}It's so nice to finally head home after working on that group project for so long. Where did I park again? Ah, over there.{/i}"
+        "{i}What? It's seriously not starting? Maybe I should call someone? ...aaaaaaand my phone's dead. Arg! Awesome luck today.{/i}"
+        "{i}There's got to be someone around who could help, right? Coffee Waves isn't too far of a walk. Maybe Brian is working today.{/i}"
+        scene coffee_shop with fade_to_black
+        "{i}I don't see Brian around here anywhere. Maybe he isn't working today?{/i}"
+        "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
+        menu:
+            "What should I do?"
+            "Walk back to the soccer field":
+                jump Brian6
+            "Ask Kelsie if Brian is around":
+                jump Brian15b
+
+    label Brian6:
+        "{i}It's a little bit of a walk back to the soccer field and it's sorta hot outside, so I think I'll order a lemonade for the road.{/i}"
+        scene coffee_shop with fade_to_black
+        kelsie "Lemonade for [mc_name]!"
+        "{i}A voice from far behind the counter rang through the drone of the coffee shop.{/i}"
+        b "[mc_name] is here?"
+        show brian neutral at center
+        b "Hey, [mc_name]! You should have asked for me. I was just doing some inventory."
+        "{i}Brian looked over his shoulder at Kelsie, then back at me.{/i}"
+        b "Oh, never mind, Kelsie's working today. If you had asked her for me, she probably would have thrown you out."
+        mc "How come?"
+        b "We dated a while back. It didn't end super well. It broke my heart."
+        mc "What does that have to do with her throwing me out?"
+        b "I messed up pretty bad in that relationship... she's constantly trying to find ways to get me back."
+        b "I try to avoid working the same shift as her because every time I talk to a girl she butts in with some lie. She tells people I have a whole bunch of high school girlfriends and stuff like that."
+        mc "That's pretty mean."
+        b "I guess I deserve it a little. I mean, I'm a bit of a flirter, as you know. I kind of gave myself a bad reputation that way. But I still don't think that gives Kelsie permission to act like that."
+        mc "No, of course not."
+        b "I really cared about her. I still do. I don't understand why she acts like a jealous ex when she's the one who dumped me..."
+        "{i}Brian paused for a moment, then blushed.{/i}"
+        b "Sorry for oversharing. I'm sure you don't care about my relationship woes."
+        b "I've been a pretty bad boyfriend over the years, and sometimes an even worse ex-boyfriend, so these aren't the kind of stories you'd care about."
+        mc "It's no problem! You can talk to me about whatever you want."
+        b "Seriously? You don't mind?"
+        mc "Not at all!"
+        b "Well... how about I text you about it?"
+        mc "Sure!"
+        b "Great! Can I put my number into your phone?"
+        mc "...it's dead."
+        b "Oh..."
+        mc "...also my car broke down."
+        b "Huh?"
+        mc "I'm stuck here with no way to get home and no way to contact anyone for help."
+        b "Why didn't you open with that?!"
+        mc "To be honest, I forgot about it until now!"
+        "{i}Brian gave a hearty laugh.{/i}"
+        b "You're unbelievable. Where have you {i}bean{/i} all my life?"
+        "{i}I giggled, despite my best efforts.{/i}"
+        mc "Is now really the time for a coffee pun?"
+        b "It's always time for a coffee pun."
+        "{i}The two of us laughed. Kelsie glared at me with something that looked like murderous intent.{/i}"
+        b "I get off in around half an hour. Why don't you hang out here until then, and then I can drive you home."
+        mc "You are a life-saver!"
+        b "I do my best. You can pay me back by giving me that phone number you promised."
+        mc "Sure thing."
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "I finished my shift and drove her home. She put her number into my phone, and we texted every now and then."
+        b "Not very often, and nothing too deep. She would ask what days I was working at Coffee Waves, I would send her score updates while watching the varsity soccer games, stuff like that."
+        cl "Did these messages at any point become romantic or sexual?"
+        b "No, of course not. I'm not one to send inappropriate pictures or explicit texts, and even if I was, we never had text conversations that went in that direction at all."
+        cl "How about in person? Did your friendship ever evolve into something else?"
+        b "Things started to change the day that Leon invited a group of us to the movies."
+        cl "Who was in the group?"
+        b "Leon So, Reg Na, [mc_name], and me."
+        cl "What exactly happened?"
+        b "Something lifechanging."
+        jump Brian7
+
+    label Brian7:
+        scene school_hallway with fade_to_black
+        show serpens neutral at center
+        s "... and we're falling a little behind, so we should probably try to meet outside of school at some point."
+        mc "Sorry, that's my fault. You keep having to explain everything to me."
+        s "It's no problem,  really. At the risk of sounding egotistical, I'm pretty good at calculus."
+        mc "Well, I appreciate it."
+        s "So, in terms of meeting up---"
+        l "Hey, mc!"
+        show leon at rightish with moveinright
+        show serpens:
+            linear 0.3 leftish
+        l "How's it going?"
+        mc "Uh, pretty good. I was just chatting with Serpens about a calculus project."
+        "{i}Leon seemed to notice Serpens for the first time.{/i}"
+        l "Oh! Hey, man."
+        s "Hey, man."
+        "{i}Serpens and Leon fist bumped.{/i}"
+        l "Hey, I'm planning on seeing a movie this evening with a group. You guys in?"
+        mc "Sure! How about you, Serpens?"
+        s "Uh, I'm kinda busy tonight..."
+        l "Oh, that's too bad. Next time, I guess!"
+        hide serpens with moveoutleft
+        show leon:
+            linear 0.3 center
+        l "So, [mc_name]... I'll see you at the theatre around 7?"
+        mc "Sounds good!"
+        scene movie_theatre with fade_to_black
+        show leon neutral at leftish
+        show reg neutral at rightish
+        show brian neutral at center
+        l "Hey, [mc_name]! We're over here!"
+        mc "Hey everyone."
+        b "Glad you could make it."
+        "{i}Brian leaned toward me and lowered his voice.{/i}"
+        b "I've been thinking about you a latte."
+        l "Brian!"
+        b "Okay, okay! What's got you soy worked up?"
+        "{i}Leon glared at Brian. Brian raised his hands in surrender.{/i}"
+        r "Leon, Brian, stop flirting with each other and let's figure out which movie we want to watch."
+        b "There's this awesome horror movie that just came out. Let's see that!"
+        l "I don't really want to see something scary. Can we see that rom-com that's up for best picture?"
+        b "Really? Man, you seriously are basic."
+        l "[mc_name], what do you want to see?"
+        menu:
+            "Which movie do I want to see?"
+            "Scary movie":
+                jump Brian15c
+            "Rom-com":
+                jump Brian8
+
+    label Brian8:
+        mc "I'd like to see the rom-com."
+        "{i}Brian clicked his tongue and shook his head.{/i}"
+        b "I expected more from you, [mc_name]."
+        "{i}He smiled and gently tapped my arm with the back of his hand.{/i}"
+        b "Kidding."
+        r "Let's stop sucking each other's dicks and go buy our tickets before we're late to the movie!"
+        scene movie_theatre with fade_to_black
+        "{i}To my right, Leon was leaning forward in his seat, entirely engrossed in the plot on screen. To my left, Brian was on his third soda refill.{/i}"
+        "{i}He was trying to act as though he wasn't interested in the movie, but on more than one occasion I caught him smiling{/i}"
+        show brian neutral at center
+        "{i}Brian leaned to whisper in my ear.{/i}"
+        b "You know, if they would just go for it instead of skirting around their feelings for each other, they wouldn't be in this situation."
+        mc "Yeah, tell me about it! He needs to just go for it. Nothing good ever came from people hiding their feelings."
+        b "You think so?"
+        mc "Of course. People miss opportunities when they don't communicate these things."
+        "{i}A moment passed, and then I felt a weight over my shoulders. I glanced to my left to see that Brian had draped his arm over my shoulders.{/i}"
+        mc "Very funny, Brian."
+        "{i}I decided to play along by crossing my left arm across my chest and intertwining my fingers in his.{/i}"
+        "{i}He squeezed me closer and whispered in my ear.{/i}"
+        b "You make me crazy."
+        mc "Well you mocha me crazy."
+        "{i}I laughed under my breath but didn't let go of his hand. We stayed like that for several minutes.{/i}"
+        hide brian with moveoutleft
+        "{i}Finally, Brian had to break the hold to take his third trip to the bathroom.{/i}"
+        scene movie_theatre with fade_to_black
+        show leon neutral at leftish
+        show reg neutral at rightish
+        show brian neutral at center
+        l "Wow, that was an excellent movie!"
+        r "It was alright."
+        l "What did you think, [mc_name]?"
+        mc "I liked it, too!"
+        l "How about you, Brian?"
+        b "I didn't think I was going to be into it, but I actually enjoyed it."
+        l "Oh, shoot... I left my jacket in the theatre."
+        hide leon with moveoutleft
+        r "I'm gonna run to the bathroom while we're waiting on him."
+        hide reg with moveoutright
+        b "You know, it's not really fair."
+        mc "What do you mean?"
+        b "That guy in the movie... he made some of the same kind of bad choices I did in previous relationships, and for him it worked out. It even made him more charming."
+        mc "Like what?"
+        b "He took his girl for granted. That's my most frequent mistake."
+        mc "Well, he learned from it. Did you?"
+        b "I like to think so."
+        {i}Brian dropped his eyes and shifted his weight.{/i}
+        b "I dated a lot in high school and I've dated a lot in college. I keep making the mistake of thinking I'm special somehow."
+        b "Just because a lot of people crush on me, I let it go to my head. I forget that I'm not some perfect guy who girls are always going to come running back to."
+        b "It's when I start acting like I'm granting my girlfriend some kind of high honor by going out with her that things start to disintegrate."
+        {i} Brian looked back at me.{/i}
+        b "Do you mind if I get a little personal?"
+        mc "Not at all."
+        b "I've never dumped someone in my life."
+        mc "Wait... are you saying you are still in several relationships?"
+        b "No, of course not. I've never dumped anyone, but I've been dumped plenty."
+        mc "Oh, gotcha."
+        b "Yeah. I mean, I liked everyone who I've dated. I still like them. Otherwise we wouldn't have dated.
+        mc "Were you in love with any of them?"
+        b "I used to think so. Until recently, I thought I'd loved every single one of them. Each time someone broke up with me, I thought I was losing my soul mate."
+        mc "What changed?"
+        b "I met someone who was real."
+        mc "Really? Do I know her?"
+        b "I---"
+        l "Got it!"
+        show leon neutral at leftish behind brian with moveinleft
+        l "It took me a little bit to remember exactly where our seats were, but I found it."
+        "{i} Leon looked around.{/i}"
+        l "Where's Reg?"
+        r "Right here."
+        show reg neutral at rightish behind brian with moveinright
+        "{i}Reg emerged from the bathroom, wiping his wet hands on his pants.{/i}"
+        r "Are we ready to go get dinner?"
+        l "Yep!"
+        hide reg
+        hide leon
+        with moveoutright
+        "{i}Brian looked at me as though he wanted to say something, then dropped his gaze and followed his friends.{/i}"
+        "{i}I followed shortly after.{/i}"
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        cl "What was life-changing about that movie?"
+        b "I realized that, without me noticing, my jokes had stopped. Suddenly, I started to mean all the things I said to her."
+        cl "So, you realized you liked her?"
+        b "Yeah."
+        cl "Did she give any indication of liking you back?"
+        b "At first I wasn't sure. She seemed to think it was still a joke, so it was hard to tell."
+        b "After a while, I could barely take it anymore. I really wanted to tell her straight up how I felt, but I was afraid that I would just end up making the same mistakes I'd been making for years."
+        b "With the girls before, it didn't matter anymore. But with [mc_name]... something was different. I was terrified of messing something up."
+        b "But on the other hand... nothing good ever came of lying about your feelings, right?"
+        cl "What did you do?"
+        b "I texted her to meet me at Coffee Waves."
+        b "And we had a chat."
+        jump Brian9
+
+    label Brian9:
+        scene coffee_shop with fade_to_black
+        "{i}Brian asked me to meet him for coffee today. Apparently he has something important to talk about. {/i}"
+        show brian neutral at center
+        b "Hey, [mc_name]. Thanks for meeting me."
+        mc "Sure thing. Shall we sit?"
+        "{i}We chose a table by the window. Kelsie slammed a caramel macchiato down in front of each of us without speaking a word.{/i}"
+        b "I hope you don't mind I ordered for you."
+        mc "Not at all! You picked exactly what I would have ordered. So, what did you want to talk about?"
+        "{i}Brian looked away for several seconds, then back at me.{/i}"
+        b "There's something I really want to do, but I'm afraid."
+        mc "Like bungie jumping or something?"
+        b "No, nothing like that. It's something I've done many times in the past, but every time it's been a mistake. Every time, it's ended horribly."
+        mc "I don't understand."
+        b "I know, but... I can't really give you any more details right now."
+        mc "Okay..."
+        b "The thing is, the reward is huge. It's something really important to me, and I'm not sure I'd ever forgive myself if I didn't take a chance."
+        b "It's something important enough to me, that I'd be willing to change for it."
+        b "But on the other hand... it's never worked. The chances are high that I would just end up making the same stupid mistake again. And if I do that, nothing will ever be the same."
+        mc "I'm sorry, but I'm really confused---"
+        b "The bottom line, [mc_name], is... is it a mistake to keep doing the same thing and expect different results?"
+        menu:
+            "Yes":
+                jump Brian15d
+            "No":
+                jump Brian10
+
+    label Brian10:
+        mc "No."
+        b "You don't think so?"
+        mc "Well, it sounds like something is different this time. You said that the reward is something you'd be willing to change for, so that tells me that something."
+        mc "It tells me that you wouldn't be making the same bad mistake again... you'd be making a different choice. Something similar maybe, but if you're going into it with a different energy, that could make a difference."
+        mc "Although, I really don't know the context, so that might be ridiculous."
+        b "No. It's not."
+        "{i}A smile appeared on Brian's face. He grabbed my hands and his face became serious again. {/i}"
+        b "I'm going to make that mistake now, okay?"
+        mc "Uh, sure---"
+        "{i} Suddenly, Brian's lips were pressed against mine. For a moment I was shocked, but I soon felt myself melt into the sensation. {/i}"
+        "{i} His hands wandered up my arm and made their way to my head where his fingers gently became tangled in my hair. He used his new grip to pull my face more firmly against his. {/i}"
+        "{i} Slowly, he unravelled his fingers from my hair and pulled away. {/i}"
+        b "...nothing good ever came from people hiding their feelings."
+        mc "...yeah."
+        "{i} Brian leaned toward me intently and dropped his voice. {/i}"
+        b "I want it to be different this time. I really care about you and I want to do this right. Are you in?"
+        "{i} I paused to look at Brian more carefully. {/i}"
+        "{i} On the outside, he looked like a player. He flirted aggressively and he'd been in too many relationships to count, but underneath... he was something else.{/i}"
+        "{i} Underneath he was a person who cared deeply and loved recklessly. He was kind, and he could tell when something was real. The longer I stared at him, the more I could see him as someone I could fall in love with.{/i}"
+        mc "Yeah. I'm in."
+        b "...really?"
+        mc "Really."
+        "{i}Brian stood up from his seat and pulled me into an embrace. He stood there for several seconds and the world turned around us. {/i}"
+        "{i}A child spilled his drink and cried. A bell rang as a woman entered the coffee shop with her dog. Kelsie looked at us disgustedly.{/i}"
+        "{i} Brian slowly released me and kissed me once more on the forehead.{/i}"
+        b "Uh, I guess I should get to class."
+        "{i}My head was swimming.{/i}"
+        mc "Uh, yeah. Me, too."
+        b "Alright. I'll see you soon."
+        mc "Yeah."
+        b "...take care."
+        hide brian with moveoutright
+        "{i}Brian left the coffee shop as I stood there, frozen, watching him walk away. I felt a tiny smile creep onto my face.{/i}"
+        kelsie "Poor, naïve child. You fell into the monster's grasp."
+        "{i} I responded without looking away from Brian's receding form.{/i}"
+        mc "Fuck off, Kelsie."
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        cl "So, you and [mc_name] became involved romantically?"
+        b "Ya know, you start a lot of your sentences with \"so.\" That's going to get really confusing when you interview Leon."
+        cl "How?"
+        b "... because his last name is So. Do you not know his full name?"
+        cl "Mr. Giang, let's get back on track, please. Were you and [mc_name] involved romantically?"
+        b "I'm not sure how my story left that question unanswered."
+        cl "Mr. Giang, the quicker you can answer my questions clearly, concisely, and without room for misinterpretation, the faster you can get out of here."
+        b "Fine. Yes, we were involved romantically."
+        cl "Did you consider her your girlfriend?"
+        b "We never really had much time to talk about making it official in any wort of way. This was less than a week before the party."
+        cl "Reg Na's party on April 27?"
+        b "Yes. In fact, the day after we met up at Coffee Waves was the day of the big win that made Reg think to throw a party in the first place."
+        jump Brian11
+
+    label Brian11:
+        scene soccer_field with fade_to_black
+        "{i}It's been some time since I took the time to go to a high school soccer game. However, Brian's been texting me score updates for the last hour, and it sounds like the guys are doing really well.{/i}"
+        show brian neutral at center
+        b "[mc_name]?"
+        mc "Hey, Brian!"
+        b "I wasn't expecting to see you! What are you doing here?"
+        mc "Same as you. Supporting the guys."
+        "{i}Brian looked at me with one eyebrow raised, his eyes suspicious.{/i}"
+        mc "Well, I came here to see one guy in particular."
+        b "That's what I thought. Leon?"
+        mc "Well, of course Leon, but... I've actually been hanging out with some barista recently. He works at Coffee Waves. Maybe you know him?"
+        "{i}Brian gathered me in a side hug and smiled.{/i}"
+        b "Good to see you."
+        mc "Good to see you too."
+        "{i}From his position on field, Reg caught my eye and winked.{/i}"
+        b "Oh, I see you have an admirer!"
+        mc "Oh, no, it's nothing like that. We're just friends. He helps me with calc every now and then."
+        b "Well as long as you don't let yourself get stolen away by a younger, prettier guy."
+        "{i}I laughed.{/i}"
+        mc "You're embarrassing."
+        scene soccer_field with fade_to_black
+        "{i}{cps=8}Tweeeeeeet!{/cps}{/i}"
+        "{i}The ref blew the final whistle and raised her hand to indicate Bellington High as the winners. The crowd roared as the team celebrated and shook the hands of the opposing team.{/i}"
+        show reg neutral at center
+        "{i}The people around me began packing up their foldable chairs and coolers as Reg jogged away from his teammates to join me on the sidelines. Before I could react, he gathered me into a bear hug.{/i}"
+        mc "Excellent playing, Reg!"
+        r "Hell yeah, man! You're like my good luck charm! I scored a personal best today!"
+        mc "That was all you, Reg!"
+        r "You helped more than you can imagine."
+        "{i}A few seconds passed. Suddenly, Reg realized he'd been hugging me this entire time and quickly let go, blushing slightly.{/i}"
+        show reg:
+            linear 0.3 rightish
+        show brian neutral at leftish with moveinleft
+        b "{cps=8}Reginaaaaaald!{/cps}"
+        "{i}Brian gave him a second hearty slap on the back.{/i}"
+        r "Knock it off, Brian!"
+        b "Ah, is Reggie in a bad mood?"
+        r "Well now that you're here I am!"
+        b "Oh, come on! You know you love me!"
+        r "I find you irritating."
+        b "Come on, Reggie, I came to see you play and this is the thanks I get?"
+        r "Oh, you came for me? Well in that case---"
+        show reg:
+            linear 0.1 center
+            linear 0.1 rightish
+        with vpunch
+        "{i}Reg hit Brian with a solid jab to the stomach to let him know he wasn't buying Brian's bull."
+        b "Ow!"
+        r "I didn't even hit you that hard."
+        b "Still..."
+        "{i}Reg rolled his eyes and directed his attention back toward me.{/i}"
+        r "You know, I think a game like this deserves a party."
+        b "Bruuuuh, that's a great idea!"
+        r "You're not invited, Brian. I was thinking something chill at my parent's pace with a few cases of soda and the varsity team... and of course each player is allowed a plus one."
+        r "What do you think, [mc_name]?"
+        b "That sounds like a snooze-fest! I should throw one of my famous Giang college parties! Booze, hot girls, black lights, and plenty of dark corners to sneak off to---"
+        r "Brian, nobody wants to go to your nasty-ass party. Right [mc_name]?"
+        b "What!? My parties are legendary! It's the best god damn time in the world followed by the inability to remember any of it."
+        b "An absolutely legendary time."
+        b "Doesn't that sound fun, [mc_name]?"
+        mc "Um, I guess..."
+        menu:
+            "Whose party sounds more fun?"
+            "Brian's":
+                jump Brian12
+            "Reg's":
+                jump Brian15e
+
+    label Brian12:
+        mc "Brian's party sounds fun!"
+        b "Well, I promised only the hottest girls would be at my party, so of course you'll be there."
+        "{i}Brian winked at me.{/i}"
+        r "Brian, you're not even on the team anymore! I'm going to throw the varsity team party, and you can't do anything about it because you.{w=0.2} Are.{w=0.2} Not.{w=0.2} On.{w=0.2} The.{w=0.2} Team!"
+        b "Okay, fine. Chill out."
+        r "You better tread lightly or you're gonna get uninvited for real."
+        "{i}Reg stormed off, but stopped to yell over his shoulder.{/i}"
+        r "April 27. You can come because you're an alum, Brian, but you only get one plus one."
+        hide reg with moveoutright
+        show brian:
+            linear 0.3 center
+        "{i}He disappeared into the cheering crowd{/i}"
+        mc "Wow. Sorry about that. I didn't realize that would set him off."
+        b "It's okay. You can never tell with that kid."
+        b "Besides, I appreciate you being on my side."
+        "{i}He gave me a quick kiss.{/i}"
+        b "I have a group project due tomorrow, so I should probably head back to campus. I'll see you at the party though! You'll be my plus one, right?"
+        mc "Absolutely!"
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "Reg's party was that weekend. I used my fake ID to buy a bunch of booze, and I was really excited for it."
+        b "[mc_name] and I arrived around 8:30 and hung out by the drink table most of the night."
+        cl "Were you and [mc_name] drinking?"
+        b "I was, but [mc_name] wasn't."
+        cl "Did you drink enough for your judgement to be impaired?"
+        b "No, I just got a little buzzed. Leon was the one who got totally messed up."
+        cl "Can you please tell me, in detail, everything you remember from that night?"
+        b "I'll do my best."
+        jump Brian13
+
+    label Brian14:
+        scene house_party_night with fade_to_black
+        show brian neutral at center
+        b "You sure you don't want to try any?"
+        mc "No, I don't drink."
+        b "Suit yourself."
+        "{i}Brian downed his drink.{/i}"
+        b "Have you seen Leon?"
+        mc "No, I haven't. He should have been here by now, right?"
+        b "Yeah. I hope my man shows up soon. He's such a blast to party with!"
+        show brian:
+            linear 0.3 rightish
+        show leon neutral at leftish with moveinleft
+        "{i} Suddenly, the front door flew open, revealing a very angry Leon. He came inside and immediately plopped down on a couch and crossed his arms. Brian and I sat down next to him.{/i}"
+        b "Dude, what's going on with you?"
+        l "This night has blown chunks so far."
+        mc "Really? What happened?"
+        l "Well, let's start with earlier today when Aden told me the party had been cancelled. For some reason I trusted him, even though he's not even on the varsity team."
+        l "So, I was sound asleep when Reg called me in a rage because he was upset that I didn't come to the party. He wouldn't even let me explain myself."
+        l "I just don't understand why Aden would lie to me like that or how I'm supposed to make Reg trust me again."
+        "{i}Leon put his head in his hands, and I put an arm around his shoulders to comfort him.{/i}"
+        mc "Hey, it's okay---"
+        b "You know what you need?"
+        l "What?"
+        b "Boooooooooooze!"
+        l "I don't drink."
+        b "So? There's a first time for everything."
+        l "I'm not interested."
+        mc "Brian, I really don't think that's a good idea right now---"
+        b "Driiiiink!"
+        l "No."
+        b "Pleeeeeeease? I'll... give you five dollars! I'll mix all your drinks for you! I'll even... let you kiss my girlfriend!"
+        mc "Brian!"
+        b "Just please drink with me! Seriously, it'll cheer you up. It'll cheer me up, too."
+        l "I don't know..."
+        b "Come on, don't be a pussy. Have a drink!"
+        mc "Brian, seriously! Don't pressure him. And don't use a term associated with feminimity as an insult."
+        l "Fine."
+        mc "...what?"
+        l "Fine. Give me a drink."
+        b "Hell, yeah!"
+        mc "Leon, you don't have to..."
+        l "I want to."
+        mc "..."
+        "{i}Brian poured Leon a massive drink, and Leon drained it in one go.{/i}"
+        l "Again."
+        b "Yeah, my man! He knows how to party!"
+        mc "Leon, be careful!"
+        "{i}Leon downed another drink.{/i}"
+        l "Again."
+        mc "Leon, please stop. I know you're upset, but this isn't safe."
+        "{i} Brian handed him another drink, but I snatched it away before he could drink it. {/i}"
+        mc "If I give this back, you have to promise you're going to drink at a reasonable pace."
+        "{i} Leon paused for a moment, glaring at me.{/i}"
+        l "Fine."
+        hide leon with moveoutleft
+        show brian:
+            linear 0.3 center
+        "{i} He snatched his drink out of my hand and disappeared into the crowd on the dance floor.{/i}"
+        b "What a legend!"
+        mc "Brian, he was really upset, plus this is his first time drinking. I'm kind of worried."
+        b "He's fine. The only thing you need to worry about right now... is busting some killer dance moves with your date. Come one, let's go dance!"
+        mc "... alright. Let's dance."
+        scene house_party_night with fade_to_black
+        show brian neutral at center
+        "{i} Brian and I have been out on the dance floor for quite a few songs by now. We started out about an arm's distance from each other, but with each passing song, we got closer and closer.{/i}"
+        "{i} By now, his arms were around my lower back and my hands were clasped behind his head. Brian gently pulled me toward him until our pelvises were touching. We were there for only a few seconds before he pushed me away and dropped his hands.{/i}"
+        b "Hey, [mc_name]... do you want to get out of here?"
+        "{i} Brian's eyes were filled with a passion I couldn't quite describe.{/i}"
+        mc "I---"
+        "{i} Suddenly, a commotion from across the room caught our attention. {/i}"
+        show brian:
+            linear 0.3 leftish
+        show leon at rightish
+        show reg at center
+        with moveinright
+        "{i}Leon was on the floor, drunk beyond recognition, and Reg was standing over him, screaming.{/i}"
+        "{i}Brian grabbed my hand and led me through the crowd to see what was going on.{/i}"
+        r "...and now you have the audacity to lay on the floor like you're a victim! All evening you've been acting like a terrible friend!"
+        "{i}Leon looked away shamefully.{/i}"
+        r "Pick yourself up. Pick yourself up!"
+        "{i}Brian dropped my hand to help Leon to his feet.{/i}"
+        r "And for God's sake, stop drinking!"
+        hide reg with moveoutleft
+        "{i}Brian carefully led Leon away, trying desperately to keep him from falling over.{/i}"
+        b "What happened, man?"
+        l "Shit."
+        b "What?"
+        l "Shit happened, okaaaaay?"
+        "{i}Leon pushed Brian away and stumbled toward the door. He paused, dry heaved, and then disappeared out the door and into the night.{/i}"
+        mc "He didn't look good."
+        b "I've gotten much drunker than that and I still managed to walk home."
+        mc "I think I need to call him a ride or something. I bet Serpens could come help..."
+        b "He'll be fine. He's probably just hanging out on the porch."
+        mc "I should really check---"
+        b "See that? A guy just walked out after him. Can we please just let someone else deal with this?"
+        "{i}In the dark it was hard to make out Brian's expression.{/i}"
+        b "Please, [mc_name]?"
+        mc "..."
+        b "I'm begging you."
+        menu:
+            "What do I do?"
+            "Go after Leon":
+                jump Brian15f
+            "Let someone else take care of Leon":
+                jump Brian14
+
+    label Brian14:
+        mc "..."
+        b "Thank you. Now..."
+        "{i}Brian leaned closer.{/i}"
+        b "...what do you say we get out of here?"
+        "{i}I nodded and let Brian lead me out the back door and to his car.{/i}"
+        scene car_interior with fade_to_black
+        "{i}Brian was in the driver's seat and I had shotgun.{/i}"
+        mc "Where to?"
+        b "I was thinking... we stay right here."
+        "{i}Brian reached across the center console and pulled a lever on the side of the passenger seat.{/i}"
+        "{i}Suddenly, the chairback behind me had fully reclined. I let upper body recline with it.{/i}"
+        "{i}Slowly, Brian swung each leg over the center console until he was kneeling on the passenger seat, straddling my hips.{/i}"
+        "{i}He propped himself up over me with one hand and used the other to brush a strand of hair from my face. {/i}"
+        b "I know I'm not perfect."
+        mc "You're correct."
+        b "I think you were a little disappointed about some of my actions this evening."
+        mc "I was."
+        b "But... I really want this to work."
+        mc "... me too."
+        "{i} Brian lowered himself until his mouth was level with my ear. Then he whispered softly into my soul. {/i}"
+        b "I'm willing to change for you. I promise... I'll get this right."
+        "{i} He lifted his head and pressed his lips against mine. I wrapped my hands around his upper body and pulled him closer, softly accepting his heart into mine.{/i}"
+        show interrogation_room with fade_to_black
+        cl "Did you and [mc_name] have sexual intercourse that night?"
+        b "Can I decline to answer? I think in terms of statutory laws in this state, it would just be cleaner if I didn't have to explain my answer on record."
+        cl "..."
+        b "I'm not the one on trial, right?"
+        cl "I'll accept it. Can you at least tell me if you were with [mc_name] all night?"
+        b "Yeah. I eventually drove her back to my place and we put on a movie. We fell asleep on the couch and then I drove her home after we woke up in the morning."
+        cl "Did you see anyone else that night?"
+        b "No."
+        cl "When was the last time you saw Leon?"
+        b "When he left after Reg yelled at him."
+        cl "And when did you last see [mc_name]?"
+        b "Around 8am on the morning of April 28."
+        cl "Do you know anything about her current whereabouts?"
+        b "No."
+        cl "Okay, thank you Mr. Giang. I have no further questions. I appreciate your openess and honesty."
+        b "I was my pleasure. Besides... nothing good ever came out of someone hiding their feelings."
+        return
+
+    label Brian15a:
+        mc "I'll take a pumpkin spice latte."
+        b "Ah, we've got two basic bitches in the house! Alright, those'll be right out."
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "That was basically it. I brought out their drinks, they drank them, then they left."
+        cl "Did you interact with [mc_name] at any point after that?"
+        b "Yeah, occasionally. She stopped by Coffee Waves a few times after that, so we greeted each other, but we didn't chat much."
+        cl "Would you consider the two of you friends?"
+        b "Not really... more like acquaintances. I would have liked to get to know her better, though."
+        b "I thought she was super hot, but obviously I wasn't going to make a move. Not for real. I can't do my boy Leon dirty like that."
+        cl "What do you mean \"do him dirty\""
+        b "I wasn't about to try and steal his girlfriend away."
+        cl "[mc_name] and Leon were together?"
+        b "Well, yeah, I assumed so. Based on the way he was looking at her at least. People don't look at each other like that if they're just friends."
+        cl "People who were close to both Leon and [mc_name] have attested that they were not romantically involved. Could you have been mistaken?"
+        b "I guess I could have."
+        cl "Did Leon or [mc_name] ever directly say they were together?"
+        b "Well... no, they didn't."
+        cl "Okay, thanks for clarifying. Going back a little... you say you and MC_name weren't really friends. How about you and Leon?"
+        b "We were buds. We didn't see each other often, but we were friendly with each other, just like everyone on the team."
+        cl "Did you see Leon or [mc_name] on the night of April 27?"
+        b "Not [mc_name]. I did see Leon though. He got really drunk and then left early. I didn't see anything noteworthy."
+        cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
+        b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
+        cl "Okay, thank you Mr. Giang. No further questions at this point."
+        return
+
+    label Brian15b:
+        mc "Excuse me... is Brian working today?"
+        kelsie "Who are you?"
+        mc "I'm his friend. My car broke down so---"
+        kelsie "He's not working today."
+        "{i}I don't really know why, but Kelsie seemed really irritated.{/i}"
+        kelsie "To tell you the truth, management is getting really tired of all you high school girls coming in here asking for him. It causes distractions when boyfriends or girlfriends of the baristas come to visit them while they're working, so it's generally frowned upon."
+        kelsie "Brian is really close to being fired because he's had so many different girlfriends come in to ask to see him."
+        "{i}Kelsie leaned over the counter and lowered her voice.{/i}"
+        kelsie "If you don't want your boyfriend to be fired, I would recommend pissing off and not coming back while he's working."
+        mc "I think you misunderstood---"
+        kelsie "I don't want to hear it. All I want to hear is the sound of you leaving this coffee shop."
+        "{i}Perplexed, I left the coffee shop. I had never met Kelsie before, but she seemed to really dislike me. I wonder why?{/i}"
+        "{i}I shook the question out of my mind and refocused on the current issue. I still had a broken down car and a dead phone, and I was no closer to finding a friend who could help me out. I guess I better walk back to the soccer field and try my luck there.{/i}"
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "I was pretty pissed when I found out that my ex had told [mc_name] to leave instead of telling me she was there. I was in the back the whole time!"
+        cl "Why would she do that?"
+        b "I think she was jealous or mad at me or something. I don't know, man."
+        cl "How did this affect your relationship to [mc_name]?"
+        b "She didn't come back to Coffee Waves again."
+        cl "Did you see her at all after that?"
+        b "No, I don't think so."
+        c "How about Leon?"
+        b "I saw him at the occasional soccer event that I went to. We were still friendly of course, just like I am with all of my old teammates."
+        cl "Did you see Leon or [mc_name] on the night of April 27?"
+        b "Not [mc_name]. I did see Leon though. He got really drunk and then left early. I didn't see anything noteworthy."
+        cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
+        b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
+        cl "Okay, thank you Mr. Giang. No further questions at this point."
+        return
+
+    label Brian15c:
+        mc "Let's watch a scary movie."
+        b "Hell, yeah!"
+        "{i}Brian fist bumped me.{/i}"
+        b "This is gonna be awesome."
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "Yeah, it basically sucked."
+        cl "How so?"
+        b "Well, Leon and [mc_name] were both pretty spooked, so they kept clinging to each other. I could tell the really liked each other, and I can't compete with that."
+        b "To be honest, I was beginning to like her, but... she clearly didn't feel the same way."
+        cl "Did you see her again after the movie?"
+        b "I ran into her at a soccer game at some point, but that's it."
+        cl "Can you tell me about it?"
+        b "Nothing really happened. We saw each other, we chatted, Reg yelled about something, and then we left."
+        cl "Did you see Leon or [mc_name] on the night of April 27?"
+        b "Not [mc_name]. I did see Leon though. He got really drunk and then left early. I didn't see anything noteworthy."
+        cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
+        b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
+        cl "Okay, thank you Mr. Giang. No further questions at this point."
+        return
+
+    label Brian15d:
+        mc "I think it's kind of naïve to expect a different result."
+        b "Really?"
+        mc "Yeah. Now, can you tell me the context, please?"
+        b "Never mind. Don't worry about it."
+        mc "Are you sure?"
+        b "I'm sure."
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "I was going to make a move, but... she was right. It would have been a stupid mistake and it would have ended up just like all my other relationships."
+        cl "Did you stop seeing her?"
+        b "Not entirely. We remained friends and I saw her every now and then at Coffee Waves."
+        b "Most of the time when she came, she brought Leon. They seemed really happy together, so I tried not to bother them too much."
+        cl "Did you see Leon or [mc_name] on the night of April 27?"
+        b "Not [mc_name]. I did see Leon though. He got really drunk and then left early. I didn't see anything noteworthy."
+        cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
+        b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
+        cl "Okay, thank you Mr. Giang. No further questions at this point."
+        return
+
+    label Brian15e:
+        mc "I think Reg's party sounds fun!"
+        r "Good. Because I wouldn't have let this guy throw it anyway."
+        "{i}Reg playfully jabbed Brian in the ribs.{/i}"
+        "April 27. You're invited, Brian, because you're an alum. You are allowed to bring a plus one, but only one."
+        "{i}Reg disappeared into the cheering crowd.{/i}"
+        hide reg with moveoutleft
+        show brian:
+            linear 0.3 center
+        b "Why didn't you have my back?"
+        mc "I mean, your party sounded fun, but I didn't want to hurt Reg's feelings or anything."
+        b "Are you... are you actually embarrassed of me?"
+        mc "What? Of course not."
+        "{i}Brian aggressively tried to swoop in for a kiss. Instinctively, I put my hands up to block him.{/i}"
+        b "Oh my God. You won't even kiss me!"
+        mc "That's not true!"
+        b "No, I get it. You're embarrassed to be seen with your fuck up of a boyfriend by all your friends."
+        mc "Boyfriend?"
+        b "Well... Wait... Oh, I see what's happening."
+        "{i}Brian turned away, took a deep breath, and then looked back toward me.{/i}"
+        b "I'm not the only guy you're with, am I?"
+        mc "What?! Of course you---"
+        b "You seriously came to see someone else. I can't believe I didn't see it."
+        b "Who? Reg? No, it must be Leon, huh? You don't want him to know you were hanging around with me on the side!"
+        mc "Brian, stop, that's not what's---"
+        b "Serves me right, doesn't it? Another giant mistake. Just like the others."
+        mc "Please, Brian---"
+        b "I need to leave. Don't text me again."
+        hide brian with moveoutright
+        "{i}With that, he was gone.{/i}"
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        b "It was a short romantic relationship, if you can even call it that. I should have known it would end the same way. I somehow manage to ruin everything."
+        cl "Were you mad at Leon?"
+        b "I guess I was a little jealous of Leon at first. I was even a little jealous of Reg, believe it or not. I mean, who knows how many guys she was seeing."
+        b "But, at the end of the day, I was mostly just angry with myself."
+        cl "Did you see [mc_name] again after that?"
+        b "She tried to come to Coffee Waves the next day to talk, but I just let Kelsie deal with her."
+        cl "Did you see [mc_name] on the night of April 27?"
+        b "No."
+        cl "How about Leon?"
+        b "No."
+        cl "He wasn't at the party?"
+        b "I don't know. I didn't bother to go."
+        cl "Oh, I see. Where were you that night?"
+        b "I was in my dorm watching a movie."
+        cl "Is there anyone who can verify your location that night?"
+        b "Not really... my roommate was at a frat party and I didn't see any of my floormates either."
+        cl "So, you had no alibi on the night of the crime, and you were jealous because you thought your girlfriend was cheating on you."
+        cl "To be completely honest, Mr. Giang... it sounds like the perfect recipe for a crime of passion."
+        b "What are you suggesting?"
+        cl "I'm suggesting you prepare a lawyer."
+        b "Do you think I could have done this?"
+        cl "It is not my place to say."
+        b "I didn't do it! You have to believe me! We were friends! We were---"
+        cl "Thank you for your time, Mr. Giang. You will be hearing from us shortly."
+        cl "Please escort him out."
         return
 
 
