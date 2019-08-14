@@ -47,6 +47,7 @@ define cl = Character("Court Lady")
 define mc = Character("[mc_name]")
 define coach = Character("Coach")
 define teacher = Character("Teacher")
+define kelsie = Character("Kelsie")
 
 define fade_to_black = Fade(0.5, 1.0, 0.5)
 
@@ -1322,7 +1323,7 @@ label start:
         cl "Did she come back for the party?"
         r "No. She may be dense, but she was smart enough not to do that."
         cl "Do you still have feelings for her?"
-        r "Someone important to me once said "you cannot stop loving someone." Now, I don't know much about love, but whatever I felt for [mc_name]... I don't think I can stop feeling that."
+        r "Someone important to me once said \"you cannot stop loving someone.\" Now, I don't know much about love, but whatever I felt for [mc_name]... I don't think I can stop feeling that."
         cl "Did you see her at any other point the night of April 27, 2019 or at any point after that?"
         r "No. That was the last I saw her."
         cl "So, [mc_name] remains without an alibi. Reg, can anyone verify your whereabouts that night?"
@@ -1511,7 +1512,7 @@ label start:
         "{i}There's got to be someone around who could help, right? Coffee Waves isn't too far of a walk. Maybe Brian is working today.{/i}"
         scene coffee_shop with fade_to_black
         "{i}I don't see Brian around here anywhere. Maybe he isn't working today?{/i}"
-        "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
+        "{i}There's a woman with a name tag reading \"Kelsie\" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
         menu:
             "What should I do?"
             "Walk back to the soccer field":
@@ -1675,18 +1676,18 @@ label start:
         b "He took his girl for granted. That's my most frequent mistake."
         mc "Well, he learned from it. Did you?"
         b "I like to think so."
-        {i}Brian dropped his eyes and shifted his weight.{/i}
+        "{i}Brian dropped his eyes and shifted his weight.{/i}"
         b "I dated a lot in high school and I've dated a lot in college. I keep making the mistake of thinking I'm special somehow."
         b "Just because a lot of people crush on me, I let it go to my head. I forget that I'm not some perfect guy who girls are always going to come running back to."
         b "It's when I start acting like I'm granting my girlfriend some kind of high honor by going out with her that things start to disintegrate."
-        {i} Brian looked back at me.{/i}
+        "{i}Brian looked back at me.{/i}"
         b "Do you mind if I get a little personal?"
         mc "Not at all."
         b "I've never dumped someone in my life."
         mc "Wait... are you saying you are still in several relationships?"
         b "No, of course not. I've never dumped anyone, but I've been dumped plenty."
         mc "Oh, gotcha."
-        b "Yeah. I mean, I liked everyone who I've dated. I still like them. Otherwise we wouldn't have dated.
+        b "Yeah. I mean, I liked everyone who I've dated. I still like them. Otherwise we wouldn't have dated."
         mc "Were you in love with any of them?"
         b "I used to think so. Until recently, I thought I'd loved every single one of them. Each time someone broke up with me, I thought I was losing my soul mate."
         mc "What changed?"
@@ -1904,7 +1905,7 @@ label start:
         b "I'll do my best."
         jump Brian13
 
-    label Brian14:
+    label Brian13:
         scene house_party_night with fade_to_black
         show brian neutral at center
         b "You sure you don't want to try any?"

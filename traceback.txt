@@ -1,22 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1135, in script
-    jump Reg14
-ScriptError: could not find label 'Reg14'.
+  File "game/script.rpy", line 1514, in script
+    "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+Exception: Say has image attributes (u'Kelsie',), but there's no image tag associated with the speaking character.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1135, in script
-    jump Reg14
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1695, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\script.py", line 894, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'Reg14'.
+  File "game/script.rpy", line 1514, in script
+    "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
+  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1334, in say
+    renpy.store.say(who, what, *args, **kwargs)
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1075, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 942, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 868, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes (u'Kelsie',), but there's no image tag associated with the speaking character.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 SavingLeon 1.0
-Sun Aug 11 19:23:39 2019
+Tue Aug 13 19:43:24 2019

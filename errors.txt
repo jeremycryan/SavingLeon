@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 872: expected 'comma or end of line' not found.
-    with vpunch
-    ^
-
-File "game/script.rpy", line 901: expected statement.
-    move reg:
-            ^
+The label Brian14 is defined twice, at
+  File "game/script.rpy", line 1907 and
+  File "game/script.rpy", line 2014.
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Sat Aug 10 20:20:58 2019
+Tue Aug 13 19:41:06 2019
