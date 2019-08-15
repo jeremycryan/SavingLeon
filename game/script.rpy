@@ -75,49 +75,54 @@ transform center:
 
 label start:
 
+    "{i}Content warning: In this game you may see cussing, mention of murder/homicide, bullying, mention of the paranormal, sexual harassment/assault,{/i}"
+    "{i}underage alcohol consumption, suicide, some minor violence, reference to romantic/sexual acts involving a minor, death of a main character, and emotional distress.{/i}"
+
+    scene black with fade_to_black
+
     python:
         mc_name = renpy.input("What is your name?")
-        mc_name = mc_name.strip().capitalize()
+        mc_name = mc_name.strip()
         if not mc_name:
             mc_name = "Gargle-flargle"
 
     "{i}Welcome, [mc_name].{/i}"
 
-    menu:
-        "Choose a chapter to playtest."
-        "Start":
-            "Starting from beginning."
-        "Aden: Practicing by himself":
-            jump Aden5
-        "Aden: Proven me wrong":
-            jump Aden11
-        "Reg: Study Buddy":
-            jump Reg5
-        "Reg: First date":
-            jump Reg11
-        "Brian: Always time for a coffee pun":
-            jump Brian5
-        "Brian: One guy in particular":
-            jump Brian11
-        "Leon: The one":
-            jump Leon5
-        "Leon: We lost":
-            jump Leon11
+    if mc_name == "playtest":
+        menu:
+            "You've uncovered super-secret playtest mode. Choose a chapter to playtest."
+            "Start":
+                "Starting from beginning."
+            "Aden: Practicing by himself":
+                jump Aden5
+            "Aden: Proven me wrong":
+                jump Aden11
+            "Reg: Study Buddy":
+                jump Reg5
+            "Reg: First date":
+                jump Reg11
+            "Brian: Always time for a coffee pun":
+                jump Brian5
+            "Brian: One guy in particular":
+                jump Brian11
+            "Leon: The one":
+                jump Leon5
+            "Leon: We lost":
+                jump Leon11
 
     label intro:
-        scene interrogation_room with fade_to_black
-        "{i}Evidence locker for case #03762. There are six tapes, a photo album, and a receipt."
+        scene evidence_locker with fade_to_black
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
+        "{i}Evidence locker for case #03762. There are six tapes, a photo album, and a receipt.{/i}"
 
         label tape_menu:
             menu:
                 "Tape: Li, Aden - deposition":
                     jump Aden2
                 "Tape: Na, Reginald - deposition":
-                    "Sorry, that doesn't exist yet."
                     jump Reg2
                 "Tape: Giang, Brian - deposition":
-                    "Sorry, that doesn't exist yet."
-                    jump tape_menu
+                    jump Brian2
                 "Tape: Dio, Serpens - deposition":
                     "Sorry, that doesn't exist yet."
                     jump tape_menu
@@ -125,15 +130,16 @@ label start:
                     "Sorry, that doesn't exist yet."
                     jump tape_menu
                 "Tape: So, Leon - deposition":
-                    "Sorry that doesn't exist yet."
-                    jump tape_menu
-                "Photo Album":
-                    "Sorry, that doesn't exist yet."
-                    jump tape_menu
+                    if not (persistent.endings_left[1] and persistent.endings_left[3] and persistent.endings_right[1]):
+                        "{i}For some reason, I can't bring myself to play this one.{/i}"
+                        "{i}Maybe I should watch some of the others first.{/i}"
+                        jump tape_menu
+                    jump Leon2
                 "Receipt":
                     jump credits
 
     label credits:
+        stop music fadeout 1.0
         $ credits_speed = 45
         scene black
         show credits at Move((0.5, 1.0), (0.5, -2.95), credits_speed,
@@ -143,6 +149,7 @@ label start:
 
     label Aden2:
         scene interrogation_room with fade_to_black
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         show aden neutral at center
         cl "Mr. Li, are you ready to begin?"
         a "I'm ready!"
@@ -176,6 +183,7 @@ label start:
 
     label Aden3:
         scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{cps=8}{i}Briiiiiiiing!{/i}{/cps}"
         "{i}As the bell marking the end of sixth period rang through the hallways, I slowly began gathering my things. As I jammed the final notebook into my backpack, Leon appeared in the doorway of the classroom.{/i}"
         show leon neutral at center
@@ -192,7 +200,7 @@ label start:
         mc "And ta-da, we've figured out the point of learning algebra."
         l "Haha, yeah you get it! Uh, by the way... It's warm cookie Wednesday at the school café. Want to go with me?"
         mc "Sure!"
-        show school_hallway with fade_to_black
+        scene school_hallway with fade_to_black
         show leon neutral at center
         l "Mmfp. I can't stop eating these! Do you think the cookies taste so good because they're overpriced? It's probably just some sort of psychological --- {i}oof{/i}!"
         show leon neutral:
@@ -277,8 +285,9 @@ label start:
         a "Nice to meet you, [mc_name]! I look forward to seeing you around school!"
         mc "See you around."
         hide aden
-        show interrogation_room
+        scene interrogation_room
         with fade_to_black
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         show aden neutral at center
         a "I feel like she saw something in me that a lot of other people didn't. She was my first new friend at high school!"
         a "Because of her, I tried out for the soccer team and I made it! As a JV alternate, but still! I was confident that if I worked hard that I could become as good as Nate, or Reg, or..."
@@ -296,11 +305,12 @@ label start:
         jump Aden5
 
     label Aden5:
-        scene school_parking_lot with fade_to_black
+        scene black with fade_to_black
         "{i}It's so nice to finally head home after working on that group project for so long. Where did I park again? Ah, over there.{/i}"
         "{i}What? It's seriously not starting? Maybe I should call someone? ...aaaaaaaaand my phone's dead. Arg! Awesome luck today.{/i}"
         "{i}There's got to be someone who could help, right? The soccer fields are nearby, so maybe Leon or one of the other soccer boys can help me out.{/i}"
         scene soccer_field with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}Looks like they're scrimmaging. I don't want to interrupt or anything, so I guess I could wait till they're on a break. Huh? It looks like there's someone practicing over here by himself. Oh is that...?{/i}"
         show aden smiling at center
         a "Ah! [mc_name]! Hi!"
@@ -369,6 +379,7 @@ label start:
         a "Thank you for believing in me."
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "Don't you see, Your Honor? Sure, we were friends but... we were also something else!"
         a "I had teammates and coaches who didn't consider my contribution to the team worth their time, but then someone came along who did."
         cl "Aden, I am not a judge. You do not have to call me \"Your Honor\"."
@@ -385,6 +396,7 @@ label start:
 
     label Aden7:
         scene soccer_field with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}I've been practicing after school with Aden for a while now. It's slow going, but I got to admit his energy is infectious. Having something to look forward to after school is nice.{/i}"
         show aden neutral at leftish
         show brian neutral at rightish
@@ -454,6 +466,7 @@ label start:
         b "Ugh. Fine."
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "I really looked up to Brian, so I didn't see at the time how bad his advice was."
         a "When I found myself in a similar situation, I thought I was doing the right thing by following Brian's example."
         cl "What do you mean you found yourself in the same situation?"
@@ -464,6 +477,7 @@ label start:
 
     label Aden9:
         scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}It's been a few months since we started practicing. It's crazy how much Aden's improved. I feel like it's only yesterday he could barely even kick the ball without tripping over his own feet...{/i}"
         show aden smiling at center
         a "[mc_name]! You're not going to believe this! Oh my gosh, it's so exciting!"
@@ -523,6 +537,7 @@ label start:
         a "... Yeah. I guess I was."
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "You see? I was in a situation just like Brian's! I liked [mc_name], but so did Leon. I couldn't bear to give her up, but I also couldn't stand the idea of Leon getting hurt because of me."
         a "So, I decided I would do my very best to make sure Leon wouldn't see [mc_name] and I together. You know, for his own protection."
         cl "So, you and [mc_name] weren't just friends because she was your girlfriend?"
@@ -536,8 +551,9 @@ label start:
 
     label Aden11:
         scene soccer_field with fade_to_black
-        show aden at leftish
-        show reg at rightish
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
+        show aden smiling at leftish
+        show reg neutral at rightish
         r "Hey, Aden... nice playing today."
         a "Thanks! I had so much fun!"
         r "Uh... I wanted to say... sorry for the things I said the day of tryouts. That was pretty uncool of me."
@@ -598,8 +614,9 @@ label start:
         a "I won't! See you this weekend."
         mc "..."
         mc "I can't wait."
-        show interrogation_room with fade_to_black
+        scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "I was so excited! My first ever date! It was going to be so awesome!"
         a "But... Leon. I thought back to Brian's story and I came up with a plan that was perfect! I could be with the girl I liked but without hurting my friend!"
         cl "What was the plan?"
@@ -617,7 +634,8 @@ label start:
         jump Aden13
 
     label Aden13:
-        scene house_party_night
+        scene house_party_night with fade_to_black
+        play music "party.wav" fadein 1.0 fadeout 1.0
         "{i}Base thumping, people dancing, the smell of the booze Brian brought filling the air. The varisty soccer team sure knows how to party!{/i}"
         show aden neutral at center
         a "Ugh, this punch tastes aweful! Have you tried it?"
@@ -636,6 +654,7 @@ label start:
         mc "What did you---"
         "{i}Before I could protest, Aden had grabbed my hand and pulled me up the stairs and into an empty bedroom. {/i}"
         scene bedroom_night with fade_to_black
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         show aden neutral at center
         "{i}The lights were off and Aden's hand was over my mouth. Through the crack  under the door, I way Leon's shadow appear, hesitate, then head back down the stairs. {/i}"
         "{i}Aden breathed a sigh of relief and removed his hand from my mouth. He was standing so close to me I could feel his breath gently on my neck. {/i}"
@@ -655,6 +674,7 @@ label start:
         "{i} He pulled me close again, and we continued exploring, carefully, these sensations that were new to us both.{/i}"
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Did you and [mc_name] have sexual intercourse that night?"
         a "Objection: relevance? Sustained."
         cl "Aden, for the last time this is not a courtroom. You also cannot object because you are not a lawyer. You also cannot sustain your own objection because you are not a judge."
@@ -686,8 +706,9 @@ label start:
         a "..."
         "{i}Defeated, Aden began erasing his name from the sign up sheet. Then, without a word, he disappeared down the hallway.{/i}"
         hide aden with moveoutright
-        show interrogation_room with fade_to_black
+        scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "So, you {i}weren't{/i} on the soccer team?"
         a "...no. I wasn't."
         a "It's like I was for the few glorious seconds my name was on that sheet, but... not really."
@@ -714,7 +735,9 @@ label start:
         mc "I have a lot of homework to do, so I'm gonna just catch a ride with Serpens."
         a "Oh, okay... well maybe another time!"
         mc "Yeah. Maybe another time."
-        show interrogation_room with fade_to_black
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "We never did end up practicing together. In fact, we barely saw each other at all after that day."
         a "I'd still consider us friends though! She was always nice to me when we passed each other in the hall."
         cl "So, the two of you never had a relationship that could be considered something more than friends?"
@@ -760,6 +783,7 @@ label start:
         b "Yeah, most of my advice is."
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "...she didn't call after that. We stopped practicing. "
         cl "Did you have any interaction after that day?"
         a "No, not really. I was so embarrassed I mostly tried to avoid her!"
@@ -785,6 +809,7 @@ label start:
         "{i}The look of confusion on Aden's face was slowly replaced with a look of betrayal, then disappointment. He looked down at his feet and wandered off into the cheering crowd. {/i}"
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "I couldn't believe it! I actually thought she had come to see me... what a letdown."
         cl "Had your relationship changed the next time you saw her?"
         a "That was actually the last time I saw her."
@@ -811,6 +836,7 @@ label start:
         "{i}Aden ignored me and disappeared into the cheering crowd. {/i}"
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "I couldn't believe it! I actually thought she may have liked me... what a letdown."
         cl "Had your relationship changed the next time you saw her?"
         a "That was actually the last time I saw her."
@@ -844,6 +870,7 @@ label start:
         a "Please. Just go."
         scene interrogation_room with fade_to_black
         show aden neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         a "That was my first heartbreak. I thought she liked me, but the whole time she was thinking about Leon."
         a "I ended up staying in that bedroom for hours. By the time I went back downstairs, people had started getting texts about what happened."
         cl "Did you see [mc_name] again that night?"
@@ -861,6 +888,7 @@ label start:
     label Reg2:
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Mr. Na, are you ready to begin?"
         r "As ready as I'll ever be, I guess."
         cl "Alright, Mr. Na, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the night of April 27, 2019."
@@ -970,6 +998,7 @@ label start:
         mc "Oh, I... okay. I'll be there!"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "From then on we would meet up a couple times a week to work on calc homework. [mc_name] was struggling a bit, but I'm a pro at this stuff."
         r "As the soccer season continued, we started having less and less time to study together, but we still managed every now and then. Each time we met up, she seemed to understand things more and more."
         r "By about halfway through the semester, she was consistently getting B's or higher on her assignments. Pretty soon, she wouldn't need me anymore."
@@ -977,6 +1006,7 @@ label start:
 
     label Reg5:
         scene bedroom with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         show reg neutral at center
         mc "So then you multiply the whole thing by delta x and... simplify like that!"
         r "You got it!"
@@ -1024,6 +1054,7 @@ label start:
         mc "Well, we better get back to it."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Mr. Na, did you not say you were... let's see... a \"pro\" at this stuff?"
         r "Well, yeah. I kinda am. I took the class last year. The only reason I had to retake it was because of my attendance."
         r "I just taught myself all this shit, so I didn't need to go to class. But, turns out if you aren't in class on the day of the exam, you fail the exam."
@@ -1044,11 +1075,12 @@ label start:
         jump Reg7
 
     label Reg7:
-        scene school_parking_lot with fade_to_black
+        scene black with fade_to_black
         "{i}It's so nice to finally head home after working on that group project for so long. Where did I park again? Ah, over there.{/i}"
         "{i}What? It's seriously not starting? Maybe I should call someone? ...aaaaaaaaand my phone's dead. Arg! Awesome luck today.{/i}"
         "{i}There's got to be someone who could help, right? The soccer fields are nearby, so maybe Leon or one of the other soccer boys can help me out.{/i}"
         scene soccer_field with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}Looks like they're scrimmaging. I don't want to interrupt or anything, so I guess I could wait till they're on a break. Huh? It looks like there's someone practicing over here by himself. Oh is that...?{/i}"
         show aden smiling at center
         a "Ah! [mc_name]! Hi!"
@@ -1136,6 +1168,7 @@ label start:
         r "Okay, enough of this mushy stuff. Let's practice!"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "I know, it was selfish. I'll grant you that. I just... it's so hard to control these negative feelings."
         r "It felt like every minute that someone else got to spend with her was one minute that she was growing farther from me."
         cl "And you liked her?"
@@ -1157,6 +1190,7 @@ label start:
 
     label Reg9:
         scene soccer_field with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}It's been some time since I took the time to go to a high school soccer game.{/i}"
         "{i}However, I've been spending a lot of time with Reg recently, so I thought it would be pretty nice to see him play. And, to be completely honest, he does make a soccer jersey look pretty good.{/i}"
         show brian neutral at center
@@ -1259,6 +1293,7 @@ label start:
         mc "I won't."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "So, you and [mc_name] were together romantically?"
         r "Well, we weren't {i}together{/i} together. We'd have to see how the party goes."
         cl "And how did the party go?"
@@ -1272,6 +1307,7 @@ label start:
     label Reg11:
         scene house_party_day with fade_to_black
         show reg neutral at center
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         r "Thanks for volunteering to come early to help me set up."
         mc "Yeah, no problem!"
         r "I bet none of your other first dates involved vacuuming a five bedroom home, hehe!"
@@ -1284,6 +1320,7 @@ label start:
         "{i}Reg grabbed his keys and sprinted out the door before I could protest.{/i}"
         scene house_party_day with fade_to_black
         show reg neutral at center
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         r "Okay, you can open your eyes."
         "{i}In front of me was a scene right out of a rom-com. A small table covered in a white sheet was surrounding by two chairs and topped with plates, cups, utensils, a candle, and a single rose in a vase.{/i}"
         "{i}Upon closer inspection, the rose appeared to be made of chocolate and covered in foil.{/i}"
@@ -1326,6 +1363,7 @@ label start:
         r "Yeah."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "So, the two of you entered a romantic relationship on April 27?"
         r "Yeah, the same day as my party."
         cl "So what happened between you and [mc_name] the night of the party?"
@@ -1350,6 +1388,7 @@ label start:
 
     label Reg13:
         scene house_party_night with fade_to_black
+        play music "party.wav" fadein 1.0 fadeout 1.0
         "{i}Base thumping, people dancing, the smell of the booze Brian brought filling the air. The varsity soccer team sure knows how to party!{/i}"
         show reg neutral at center
         r "You having a good time, [mc_name]?"
@@ -1468,10 +1507,12 @@ label start:
         mc "Okay. Let's go upstairs."
         "{i}Reg tugged gently on my hands and led me up the stairs and into his bedroom, locking the door behind him. He didn't turn on the light.{/i}"
         scene bedroom_night with fade_to_black
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         "{i}Carefully, he led me to his bed, and we sat down on the foot of it. His hands wandered up my arms and came to rest on either side of my neck.{/i}"
         "{i}Through the dark I could see him look into my eyes for just a moment, then he pulled me into a deep kiss. I closed my eyes and let our bodies embrace each other.{/i}"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "So, did you and [mc_name] have sexual intercourse that night?"
         r "I'm not one to kiss and tell."
         cl "Very well. Were you with [mc_name] through the night of April 27?"
@@ -1500,6 +1541,7 @@ label start:
         "{i}Reg disappeared into the hallway, making sure to flip me the bird on his way out. He's definitely a charmer.{/i}"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "I didn't talk to her much after that. We just saw each other in class. We eventually ended up on decent terms, but we weren't friends or anything."
         cl "Does that mean she didn't go to your party on April 27?"
         r "No, she didn't."
@@ -1531,6 +1573,7 @@ label start:
         "{i}In silence, I left. We didn't study together again.{/i}"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "I'm confused... why did you cut off the study sessions?"
         r "I was only doing them in the first place because I liked her. Clearly she didn't like me back or else she would have picked up on it."
         cl "Did the two of you at least remain friends?"
@@ -1560,6 +1603,7 @@ label start:
         r "Alright, whatever you say..."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "I didn't talk to her much after that. I mean, obviously she was fonder of Aden than she was of me. We remained friends, but nothing else really happened."
         cl "Does that mean she didn't go to your party on April 27?"
         r "No, she didn't."
@@ -1580,6 +1624,7 @@ label start:
         mc "Yeah. Maybe another time."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "I didn't talk to her much after that. I mean, obviously she was fonder of Serpens than she was of me. We remained friends, but nothing else really happened."
         cl "Does that mean she didn't go to your party on April 27?"
         r "No, she didn't."
@@ -1610,6 +1655,7 @@ label start:
         "{i}Reg stormed off into a crowd of cheering fans as Brian and I looked at each other in shock. I don't fully understand what set him off, but I don't know as I'll be able to repair it before the party.{/i}"
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "It seems kind of silly now, but at the time I was really jealous of Brian."
         r "I was still mad about it when the party rolled around, so I didn't invite either of them, but since then we've all made up."
         cl "Does that mean she didn't go to your party on April 27?"
@@ -1644,6 +1690,7 @@ label start:
         r "Now! And don't come back for the party. Don't come back. Ever."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "She really broke my heart. I seriously thought she felt the same way toward me. It ruined the whole party for me."
         r "Liking someone who doesn't like you back... it hurts."
         cl "Did she come back for the party?"
@@ -1688,6 +1735,7 @@ label start:
         mc "But just because I'm not dating Leon doesn't mean I can let him be in danger. Please, Reg. Be here when I get back."
         scene interrogation_room with fade_to_black
         show reg neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         r "She never came back."
         cl "I'm sorry, Reginald."
         r "It's still Reg."
@@ -1714,6 +1762,7 @@ label start:
     label Brian2:
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Mr. Giang, are you ready to begin?"
         b "Yes."
         cl "Alright Mr. Giang, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the evening of April 27, 2019."
@@ -1827,6 +1876,7 @@ label start:
         mc "I'll certainly try!"
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "She came to the coffee shop every now and then after that day. When she did, I would always make sure to chat her up, flirt a little, do my thing... What can I say?"
         b "She was cute, and I'm a jokester at heart. I wasn't being serious anyway."
         cl "Did anything else notable happen the other times she came to the coffee shop?"
@@ -1834,7 +1884,7 @@ label start:
         jump Brian5
 
     label Brian5:
-        scene school_parking_lot with fade_to_black
+        scene black with fade_to_black
         "{i}It's so nice to finally head home after working on that group project for so long. Where did I park again? Ah, over there.{/i}"
         "{i}What? It's seriously not starting? Maybe I should call someone? ...aaaaaaand my phone's dead. Arg! Awesome luck today.{/i}"
         "{i}There's got to be someone around who could help, right? Coffee Waves isn't too far of a walk. Maybe Brian is working today.{/i}"
@@ -1895,6 +1945,7 @@ label start:
         mc "Sure thing."
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "I finished my shift and drove her home. She put her number into my phone, and we texted every now and then."
         b "Not very often, and nothing too deep. She would ask what days I was working at Coffee Waves, I would send her score updates while watching the varsity soccer games, stuff like that."
         cl "Did these messages at any point become romantic or sexual?"
@@ -1910,6 +1961,7 @@ label start:
     label Brian7:
         scene school_hallway with fade_to_black
         show serpens neutral at center
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         s "... and we're falling a little behind, so we should probably try to meet outside of school at some point."
         mc "Sorry, that's my fault. You keep having to explain everything to me."
         s "It's no problem,  really. At the risk of sounding egotistical, I'm pretty good at calculus."
@@ -1938,6 +1990,7 @@ label start:
         show leon neutral at leftish
         show reg neutral at rightish
         show brian neutral at center
+        play music "hallway.wav"
         l "Hey, [mc_name]! We're over here!"
         mc "Hey everyone."
         b "Glad you could make it."
@@ -1966,6 +2019,7 @@ label start:
         b "Kidding."
         r "Let's stop sucking each other's dicks and go buy our tickets before we're late to the movie!"
         scene movie_theatre_interior with fade_to_black
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         "{i}To my right, Leon was leaning forward in his seat, entirely engrossed in the plot on screen. To my left, Brian was on his third soda refill.{/i}"
         "{i}He was trying to act as though he wasn't interested in the movie, but on more than one occasion I caught him smiling{/i}"
         show brian neutral at center
@@ -1987,6 +2041,7 @@ label start:
         show leon neutral at leftish
         show reg neutral at rightish
         show brian neutral at center
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         l "Wow, that was an excellent movie!"
         r "It was alright."
         l "What did you think, [mc_name]?"
@@ -2039,6 +2094,7 @@ label start:
         "{i}I followed shortly after.{/i}"
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "What was life-changing about that movie?"
         b "I realized that, without me noticing, my jokes had stopped. Suddenly, I started to mean all the things I said to her."
         cl "So, you realized you liked her?"
@@ -2119,6 +2175,7 @@ label start:
         mc "Fuck off, Kelsie."
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "So, you and [mc_name] became involved romantically?"
         b "Ya know, you start a lot of your sentences with \"so.\" That's going to get really confusing when you interview Leon."
         cl "How?"
@@ -2135,6 +2192,7 @@ label start:
 
     label Brian11:
         scene soccer_field with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}It's been some time since I took the time to go to a high school soccer game. However, Brian's been texting me score updates for the last hour, and it sounds like the guys are doing really well.{/i}"
         show brian neutral at center
         b "[mc_name]?"
@@ -2223,6 +2281,7 @@ label start:
         mc "Absolutely!"
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "Reg's party was that weekend. I used my fake ID to buy a bunch of booze, and I was really excited for it."
         b "[mc_name] and I arrived around 8:30 and hung out by the drink table most of the night."
         cl "Were you and [mc_name] drinking?"
@@ -2236,6 +2295,7 @@ label start:
     label Brian13:
         scene house_party_night with fade_to_black
         show brian neutral at center
+        play music "party.wav" fadein 1.0 fadeout 1.0
         b "You sure you don't want to try any?"
         mc "No, I don't drink."
         b "Suit yourself."
@@ -2306,8 +2366,8 @@ label start:
         "{i} Suddenly, a commotion from across the room caught our attention. {/i}"
         show brian:
             linear 0.3 leftish
-        show leon at rightish
-        show reg at center
+        show leon neutral at rightish
+        show reg neutral at center
         with moveinright
         "{i}Leon was on the floor, drunk beyond recognition, and Reg was standing over him, screaming.{/i}"
         "{i}Brian grabbed my hand and led me through the crowd to see what was going on.{/i}"
@@ -2347,6 +2407,7 @@ label start:
         b "...what do you say we get out of here?"
         "{i}I nodded and let Brian lead me out the back door and to his car.{/i}"
         scene car_interior with fade_to_black
+        show brian neutral at center
         "{i}Brian was in the driver's seat and I had shotgun.{/i}"
         mc "Where to?"
         b "I was thinking... we stay right here."
@@ -2363,7 +2424,9 @@ label start:
         "{i} Brian lowered himself until his mouth was level with my ear. Then he whispered softly into my soul. {/i}"
         b "I'm willing to change for you. I promise... I'll get this right."
         "{i} He lifted his head and pressed his lips against mine. I wrapped my hands around his upper body and pulled him closer, softly accepting his heart into mine.{/i}"
-        show interrogation_room with fade_to_black
+        scene interrogation_room with fade_to_black
+        show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Did you and [mc_name] have sexual intercourse that night?"
         b "Can I decline to answer? I think in terms of statutory laws in this state, it would just be cleaner if I didn't have to explain my answer on record."
         cl "..."
@@ -2388,6 +2451,7 @@ label start:
         b "Ah, we've got two basic bitches in the house! Alright, those'll be right out."
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "That was basically it. I brought out their drinks, they drank them, then they left."
         cl "Did you interact with [mc_name] at any point after that?"
         b "Yeah, occasionally. She stopped by Coffee Waves a few times after that, so we greeted each other, but we didn't chat much."
@@ -2428,6 +2492,7 @@ label start:
         "{i}I shook the question out of my mind and refocused on the current issue. I still had a broken down car and a dead phone, and I was no closer to finding a friend who could help me out. I guess I better walk back to the soccer field and try my luck there.{/i}"
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "I was pretty pissed when I found out that my ex had told [mc_name] to leave instead of telling me she was there. I was in the back the whole time!"
         cl "Why would she do that?"
         b "I think she was jealous or mad at me or something. I don't know, man."
@@ -2452,6 +2517,7 @@ label start:
         b "This is gonna be awesome."
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "Yeah, it basically sucked."
         cl "How so?"
         b "Well, Leon and [mc_name] were both pretty spooked, so they kept clinging to each other. I could tell the really liked each other, and I can't compete with that."
@@ -2477,6 +2543,7 @@ label start:
         b "I'm sure."
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "I was going to make a move, but... she was right. It would have been a stupid mistake and it would have ended up just like all my other relationships."
         cl "Did you stop seeing her?"
         b "Not entirely. We remained friends and I saw her every now and then at Coffee Waves."
@@ -2521,6 +2588,7 @@ label start:
         "{i}With that, he was gone.{/i}"
         scene interrogation_room with fade_to_black
         show brian neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         b "It was a short romantic relationship, if you can even call it that. I should have known it would end the same way. I somehow manage to ruin everything."
         cl "Were you mad at Leon?"
         b "I guess I was a little jealous of Leon at first. I was even a little jealous of Reg, believe it or not. I mean, who knows how many guys she was seeing."
@@ -2552,6 +2620,7 @@ label start:
     label Leon2:
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "Mr. So, are you ready to begin."
         l "Yeah."
         cl "Alright Mr. So, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the evening of April 27, 2019. You are sworn under the same oath that you will be for the upcoming trial. Is this clear?"
@@ -2693,6 +2762,7 @@ label start:
         l "See you then!"
         hide leon with moveoutleft
         scene interrogation_room with fade_to_black
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         cl "The two of you were really close."
         l "Yeah. We were."
         cl "And you thought she might have liked you romantically?"
@@ -2711,6 +2781,7 @@ label start:
 
     label Leon5:
         scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{cps=8}{i}Briiiiiiiing!{/i}{/cps}"
         "{i}As the bell marking the end of sixth period rang through the hallways, I slowly began gathering my things. As I jammed the final notebook into my backpack, Leon appeared in the doorway of the classroom.{/i}"
         show leon neutral at center
@@ -2727,7 +2798,8 @@ label start:
         mc "And ta-da, we've figured out the point of learning algebra."
         l "Haha, yeah you get it! Uh, by the way... It's warm cookie Wednesday at the school café. Want to go with me?"
         mc "Sure!"
-        show school_hallway with fade_to_black
+        scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         show leon neutral at center
         l "Mmfp. I can't stop eating these! Do you think the cookies taste so good because they're overpriced? It's probably just some sort of psychological --- {i}oof{/i}!"
         show leon neutral:
@@ -2832,6 +2904,7 @@ label start:
         mc "Now let's go invite that kid to try out for the team."
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "I feel like she always managed to remind me what kind of person I was trying to be. She made me a better version of myself."
         l "We may have not been together romantically, but we loved each other. Not the kind of love you were asking about, but  kind of love unique to us."
         cl "Anything else you can tell me about your relationship to [mc_name]?"
@@ -2842,6 +2915,7 @@ label start:
 
     label Leon7:
         scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         show serpens neutral at center
         s "… and we're falling a little behind, so we should probably try to meet outside of school at some point."
         mc "Sorry, that's my fault. You keep having to explain everything to me."
@@ -2901,6 +2975,7 @@ label start:
         l "Uh, nothing. Let's go."
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "To be honest, I kind of wanted it to be a date. Serpens was even enough of a bro to say he was busy so that it would just be [mc_name] and I."
         l "But when she suggested fast food, I figured that was her trying to subtly let me know that she didn't want it to be a date. Kind of a shame, but it was for the best."
         cl "Why do you say that?"
@@ -2913,6 +2988,7 @@ label start:
         show leon neutral at leftish
         show reg neutral at rightish
         show brian neutral at center
+        play music "hallway.wav"
         r "[mc_name], Leon! We're over here!"
         mc "Hey everyone."
         b "Glad you could make it."
@@ -2955,7 +3031,8 @@ label start:
         mc "Tell you what... you can hold my hand if you get scared."
         "{i}Leon smiled rolled his eyes.{/i}"
         l "Fine. Let's do this."
-        show movie_theatre_interior with fade_to_black
+        scene movie_theatre_interior with fade_to_black
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         "{i}To my left, Brian was staring in awe at the screen as a supernatural creature caused blood to come out of a protagonist's eyes.{/i}"
         "{i} To my right, Leon was cowering away from the screen with his legs tucked against his chest and his jacket covering his eyes.{/i}"
         show leon neutral at center
@@ -2974,6 +3051,7 @@ label start:
         "{i}For the rest of the movie, Leon cowered into my arm and I gripped his hand. Somehow, it made us both feel much less afraid.{/i}"
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "If Brian hadn't suggested a horror movie..."
         cl "You never would have had that kind of physical intimacy."
         l "Exactly. I hate that you called it \"physical intimacy\", but yeah."
@@ -2991,6 +3069,7 @@ label start:
 
     label Leon11:
         scene school_hallway with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}It's been a few months since we started practicing. It's crazy how much Aden's improved. I feel like it's only yesterday he could barely even kick the ball without tripping over his own feet...{/i}"
         show aden smiling at center
         a "[mc_name]! You're not going to believe this! Oh my gosh, it's so exciting!"
@@ -3048,6 +3127,7 @@ label start:
         mc "Absolutely."
         scene interrogation_room with fade_to_black
         show leon neutral center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "Oh, man... I hope she couldn't tell how nervous I was to ask her. I felt like I was going to pass out!"
         l "Even in the car ride home, my heart was beating so fast---"
         cl "Mr. So, can you tell me about the night of the party?"
@@ -3057,6 +3137,7 @@ label start:
 
     label Leon13:
         scene bedroom with fade_to_black
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         "{i}The day of the party, Leon got a message from Aden saying it had been cancelled. We were disappointed, but decided to hang out anyway. {/i}"
         "{i}We ended up sitting on his bedroom playing games into the evening. {/i}"
         l "Jengaaaaaaa!"
@@ -3076,13 +3157,16 @@ label start:
     label Leon14:
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "No, [mc_name]. You don't get a happy ending. Not from me."
         l "Why? I'll tell you why."
         l "..."
         l "Because I'm already dead."
+        stop music
         l "You killed me."
         l "..."
         scene black
+        play music "sovereign.mp3" fadein 1.0 fadeout 1.0
         l "You don't remember? Let me explain in words you can understand."
         l "I'd love to say we got a call from Reg saying the party was on, we went, we had a good time drinking with Brian, we saw Nate on a walk while getting a ride home from Serpens, and spent a fantastic night in each other's company."
         l "But you know that didn't happen."
@@ -3111,7 +3195,7 @@ label start:
         l "You only made it to my side after I was gone."
         l "..."
         l "But even this isn't the truth, is it."
-        scene interrogation_room with fade_to_black
+        scene evidence_locker with fade_to_black
         show leon neutral at center
         l "You've been staring at the names on these tapes for hours, but you still haven't noticed, have you?"
         l "I am a fictional character, so losing me didn't matter. But you lost someone real, didn't you?"
@@ -3183,6 +3267,7 @@ label start:
         mc "I'll certainly try!"
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "Turns out it wasn't a joke. He seriously took a shot at her. She eventually started falling for him."
         l "I had to silently cede her over to another person. It broke my fucking heart."
         cl "Oh, so she was actually dating Brian?"
@@ -3205,6 +3290,8 @@ label start:
         a "Really, [mc_name]?"
         mc "Who knows? Maybe he’ll surprise you."
         scene interrogation_room with fade_to_black
+        show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "Aden and [mc_name] really hit it off. She eventually started falling for him."
         l "I had to silently cede her over to another person. It broke my fucking heart."
         cl "Oh, so she was actually dating Aden?"
@@ -3230,6 +3317,7 @@ label start:
         l "Sounds great!"
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "It was a really nice dinner and movie. However, I didn't feel anything. It just felt like we were going as friends."
         l "It was at that point that I realized that's all we were going to be. She didn't like me the way I liked her."
         l "I don't know how I didn't notice at the time, but she was actually starting to fall for Serpens. I had to cede her to another person and it broke my fucking heart."
@@ -3257,6 +3345,7 @@ label start:
         r "Let's stop sucking each other's dicks and go buy our tickets before we're late to the movie!"
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "It movie, but I didn't feel anything. It just felt like we were going as friends."
         l "It was at that point that I realized that's all we were going to be. She didn't like me the way I liked her."
         l "I don't know how I didn't notice at the time, but she was actually starting to fall for Reg. Ironic, considering his comment before we went to buy tickets."
@@ -3285,6 +3374,7 @@ label start:
         l "{size=-10}God, so embarrassing...{/size}"
         scene interrogation_room with fade_to_black
         show leon neutral at center
+        play music "deposition_room.wav" fadein 1.0 fadeout 1.0
         l "I figured out in the most embarrassing way, that she didn't like me how I liked her. She only saw me as a friend."
         l "It was at that point that I realized that's all we were going to be. We would never be together."
         l "I don't know how I didn't notice at the time, but she was actually starting to fall for Nate. I had to cede her to another person and it broke my fucking heart."

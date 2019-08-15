@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/ending_gal.rpy", line 46: u'img' is not a keyword argument or valid child for the imagebutton statement.
-    imagebutton img action Hide("endings_close", dissolve)
-                   ^
+File "game/script.rpy", line 87: expected menuitem
+    if mc_name is "playtest":
+    ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Wed Aug 14 23:38:38 2019
+Wed Aug 14 23:28:55 2019
