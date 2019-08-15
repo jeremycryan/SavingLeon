@@ -131,8 +131,15 @@ label start:
                     "Sorry, that doesn't exist yet."
                     jump tape_menu
                 "Receipt":
-                    "Sorry, that doesn't exist yet."
-                    jump tape_menu
+                    jump credits
+
+    label credits:
+        $ credits_speed = 45
+        scene black
+        show credits at Move((0.5, 1.0), (0.5, -2.95), credits_speed,
+                      xanchor=0.5, yanchor=0)
+        with Pause(credits_speed+3)
+        jump intro
 
     label Aden2:
         scene interrogation_room with fade_to_black
