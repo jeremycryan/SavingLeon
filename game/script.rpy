@@ -87,28 +87,22 @@ label start:
         "Choose a chapter to playtest."
         "Start":
             "Starting from beginning."
-        "Meeting Aden":
-            jump Aden2
-        "Practicing by himself":
+        "Aden: Practicing by himself":
             jump Aden5
-        "Love is worth it":
-            jump Aden9
-        "Meeting Reg":
-            jump Reg2
-        "Study Buddy":
+        "Aden: Proven me wrong":
+            jump Aden11
+        "Reg: Study Buddy":
             jump Reg5
-        "More than you can imagine":
-            jump Reg9
-        "First date":
+        "Reg: First date":
             jump Reg11
-        "Meeting Brian":
-            jump Brian2
-        "Always time for a coffee pun":
+        "Brian: Always time for a coffee pun":
             jump Brian5
-        "People hiding their feelings":
-            jump Brian9
-        "One guy in particular":
+        "Brian: One guy in particular":
             jump Brian11
+        "Leon: The one":
+            jump Leon5
+        "Leon: We lost":
+            jump Leon11
 
     label intro:
         scene interrogation_room with fade_to_black
@@ -575,7 +569,7 @@ label start:
         mc "Aden..."
         a "Yeah?"
         mc "... it's a date."
-        "{i}I smiled and felt my face get hot. Aden blushed back at me.{/i}
+        "{i}I smiled and felt my face get hot. Aden blushed back at me.{/i}"
         a "Uh, okay... a date it is then!"
         "{i}Suddenly, Aden's face turned serious.{/i}"
         a "Oh, no..."
@@ -609,7 +603,7 @@ label start:
         a "But... Leon. I thought back to Brian's story and I came up with a plan that was perfect! I could be with the girl I liked but without hurting my friend!"
         cl "What was the plan?"
         a "I would text Leon the day of the party to tell him that Reg had to reschedule the party so I was helping him pass on the news."
-        a "Leon would skip, believing that the party was not happening, and I could go with mc without worrying about him seeing!"
+        a "Leon would skip, believing that the party was not happening, and I could go with [mc_name] without worrying about him seeing!"
         cl "..."
         a "I had his best interests in mind! I swear, I couldn't have known how it would turn out."
         a "I never wanted my friend to be hurt... this was the only way I could think to no break his heart."
@@ -637,10 +631,10 @@ label start:
         "{i}I suddenly spotted Leon come through the front door, a look of irritation on his face. {/i}"
         a "Oh, look! He just got here!"
         "{i}Leon caught Aden's eye and started making his way through the crowd in our direction. {/i}"
-        a "mc, we should go."
+        a "[mc_name], we should go."
         mc "What did you---"
         "{i}Before I could protest, Aden had grabbed my hand and pulled me up the stairs and into an empty bedroom. {/i}"
-        scene bedroom with fade_to_black
+        scene bedroom_night with fade_to_black
         show aden neutral at center
         "{i}The lights were off and Aden's hand was over my mouth. Through the crack  under the door, I way Leon's shadow appear, hesitate, then head back down the stairs. {/i}"
         "{i}Aden breathed a sigh of relief and removed his hand from my mouth. He was standing so close to me I could feel his breath gently on my neck. {/i}"
@@ -660,7 +654,7 @@ label start:
         "{i} He pulled me close again, and we continued exploring, carefully, these sensations that were new to us both.{/i}"
         scene interrogation_room with fade_to_black
         show aden neutral at center
-        cl "Did you and mc have sexual intercourse that night?"
+        cl "Did you and [mc_name] have sexual intercourse that night?"
         a "Objection: relevance? Sustained."
         cl "Aden, for the last time this is not a courtroom. You also cannot object because you are not a lawyer. You also cannot sustain your own objection because you are not a judge."
         a "..."
@@ -670,7 +664,7 @@ label start:
         a "No, of course not! About... you know..."
         cl "The death of your friend."
         a "Yeah."
-        cl "So, you were with mc while the crime occurred?"
+        cl "So, you were with [mc_name] while the crime occurred?"
         a "Yes."
         cl "And can anyone else verify this?"
         a "Sure... just about anyone at the party can tell you we went upstairs together and came back down later. Plus, Reg's place has a security camera on the outside of the house, so we couldn't have realistically snuck out the window or anything ."
@@ -685,98 +679,98 @@ label start:
 
     label Aden15a:
         mc "You should keep up with the saxophone! With talent like yours, you could really go somewhere."
-        a "But soccer looks like so much fun…"
+        a "But soccer looks like so much fun..."
         mc "It would be such a shame for you to deprive the world of your music."
-        a "…"
+        a "..."
         "{i}Defeated, Aden began erasing his name from the sign up sheet. Then, without a word, he disappeared down the hallway.{/i}"
         hide aden with moveoutright
         show interrogation_room with fade_to_black
         show aden neutral at center
-        cl "So, you {i}weren’t{/i} on the soccer team?"
-        a "…no. I wasn’t."
-        a "It’s like I was for the few glorious seconds my name was on that sheet, but… not really."
+        cl "So, you {i}weren't{/i} on the soccer team?"
+        a "...no. I wasn't."
+        a "It's like I was for the few glorious seconds my name was on that sheet, but... not really."
         cl "So, how did you know [mc_name]?"
-        a "That was it. We interacted the day of the soccer tryouts and that’s it. We didn’t talk after that."
-        cl "And you say it was… \"transformative\"? Can you explain?"
-        a "I had been bored with band, but after that day I was resolved to put everything I had into my playing. And then a few months later… I made it into the All State Band!"
+        a "That was it. We interacted the day of the soccer tryouts and that's it. We didn't talk after that."
+        cl "And you say it was... \"transformative\"? Can you explain?"
+        a "I had been bored with band, but after that day I was resolved to put everything I had into my playing. And then a few months later... I made it into the All State Band!"
         cl "But, just to be clear, you were not on the soccer team and you did not have any further interaction with [mc_name]?"
-        a "That’s right!"
-        cl "Were you present at Reginald Na’s party on April 27, 2019? "
+        a "That's right!"
+        cl "Were you present at Reginald Na's party on April 27, 2019? "
         a "No. "
         cl "And were you with [mc_name] the evening of April 27, 2019?"
         a "No."
         cl "Were you with anyone the evening of April 27, 2019?"
-        a "No, I don’t think so."
+        a "No, I don't think so."
         cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
-        a "Wait, there’s no way she did it! She’s w---"
+        a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
-        a "…there’s no way… is there?"
+        a "...there's no way... is there?"
         return
 
     label Aden15b:
-        mc "I have a lot of homework to do, so I’m gonna just catch a ride with Serpens."
-        a "Oh, okay… well maybe another time!"
+        mc "I have a lot of homework to do, so I'm gonna just catch a ride with Serpens."
+        a "Oh, okay... well maybe another time!"
         mc "Yeah. Maybe another time."
         show interrogation_room with fade_to_black
         a "We never did end up practicing together. In fact, we barely saw each other at all after that day."
-        a "I’d still consider us friends though! She was always nice to me when we passed each other in the hall."
+        a "I'd still consider us friends though! She was always nice to me when we passed each other in the hall."
         cl "So, the two of you never had a relationship that could be considered something more than friends?"
-        a "What? No, of course not. I mean, she’s kinda cute but…"
+        a "What? No, of course not. I mean, she's kinda cute but..."
         cl "But what?"
-        a "But she clearly wasn’t interested in me."
+        a "But she clearly wasn't interested in me."
         cl "So I assume you were not with her on the night of April 27, 2019? "
-        a "The night of Reg’s party? No, not at all! I wasn’t even invited because I wasn’t on the varsity team."
-        cl "Oh, so you weren’t at the party at all?"
+        a "The night of Reg's party? No, not at all! I wasn't even invited because I wasn't on the varsity team."
+        cl "Oh, so you weren't at the party at all?"
         a "No."
         cl "Where were you the evening of April 27, 2019?"
         a "At home studying."
         cl "Were you with anyone, or did anyone know where you were?"
         a "No, I was alone. My parents were out for the evening."
         cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
-        a "Wait, there’s no way she did it! She’s w---"
+        a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
-        a "…there’s no way… is there?"
+        a "...there's no way... is there?"
         return
 
     label Aden15c:
         mc "I agree with Brian. Love is a pain."
-        b "Yeah, she gets it! And if I’m being honest… she {i}can{/i} get it."
-        a "Brian, don’t be gross!"
+        b "Yeah, she gets it! And if I'm being honest... she {i}can{/i} get it."
+        a "Brian, don't be gross!"
         b "What do you say [mc_name]? You wanna spend a night not falling in love with me?"
         a "Brian, stop!"
-        b "I’m joking, I’m joking! You’re too sensitive Aden."
-        b "If you want my advice, try going after a girl just for the thrill. Don’t worry about love or romance."
+        b "I'm joking, I'm joking! You're too sensitive Aden."
+        b "If you want my advice, try going after a girl just for the thrill. Don't worry about love or romance."
         b "Just.{w=0.5} Thrill."
         a "I don't know..."
         b "Just for once, shut your brain off and let your instincts drive. Just take what you want and forget about the consequences, just---"
-        "{i}Suddenly Aden’s hands had grabbed my face and his lips were pressed to mine. I instinctively pushed him off and he fell to the ground.{/i}"
-        b "Woah, Aden! That’s not…"
+        "{i}Suddenly Aden's hands had grabbed my face and his lips were pressed to mine. I instinctively pushed him off and he fell to the ground.{/i}"
+        b "Woah, Aden! That's not..."
         "{i}Aden scrambled to his feet, his face red from embarrassment. I was too shocked to speak.{/i}"
         a "[mc_name]..."
-        b "Dude…"
+        b "Dude..."
         a "..."
         hide aden with moveoutleft
         "{i}Aden frantically grabbed his soccer equipment and sprinted away.{/i}"
-        b "I can’t help but feel slightly responsible."
+        b "I can't help but feel slightly responsible."
         mc "That was shit advice, Brian."
         b "Yeah, most of my advice is."
         scene interrogation_room with fade_to_black
         show aden neutral at center
-        a "…she didn’t call after that. We stopped practicing. "
+        a "...she didn't call after that. We stopped practicing. "
         cl "Did you have any interaction after that day?"
         a "No, not really. I was so embarrassed I mostly tried to avoid her!"
         cl "So you were not with [mc_name] the evening of April 27, 2019?"
-        a "The night of Reg’s party? No, not at all! I wasn’t even invited because I wasn’t on the varsity team."
-        cl "Oh, so you weren’t at the party at all?"
+        a "The night of Reg's party? No, not at all! I wasn't even invited because I wasn't on the varsity team."
+        cl "Oh, so you weren't at the party at all?"
         a "No."
         cl "Where were you the evening of April 27, 2019?"
         a "At home studying."
         cl "Were you with anyone, or did anyone know where you were?"
         a "No, I was alone. My parents were out for the evening."
         cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
-        a "Wait, there’s no way she did it! She’s w---"
+        a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
-        a "…there’s no way… is there?"
+        a "...there's no way... is there?"
         return
 
     label Aden15d:
@@ -845,7 +839,7 @@ label start:
         show aden neutral at center
         a "That was my first heartbreak. I thought she liked me, but the whole time she was thinking about Leon."
         a "I ended up staying in that bedroom for hours. By the time I went back downstairs, people had started getting texts about what happened."
-        cl "Did you see [mc_name] again that night?
+        cl "Did you see [mc_name] again that night?"
         a "No. When I came out of the bedroom, she was gone."
         cl "I understand. Do you know where she went?"
         a "I have no idea."
@@ -1465,6 +1459,7 @@ label start:
     label Reg14:
         mc "Okay. Let's go upstairs."
         "{i}Reg tugged gently on my hands and led me up the stairs and into his bedroom, locking the door behind him. He didn't turn on the light.{/i}"
+        scene bedroom_night with fade_to_black
         "{i}Carefully, he led me to his bed, and we sat down on the foot of it. His hands wandered up my arms and came to rest on either side of my neck.{/i}"
         "{i}Through the dark I could see him look into my eyes for just a moment, then he pulled me into a deep kiss. I closed my eyes and let our bodies embrace each other.{/i}"
         scene interrogation_room with fade_to_black
@@ -1904,7 +1899,7 @@ label start:
         s "It's no problem,  really. At the risk of sounding egotistical, I'm pretty good at calculus."
         mc "Well, I appreciate it."
         s "So, in terms of meeting up---"
-        l "Hey, mc!"
+        l "Hey, [mc_name]!"
         show leon at rightish with moveinright
         show serpens:
             linear 0.3 leftish
@@ -1918,9 +1913,9 @@ label start:
         mc "Sure! How about you, Serpens?"
         s "Uh, I'm kinda busy tonight..."
         l "Oh, that's too bad. Next time, I guess!"
-        hide serpens with moveoutleft
         show leon:
             linear 0.3 center
+        hide serpens with moveoutleft
         l "So, [mc_name]... I'll see you at the theatre around 7?"
         mc "Sounds good!"
         scene movie_theatre with fade_to_black
@@ -1954,7 +1949,7 @@ label start:
         "{i}He smiled and gently tapped my arm with the back of his hand.{/i}"
         b "Kidding."
         r "Let's stop sucking each other's dicks and go buy our tickets before we're late to the movie!"
-        scene movie_theatre with fade_to_black
+        scene movie_theatre_interior with fade_to_black
         "{i}To my right, Leon was leaning forward in his seat, entirely engrossed in the plot on screen. To my left, Brian was on his third soda refill.{/i}"
         "{i}He was trying to act as though he wasn't interested in the movie, but on more than one occasion I caught him smiling{/i}"
         show brian neutral at center
@@ -2390,7 +2385,7 @@ label start:
         b "I guess I could have."
         cl "Did Leon or [mc_name] ever directly say they were together?"
         b "Well... no, they didn't."
-        cl "Okay, thanks for clarifying. Going back a little... you say you and MC_name weren't really friends. How about you and Leon?"
+        cl "Okay, thanks for clarifying. Going back a little... you say you and [mc_name] weren't really friends. How about you and Leon?"
         b "We were buds. We didn't see each other often, but we were friendly with each other, just like everyone on the team."
         cl "Did you see Leon or [mc_name] on the night of April 27?"
         b "Not [mc_name]. I did see Leon though. He got really drunk and then left early. I didn't see anything noteworthy."
@@ -2531,6 +2526,755 @@ label start:
         cl "Thank you for your time, Mr. Giang. You will be hearing from us shortly."
         cl "Please escort him out."
         return
+
+    label Leon2:
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        cl "Mr. So, are you ready to begin."
+        l "Yeah."
+        cl "Alright Mr. So, I'm going to be asking you some questions about yourself and the occurrences of and leading up to the evening of April 27, 2019. You are sworn under the same oath that you will be for the upcoming trial. Is this clear?"
+        l "Yes, I understand."
+        cl "Excellent. Let's begin. Please state for the record your full name and age."
+        l "I am Leon Hewett So and I'm 17 years old."
+        cl "And what is your occupation?"
+        l "I'm a high schooler. I'm in my junior year."
+        cl "At what school."
+        l "Bellington High."
+        cl "How do you know [mc_name]?"
+        l "We've been friends since we were about seven. We've lived near each other almost our entire lives, so we would always play together as children."
+        cl "Did you at any point become romantically involved with [mc_name]?"
+        l "Well, I've liked her since I was very young, but she was liked by so many people. I never really stood a chance."
+        cl "Did she ever indicate that she liked you back?"
+        l "I don't know. She never said outright. There were times I thought maybe she did, but it was never conclusive."
+        cl "What made you suspicious that she liked you?"
+        l "Well, we spent a lot of time together. We hung out almost every day. She would tease me, laugh with me... whenever she would make plans to go anywhere, she would almost always invite me because I'm the person she wanted to share all those experiences with."
+        l "We tried to share experiences even as insignificant as going out to coffee during the lunch period."
+        jump Leon3
+
+    label Leon3:
+        scene classroom with fade_to_black
+        "{i}{cps=8}Briiiiiiiing.{/cps}{/i}"
+        "{i}The bell announcing the beginning of lunch period woke me from a half-snooze. As I began putting my belongings into my backpack. I felt a hand on my shoulder.{/i}"
+        show leon neutral at center
+        "{i}I turned around to see Leon standing over me.{/i}"
+        l "Hey, [mc_name]."
+        mc "Hey Leon!"
+        l "Want to grab a drink at Coffee Waves?"
+        mc "Sure! I could certainly use the caffeine."
+        l "Alright, let's go. I can drive."
+        scene coffee_shop with fade_to_black
+        show leon neutral at center
+        l "Oh hey, Brian is working today! Have you met him?"
+        mc "No, I don't think so."
+        l "Hey Brian!"
+        show brian neutral at rightish with moveinright
+        show leon:
+            linear 0.3 leftish
+        b "{cps=8}Yoooooooo{/cps}, Leon! How's it going dude?"
+        l "I'm good. Soccer tryouts are coming up next week."
+        b "You feel ready?"
+        l "Well, for some of us varsity guys it's just a formality. I've been on the team for two years, so I'm not super worried."
+        b "Well, don't underestimate the new freshmen. One of them might take your spot!"
+        l "Alright, man. I won't."
+        "{i}Leon gestured in my direction.{/i}"
+        l "Hey, I wanted to introduce you to my friend [mc_name]."
+        b "Oh, [mc_name] is it? Nice to meet you. I'm Brian."
+        "{i}Brian smiled at me with what he probably intended to be a sexy smolder.{/i}"
+        b "They call me a coffee maestro because I grind so fine."
+        l "Brian, stop joking around and just take our order."
+        b "Okay, fine. What can I get you?"
+        l "I'll take a pumpkin spice latte."
+        b "AH, we've got ourselves a basic one! How about you, hot-tea?"
+        l "Brian, knock it off with the coffee puns!"
+        mc "Um, I's actually not sure what I want... any recommendations from either of you?"
+        l "The pumpkin spice here is fantastic!"
+        b "I'm quite fond of the caramel macchiato."
+        mc "Hmmmm, those both sound good. I'm going to go with..."
+        menu:
+            "What should I order?"
+            "Caramel macchiato":
+                jump Leon15a
+            "Pumpkin spice":
+                jump Leon4
+
+    label Leon4:
+        mc "I'll take a pumpkin spice latte."
+        b "Ah, we've got two basic bitches in the house! Alright, those'll be right out."
+        hide brian with moveoutright
+        show leon:
+            linear 0.3 center
+        l "What do you think of your drink?"
+        mc "It's disgusting."
+        l "What? Really?"
+        mc "No, I'm joking. It's just as tasty as you promised it was!"
+        l "Oh, I'm so relieved! I was worried you were going to be stuck with a drink you hated."
+        mc "Why would you be worried about that? That would just mean you get two drinks."
+        l "...oh. I suppose you're right."
+        "{i}He laughed.{/i}"
+        l "In that case... are you sure you don't hate it?"
+        "{i}I playfully punched Leon in the arm.{/i}"
+        mc "You wish."
+        scene coffee_shop with fade_to_black
+        show leon neutral at center
+        mc "...and then he straight up blackmailed her into not marking him tardy!"
+        "{i}Leon roared with laughter.{/i}"
+        l "What and absolute legend! That guy has no fear."
+        "{i}Leon glanced at his phone{/i}"
+        l "Oh, jeez. We've already been here for almost half hour. We should probably head back if we're gonna be in time for fifth period."
+        mc "Don't you have a study period fifth?"
+        l "Yeah. You have English, right?"
+        mc "Yeah."
+        mc "..."
+        mc "...you wanna skip?"
+        l "What?"
+        mc "We should skip."
+        l "Really? The perfect attendance, honor roll, goody-two-shoes wants to skip class?"
+        mc "Mrs. Green doesn't take attendance."
+        mc "Besides, it's been a while since we've had a chance to laugh like this together."
+        "{i}Leon looked at me in shock, then looked away, blushing slightly.{/i}"
+        mc "So... can we stay here just a little longer?"
+        "{i}Leon blushed deeper. {/i}"
+        l "Sure. Let's stay a little longer."
+        scene coffee_shop with fade_to_black
+        show leon neutral at center
+        l "...so I guess the dilemma is less about morality and more about conformity to societal norms."
+        mc "That makes sense. Oh wow, it's almost time for sixth period. We should probably head back toward campus."
+        l "Or we could just... not."
+        mc "You sure?"
+        l "Yeah. We're supposed to have a sub today, so we're probably not doing anything."
+        mc "We're running the mile in gym, so I'm happy to miss out on that."
+        l "Awesome. I'll buy you another drink. What do you want?"
+        mc "Pumpkin spice. Thanks, Leon!"
+        l "No problem. Next one's on you, though."
+        mc "Sure."
+        show coffee_shop with fade_to_black
+        show leon neutral at center
+        l "... and this is your love line, and because of the way it intersects with your life line... that means the person you love with die an untimely death."
+        mc "What?! Really?!"
+        l "No, I'm making this up as I go."
+        "{i}Leon smiled slyly and I laughed.{/i}"
+        mc "Of course you are. Here, I'll do you."
+        b "Sorry lovebirds, but I'm gonna have to break this up because we're closing."
+        show leon:
+            linear 0.3 center
+        show brian neutral at rightish with moveinright
+        "{i}I looked up from Leon's palm to see that the coffee shop was empty and Brian was holding a mop. I turned my head to the window and noticed for the first time that the sun had set and it was dark outside.{/i}"
+        mc "Woah! I didn't even notice how late it had gotten!"
+        l "Sorry, Brian. We'll get out of your hair."
+        hide brian with moveoutright
+        show leon:
+            linear 0.3 center
+        l "This was fun... let's do it again sometime."
+        mc "I'd like that."
+        l "See you tomorrow for breakfast?"
+        mc "Yeah. Usual spot."
+        l "See you then!"
+        hide leon with moveoutleft
+        scene interrogation_room with fade_to_black
+        cl "The two of you were really close."
+        l "Yeah. We were."
+        cl "And you thought she might have liked you romantically?"
+        l "Maybe I was just being hopeful, but... we've known each other almost our whole lives, and we still managed to have something to talk about for an entire afternoon and into the evening."
+        l "Is it so much a stretch to think that if we still have things to talk about after ten years that we may still have things to talk about after twenty, or fifty, or eighty?"
+        cl "Perhaps not."
+        l "I just don't understand why what happened... happened."
+        cl "The investigative team is still struggling to understand the suspect's motives. In my experience, it doesn't help to dwell on questions like that."
+        cl "The best thing you can do is to answer our questions honestly so we can fully understand your relationship with [mc_name] and the events leading up to the tragedy."
+        l "Alright."
+        cl "So why don't we move on to the day of the soccer tryouts? I understand that was a significant day?"
+        l "Yeah, it was."
+        cl "So what happened?"
+        l "Aden happened."
+        jump Leon5
+
+    label Leon5:
+        scene school_hallway with fade_to_black
+        "{cps=8}{i}Briiiiiiiing!{/i}{/cps}"
+        "{i}As the bell marking the end of sixth period rang through the hallways, I slowly began gathering my things. As I jammed the final notebook into my backpack, Leon appeared in the doorway of the classroom.{/i}"
+        show leon neutral at center
+        l "Hey [mc_name]! What's up?"
+        mc "Hey Leon. Not much... I'm just burned out from history class."
+        l "Yeah, me too."
+        mc "Didn't you finish all your history requirements last year?"
+        l "Oh, well, yeah... I just mean I'm --- I just remember what a bore history can be, heh! Memorizing all those dates. Blegh!"
+        l "I mean, when will I ever be in a position where I'll need to know when the War of the Roses started?"
+        l "Will someone ever point a gun to my head and threaten to pull the trigger unless I know what year the Battle of 1812 happened?"
+        l "Or maybe high school is just trying to prepare us for Thursday Night Trivia?"
+        mc "Haha, I'm sure that's it! I'm glad we're being prepared for something so important."
+        l "It totally is important! I mean, how could we live without Thursday Night Trivia's $500 cash prize to split among a team of six?"
+        mc "And ta-da, we've figured out the point of learning algebra."
+        l "Haha, yeah you get it! Uh, by the way... It's warm cookie Wednesday at the school café. Want to go with me?"
+        mc "Sure!"
+        show school_hallway with fade_to_black
+        show leon neutral at center
+        l "Mmfp. I can't stop eating these! Do you think the cookies taste so good because they're overpriced? It's probably just some sort of psychological --- {i}oof{/i}!"
+        show leon neutral:
+            linear 0.5 leftish
+        show reg neutral at center with moveinright
+        show nate neutral at rightish behind reg with moveinright
+        "{i}Suddenly, two boys in athletic attire had appeared. One of them had put Leon in a headlock that he was struggling to escape from, and the other was slowly shaking his head in both humor and disappointment.{/i}"
+        l "Guys, knock it off!"
+        "{i}Leon skillfully escaped from the hold.{/i}"
+        l "You're gonna make me drop my unreasonably priced cookie!"
+        l "Uh, [mc_name], these are a couple of the guys on my soccer team. This is the captain, Nathaniel, and one of the midfielders, Reginald."
+        mc "Hey Nate, hey Reg. Good to see you guys again."
+        l "Oh, do you guys already know each other?"
+        r "First of all, don't let me ever hear you call me Reginald. And secondly, yes, we have met. You see, me and your {i}girlfriend{/i} here ---"
+        l "What!? She's not ---"
+        n "Reg, cut it out. Instead of teasing Leon, maybe we should be talking about how he's eating loads of sugar right before tryouts? Leon, you're going to have a sugar crash."
+        l "It's warm cookie Wednesday though! Do you want a piece?"
+        n "No, thank you, I need to get back to my ever-so-important tabling duties."
+        "{i}Nate sat down at a foldable table that I'd neglected to notice earlier and beckoned Reg to join him. Attached to the front was a huge white sign reading {i}\"SOCCER TRYOUTS TODAY!\"{/i} in immaculate handwriting."
+        mc "Wow. Whoever wrote that sign has really nice handwriting."
+        r "That's be me."
+        "{i}Reg sat down next to Nate and propped his feet on the table.{/i}"
+        r "What can I say, I'm an effeminate guy."
+        "{i}Reg winked.{/i}"
+        mc "Is anyone even signing up this late?"
+        "{i}Reg sat down next to Nate and propped his feet on the table.{/i}"
+        r "Not really. Coach just likes to make us sit here and suffer."
+        n "It's not that bad, Reg."
+        r "Maybe not for you... you don't have anything better to do!"
+        n "That's not ---"
+        boy "{cps=8}{i}Woooooa!{/i}{/cps}"
+        show leon neutral:
+            linear 0.3 left
+        show reg neutral:
+            linear 0.3 leftish
+        show nate neutral:
+            linear 0.3 center
+        show aden smiling at right with moveinright
+        boy "There's soccer tryouts? Can I sign up? When are they?"
+        n "Hi! Yes, just put down your info here. Tryouts are this afternoon at 4:30."
+        boy "They're today? That's so soon!"
+        r "Yeah, not like we haven't been in the hallway advertising for the past week --- ouch!"
+        "{i}Nate nudged Reg aggressively in the ribs, as the young boy began frantically scribbling on the sign-up sheet.{/i}"
+        n "Yeah, they're today. No, that's where your emergency contact name goes... your name goes over there. Aden, is it? Do you have any experience, Aden?"
+        a "Uhmm, I've watched soccer on TV!"
+        n "..."
+        l "..."
+        r "Great! You've got everything you need to make --- ouch!"
+        "{i}Nate nudged Reg in the ribs again, this time with double the force.{/i}"
+        l "Uh, hey, the team is like, really competitive. Like, we made it to the state semi-finals this year. Are you sure you're feeling up to trying out for a team like that?"
+        a "Yeah, I'm sure! Anyone can try out right? I think if I work really, really hard and have a positive mental attitude I'll be awesome!"
+        n "I don't think it's really that simple. Most players on the varsity team have at least six years of experience. We've all trained really hard for years."
+        r "What? You don't want to see the kid make a fool of himself out there?"
+        n "Reg, stop it. Um, what's your name again?"
+        a "Aden!"
+        n "Aden, right, you look familiar. Aren't you in the band? I remember you being really good on the sax."
+        n "Band practices are at the same time as soccer, so you'd have to quit band if you made the team. It would be a shame for the band to lose a player like you!"
+        l "Yeah, sorry Aden... I'd have to agree with Nate."
+        a "But I want to do something new and exciting! I think I'd have a lot of fun."
+        "{i}Aden suddenly turned his attention to me as though he was pleading for someone to agree with him.{/i}"
+        mc "Aden, I think you should..."
+        menu:
+            "What should Aden do?"
+            "Try out for soccer":
+                jump Leon15b
+            "Stay in band":
+                jump Leon6
+
+    label Leon6:
+        mc "Aden, I think you should..."
+        "{i}I hesitated. This wasn't the right answer. {/i}"
+        mc "Hey Leon, can I talk to you privately for a moment?"
+        l "Uh, sure?"
+        hide reg
+        hide nate
+        hide aden
+        with moveoutright
+        mc "What are you doing?"
+        l "Uh, what do you mean?"
+        mc "You are trying to discourage Aden from trying out."
+        l "He's never played before."
+        mc "So?"
+        l "So..."
+        mc "Leon, I know you mean well but... you're better than this."
+        l "Huh?"
+        mc "Remember back when we took tap dancing lessons together?"
+        l "Yeah?"
+        mc "And you loved it right?"
+        l "Where are you going with this?"
+        mc "Your dad told you that you weren't good enough to move on to the higher level with me, so he told you to just quit."
+        l "... well, yes---"
+        mc "You remember what you told him?"
+        l "..."
+        mc "This is what you said: \"You have no right to break another person's dream.\""
+        l "...I remember."
+        mc "I doesn't matter if he isn't good. It's not your place to break his dream."
+        "{i}Leon stared at me with an expression I couldn't read. Suddenly, he pulled me into an embrace.{/i}"
+        l "[mc_name]... what would I do without you?"
+        "{i}I smiled and rested my head on his shoulder.{/i}"
+        mc "Not the right thing."
+        "{i}Briefly, I pulled him closer. Then, reluctantly, I broke the embrace.{/i}"
+        mc "Now let's go invite that kid to try out for the team."
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "I feel like she always managed to remind me what kind of person I was trying to be. She made me a better version of myself."
+        l "We may have not been together romantically, but we loved each other. Not the kind of love you were asking about, but  kind of love unique to us."
+        cl "Anything else you can tell me about your relationship to [mc_name]?"
+        l "Uh, there was the day I invited [mc_name] to the movies. That was an enlightening experience."
+        cl "What happened?"
+        l "A lot."
+        jump Leon7
+
+    label Leon7:
+        scene school_hallway with fade_to_black
+        show serpens neutral at center
+        s "… and we're falling a little behind, so we should probably try to meet outside of school at some point."
+        mc "Sorry, that's my fault. You keep having to explain everything to me."
+        s "It's no problem,  really. At the risk of sounding egotistical, I'm pretty good at calculus."
+        mc "Well, I appreciate it."
+        s "So, in terms of meeting up---"
+        l "Hey, [mc_name]!"
+        show serpens:
+            linear 0.3 leftish
+        show leon neutral at rightish with moveinright
+        l "How's it going?"
+        mc "Uh, pretty good. I was just chatting with Serpens about a calculus project."
+        "{i}Leon seemed to notice Serpens for the first time.{/i}"
+        l "Oh! Hey, man."
+        s "Hey, man."
+        "{i}Serpens and Leon fist bumped.{/i}"
+        l "Hey, I'm planning to go see a movie this evening. You guys in?"
+        mc "Yeah, I'm in! How about you, Serpens?"
+        s "Uh... I'm kinda busy tonight..."
+        l "Oh, that's too bad. Next time, I guess!"
+        hide serpens with moveoutleft
+        show leon:
+            linear 0.3 center
+        l "So, [mc_name]... I'll see you at the theatre around 7?"
+        mc "Sounds good!"
+        "{i}I began to walk away. After taking a couple steps, I felt Leon grab my arm.{/i}"
+        l "Actually..."
+        mc "Yeah?"
+        l "Well, practice was cancelled this afternoon, so I was wondering..."
+        l "...if you'd like to grab dinner first?"
+        "{i}My heart fluttered slightly.{/i}"
+        mc "Uh, I..."
+        "{i}Leon blushed and looked away.{/i}"
+        l "It doesn't have to be a big deal or anything, I mean, we could get fast food if you don't want to go to a sit-down place, cuz that would look like we were, like on a date or something crazy like that, so we don't have to do that if you don't want, but if you, like want to go to a sit-down place that's fine too, I mean it's more that fine, that's great, but like we don't have to, ya know, it's chill---"
+        "{i}I giggled.{/i}"
+        l "What's so funny?"
+        mc "You're just really cute when you get flustered."
+        "{i}Leon blushed deeper.{/i}"
+        mc "Where we go to eat isn't a big deal. We have plenty of time to go to a sit-down, and I'm not short on cash or anything. Do you have money? Is that why you're panicking about it?"
+        l "No, I'm good on money. I was just worried that..."
+        mc "That what?"
+        l "...nevermind."
+        mc "Okay, well in that case, let's..."
+        menu:
+            "Where should we go to eat?"
+            "Fast food":
+                jump Leon8
+            "Sit-down restaurant":
+                jump Leon15c
+
+    label Leon8:
+        mc "Let's get some fast food."
+        l "Oh... okay."
+        mc "Is that okay?"
+        l "Oh, yeah, it's fine, just..."
+        mc "Yeah?"
+        l "Uh, nothing. Let's go."
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "To be honest, I kind of wanted it to be a date. Serpens was even enough of a bro to say he was busy so that it would just be [mc_name] and I."
+        l "But when she suggested fast food, I figured that was her trying to subtly let me know that she didn't want it to be a date. Kind of a shame, but it was for the best."
+        cl "Why do you say that?"
+        l "It may not have been the outcome I wanted, but if she hadn't made it clear she didn't think of it as a date, I wouldn't have invited Brian and Reg along."
+        l "If Brian hadn't been there, then what happened next couldn't have happened."
+        jump Leon9
+
+    label Leon9:
+        scene movie_theatre with fade_to_black
+        show leon neutral at leftish
+        show reg neutral at rightish
+        show brian neutral at center
+        r "[mc_name], Leon! We're over here!"
+        mc "Hey everyone."
+        b "Glad you could make it."
+        "{i}Brian leaned toward me and lowered his voice.{/i}"
+        b "I've been thinking about you a latte."
+        l "Brian!"
+        b "Okay, okay! What's got you soy worked up?"
+        "{i}Leon glared at Brian. Brian raised his hands in surrender.{/i}"
+        r "Leon, Brian, stop flirting with each other and let's figure out which movie we want to watch."
+        b "There's this awesome horror movie that just came out. Let's see that!"
+        l "I don't really want to see something scary. Can we see that rom-com that's up for best picture?"
+        b "Really? Man, you seriously are basic."
+        l "[mc_name], what do you want to see?"
+        menu:
+            "Which movie do I want to see?"
+            "Scary movie":
+                jump Leon10
+            "Rom-com":
+                jump Leon15d
+
+    label Leon10:
+        m "Let's watch a scary movie."
+        b "Hell, yeah!"
+        "{i}Brian fist bumped me.{/i}"
+        b "This is gonna be awesome."
+        "{i}Brian enthusiastically led the way to the ticket line, Reg trailing shortly behind.{/i}"
+        hide reg
+        hide brian
+        with moveoutright
+        show leon:
+            linear 0.3 center
+        "{i}Leon touched my shoulder.{/i}"
+        l "I don't know if can do this."
+        mc "What do you mean?"
+        l "I get really freaked out by movies like this."
+        mc "Really? I didn't take you as one to be scared by movies."
+        l "You're one to talk! You get really freaked out by this stuff."
+        mc "But at least I enjoy it."
+        "{i}I playfully nudged Leon in the arm.{/i}"
+        mc "Tell you what... you can hold my hand if you get scared."
+        "{i}Leon smiled rolled his eyes.{/i}"
+        l "Fine. Let's do this."
+        show movie_theatre_interior with fade_to_black
+        "{i}To my left, Brian was staring in awe at the screen as a supernatural creature caused blood to come out of a protagonist's eyes.{/i}"
+        "{i} To my right, Leon was cowering away from the screen with his legs tucked against his chest and his jacket covering his eyes.{/i}"
+        show leon neutral at center
+        l "Tell me when it's safe to look."
+        "{i}The supernatural creature flew out a window and disappeared into the night.{/i}"
+        mc "It just left, you can look."
+        "{i}Leon cautiously peeked at the screen, then slowly lowered his jacket and put his feet back on the floor. His knuckles were white from gripping his jacket.{/i}"
+        "{i}Within five seconds, we were kit with a jump scare. Leon and I both yelped in surprise. I looked down to realize that, without realizing it, I had leaned sideways against Leon and interlaced my fingers with his.{/i}"
+        "{i}Embarrassed, I loosed my grip, but he instinctively pulled me closer. His eyes were fixed on the screen in horror and he didn't even seem to realize what had happened.{/i}"
+        "{i}I flushed in embarrassment, but allowed him to stay where he was. For several minutes we remained there, Leon frozen in terror and me unable to concentrate on the movie because I could feel the warmth of Leon's body against my arm.{/i}"
+        "{i}On the next jump scare, Leon grabbed my arm with his free hand and buried his face into my shoulder. It was only then that he seemed to realize what had happened. {/i}"
+        "{i}He blushed beet red and started pulling himself away.{/i}"
+        mc "You can stay there... if you want."
+        "{i}Leon blushed deeper, but obliged.{/i}"
+        l "Thank you."
+        "{i}For the rest of the movie, Leon cowered into my arm and I gripped his hand. Somehow, it made us both feel much less afraid.{/i}"
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "If Brian hadn't suggested a horror movie..."
+        cl "You never would have had that kind of physical intimacy."
+        l "Exactly. I hate that you called it \"physical intimacy\", but yeah."
+        l "I hated the movie, but..."
+        l "It was a great experience."
+        l "It told me something about where we stood. It wasn't necessarily a romantic touch, but it told me that I had a chance, you know? That maybe she felt the same way about me that I did about her."
+        cl "I understand. Did that event change your relationship to [mc_name] at all?"
+        l "For the outside it may not have seemed so, but... I could feel that we were both a little more embarrassed around each other. When we hung out, we'd let ourselves be a little closer to each other. We spoke a little softer and smiled a little more."
+        l "It was subtle, but it was important."
+        cl "I see. Was there ever a solid affirmation from [mc_name] whether she felt the same about you that you did about her?"
+        l "Not really... there was the day I was invited to Reg's party though."
+        cl "What happened?"
+        l "[mc_name] came to see me play in the soccer game... or so I thought."
+        jump Leon11
+
+    label Leon11:
+        scene school_hallway with fade_to_black
+        "{i}It's been a few months since we started practicing. It's crazy how much Aden's improved. I feel like it's only yesterday he could barely even kick the ball without tripping over his own feet...{/i}"
+        show aden smiling at center
+        a "[mc_name]! You're not going to believe this! Oh my gosh, it's so exciting!"
+        a "I can't wait! This is crazy!"
+        mc "Uh, hey, slow down Aden. What are you talking about?"
+        a "Well okay, see there's this guy named Sean and he's on the varsity team, but he hurt his ankle so they needed an alternate, which is really awesome..."
+        a "...I mean not awesome for him since you know, that hurts and sucks and everything, but..."
+        a "They want me to take his place for the game tonight!"
+        mc "That's awesome Aden! You've been working really hard, you deserve it!"
+        a @blushing "Uh, I mean, well, I couldn't have done it without you. You're really amazing!"
+        mc "Um, thanks, I- haha, I try my best. So, what time is the game tonight?"
+        a "It's at 4:30. Why, are you... do you... are you planning to come watch?"
+        mc "Of course I am! If... if you don't mind, of course."
+        a "Oh, no, of course I don't mind! I'd love for... I'd really like for you to be there."
+        a "Okay, I'll be sure to be awesome and score tons of goals and, like, be the MVP!"
+        scene soccer_field with fade_to_black
+        "{i}It's been a long time since I've gone to a soccer game, so I figured today would be a good chance to go to one. Besides, Aden could use the support.{/i}"
+        "{i}Plus, I can't stop thinking about the feeling of Leon's warmth in that dark movie theatre..."
+        show aden smiling at center
+        a "Hey! [mc_name]! I'm so glad you came! Did you see me out there!"
+        mc "Yeah, I did! That was so intense! You made an awesome assist."
+        a "Yeah, I---"
+        show aden:
+            linear 0.5 leftish
+        show leon neutral at rightish with moveinright
+        l "Did you... did you come to see me play?"
+        mc "Well, I---"
+        l "Awwww, that's so sweet [mc_name]! I think this is the first time you've come to one of my games since middle school."
+        l "I... actually really appreciate it."
+        mc "Oh well, I'm glad you appreciate it but I actually---"
+        l "No need to talk it down. It was really sweet, [mc_name]."
+        l "I maybe would have tried a little harder to sccore a goal if I'd known you'd be here. I kinda missed an opportunity to show off."
+        l "Oh jeez, that sounded weird! It's not like I'm trying to impress you in particular or anything, it's just---"
+        mc "Leon, I..."
+        menu:
+            "Actually, I came to see Aden":
+                jump Leon15e
+            "Don't correct him":
+                jump Leon12
+
+    label Leon12:
+        mc "I'm always happy to come see you play."
+        "{i}Leon blushed slightly. Aden looked at me in confusion. {/i}"
+        l "Thanks."
+        "{i}The look of confusion on Aden's face was slowly replaced with a look of betrayal, then disappointment. He looked down at his feet and wandered off into the cheering crowd. {/i}"
+        l "Hey, [mc_name]... Reg is throwing a party this weekend for the varsity team..."
+        mc "Uh-huh?"
+        l "... would you like to be my date?"
+        "{i}My heart skipped a beat. {/i}"
+        mc "Uh..."
+        l "I don't mean like... date... I just mean each guy gets to bring a plus one, so... will you be my plus one?"
+        "{i}I let out a tiny sigh, unsure whether it was a sigh of relief or disappointment.{/i}"
+        mc "Of course. I'd be happy to."
+        l "Okay! Great! Uh, any chance you could give me a ride home?"
+        mc "Absolutely."
+        scene interrogation_room with fade_to_black
+        show leon neutral center
+        l "Oh, man... I hope she couldn't tell how nervous I was to ask her. I felt like I was going to pass out!"
+        l "Even in the car ride home, my heart was beating so fast---"
+        cl "Mr. So, can you tell me about the night of the party?"
+        l "Oh, yeah of course. Get ready though..."
+        l "It was a long night."
+        jump Leon13
+
+    label Leon13:
+        scene bedroom with fade_to_black
+        "{i}The day of the party, Leon got a message from Aden saying it had been cancelled. We were disappointed, but decided to hang out anyway. {/i}"
+        "{i}We ended up sitting on his bedroom playing games into the evening. {/i}"
+        l "Jengaaaaaaa!"
+        "{i}As I was focusing on removing a piece from the wooden tower, Leon shoved the tower, sending it toppling. I yelped in surprise, and then we laughed. I playfully hit him in the arm. {/i}"
+        mc "You jerk! I was going to win!"
+        l "I know. That's why I had to take matters into my own hands!"
+        "{i}He playfully hit me back. I retaliated by giving him a light shove. He dramatically topped backward, and the sudden lack of resistance sent me falling toward him. I caught myself by placing a hand on either side of him.{i}"
+        "{i}Suddenly, I found myself hovering over him as he lay on his back. My hair had fallen over my shoulder and was brushing his chest. I could see his chest rising and falling ever more rapidly under the strands. {/i}"
+        "{i}He was my best friend, but suddenly I could see him as something more. {/i}"
+        "{i}No... who the hell am I trying to fool. I'd always been in love with him. It was just at this reason that I realized, without a doubt, that he liked me, too."
+        menu:
+            "Kiss him":
+                jump Leon14
+            "Say \"I love you\"":
+                jump Leon14
+
+    label Leon14:
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "No, [mc_name]. You don't get a happy ending. Not from me."
+        l "Why? I'll tell you why."
+        l "..."
+        l "Because I'm already dead."
+        l "You killed me."
+        l "..."
+        scene black
+        l "You don't remember? Let me explain in words you can understand."
+        l "I'd love to say we got a call from Reg saying the party was on, we went, we had a good time drinking with Brian, we saw Nate on a walk while getting a ride home from Serpens, and spent a fantastic night in each other's company."
+        l "But you know that didn't happen."
+        l "You went to the party with Aden. You made that decision. It is not something you can undo."
+        l "He knew I loved you, something you never managed to pick up on. Because of that, he felt the need to protect me by {i}denying{/i} the party was happening."
+        l "You became Reg's girlfriend. You made that decision. It is not something you can undo."
+        l "He decided to announce it at the party. When I, one of his closest friends, did not show up, he was understandably {i}angry{/i}."
+        l "He called me up and demanded I show up."
+        l "You hung out with Brian by the drinks all night. You made that decision. It is not something you can undo."
+        l "I got there feeling incredibly low. Aden, someone I considered a friend, had lied to me about the party. Reg, someone I almost considered a brother, thought I was a horrible person and demanded I come to a party I had no chance of enjoying."
+        l "I was low enough that when Brian {i}bargained{/i} with me to drink, I gave in. I am not one to give in to that type of thing, but... you'd fallen for someone else and it broke me."
+        l "I got too drunk to drive myself home. I called Serpens."
+        l "You spend that night with Serpens. You made that decision. It is not something you can undo."
+        l "After I climbed in the car with the two of you, it didn't take long for me to figure out what was going on."
+        l "In my drunken state I confessed to you, but I knew it was hopeless. It made me feel so {i}depressed{/i} seeing you so close but being unable to reach you."
+        l "But, you were with Serpens and there was nothing I could do about it."
+        l "I caused a scene and he kicked me out of his car. That's when I saw you and Nate."
+        l "You went on a romantic walk with Nate. You made that decision. It is not something you can undo."
+        l "Seeing you with him took what was left of my soul and shattered it. He was kind and comforting, but his bottom line was that I would need to {i}accept{/i} that he was with you and that I needed to move on."
+        l "I watched you choose five of my friends over me. I left you and Nate with nothing of myself left."
+        l "This entire time, you could have sent someone after me. You could have saved me. But, each time, you let yourself fall in love with someone else."
+        l "These are decisions {i}you{/i} made. Try all you want, but you can't take them back."
+        l "I was so broken that I walked around for hours. It was dark, I was heartbroken, and you were thinking of some other boy you'd spent the night with..."
+        l "I didn't notice the car coming toward me as I crossed the street in the darkness of the early morning. You were driving. Just like for the last decade of my life, you didn't see me even though I right in front of you."
+        l "I died alone in the dark, in the middle of a strange street in an area of town that scared me."
+        l "You only made it to my side after I was gone."
+        l "..."
+        l "But even this isn't the truth, is it."
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "You've been staring at the names on these tapes for hours, but you still haven't noticed, have you?"
+        l "I am a fictional character, so losing me didn't matter. But you lost someone real, didn't you?"
+        l "He was your first love, but you never told him how you felt. You couldn't even manage to be a good friend. By the time he was seventeen, he was so alone in the world that he climbed into the bath, took a handful of pills and fell asleep."
+        l "He was surprised to wake up in the morning. More often than not, when someone attempts suicide and it doesn't work, they are thankful. They realize in their near-death experience that they really do have something to live for."
+        l "Not him."
+        l "He spent one more day of his life acting as though everything was okay. Then while his family was away, he took the family's gun into the backyard... and he put it in his mouth... and he pulled the trigger."
+        l "Someone who loved him found him. You don't even remember who, do you? Maybe his sister, maybe his mom... you have no idea."
+        l "You should have been there for him. But you let your affection turn to embarrassment and your embarrassment manifest toxicly."
+        l "That was six years ago, and you're still carrying around that baggage, aren't you, Airborne_Mana--- uh, I mean, [mc_name]?"
+        l "And now you've created a ridiculous game with a confusing premise because art is your only outlet for something like this. You've tried over the years to turn your grief into art, but you're never satisfied."
+        l "Grief has five stages, and I'm guessing none of your players noticed until now that they've just followed a broken-hearted artist through each one."
+        l "Rearrange the letters in Aden Li and you are left with denial. He denied me what could have been a magical night with the soccer team."
+        l "Reg Na is anger. His misplaced anger hurt me beyond words and brought me low enough that I made a night full of mistakes."
+        l "Brian Giang is bargaining. He bargained with me to make my first mistake of the night, and he won."
+        l "Serpens Dio is depression. He had what I wanted but could never have. Nothing I'd ever experienced was more depressing."
+        l "Nate C. Pacce is acceptance. Unfortunately, I couldn't bring myself to accept that I couldn't have you, despite his pleas."
+        l "At the end of the day, it was you who killed me. So... who am I?"
+        "{i}You are Leon Hewett So.{/i}"
+        "{i}You are The One We Lost.{/i}"
+        scene black with fade_to_black
+        return
+
+    label Leon15a:
+       mc "I'll take a caramel macchiato. I've never had one, so I'm curious how it tastes."
+        b "Excellent choice! I'll need to hear your opinion once you've tried it."
+        mc "I'll let you know before we leave!"
+        b "Actually... let me talk to my boss. He might let me take my break a little early today so I can hang out with you for 15 minutes. Gimme a few minutes."
+        hide brian with moveoutright
+        show leon:
+            linear 0.3 center
+        "{i}Leon and I dropped our cash on the counter and claimed a small table in the otherwise empty coffee shop.{/i}"
+        l "He's a character."
+        mc "Seems like it! What's with all the uncomfortable pick-up lines?"
+        l "He does that to everyone. He's a jokester."
+        mc "Gotcha."
+        show brian neutral at rightish with moveinright
+        show leon:
+            linear 0.3 leftish
+        "{i}Brian reappeared by the table holding a try with three drinks. He placed each drink carefully on the table, and then sat in the chair next to mine.{/i}"
+        b "So, what do you think?"
+        "{i}I took a sip of my drink.{/i}"
+        mc "It's delicious!"
+        b "I know, right? I gave you an extra pump of caramel."
+        "{i}He leaned toward me and dropped his voice to a whisper.{/i}"
+        b "{size=-10}Don't tell my boss.{/size}"
+        mc "Your secret is safe with me."
+        b "How's yours, Leon?"
+        l "It's tasty!"
+        b "Fantastic. I really am a coffee genius."
+        "{i}He turned to me and grabbed one of my hands.{/i}"
+        b "I guess that's why it fells like there's something {i}brewing{/i} between the two of us."
+        l "Brian, chill it with the coffee pickup lines!"
+        b "Dude, I'm just messing with you. I'm not trying to steal your girl."
+        l "My--- my girl?"
+        b "You seriously think I would do you dirty like that? Naw, man. I may be a bit of a player, but I would never go after another guy's girlfriend."
+        l "What?! We're not... she's not..."
+        b "Wait, aren't you guys dating?"
+        mc "Uh, no... we're just friends."
+        b "Oh, my bad, dude. I just assumed by the way you interacted that something was going on."
+        l "Oh, no. We've just been friends for a long time."
+        b "Ah, I see. Then you wouldn't mind if I took a shot at her?"
+        "{i}Brian raised an eyebrow suggestively.{/i}"
+        l "Do you ever quit this act of yours?"
+        b "Never."
+        "{i}Brian realized he's been holding my hand this entire time and quickly dropped it in embarrassment.{/i}"
+        b "Well, I think it's about time I went back to work. But hey, it was nice meeting you [mc_name]! Come back to see me soon."
+        mc "I'll certainly try!"
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "Turns out it wasn't a joke. He seriously took a shot at her. She eventually started falling for him."
+        l "I had to silently cede her over to another person. It broke my fucking heart."
+        cl "Oh, so she was actually dating Brian?"
+        l "I don't know if it was ever entirely official, but basically, yeah."
+        cl "Were they together the night of Reg's party?"
+        l "Yeah."
+        cl "So, what happened?"
+        l "..."
+        l "You know what happened."
+        cl "..."
+        cl "I know."
+        cl "And I am so so sorry."
+        "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
+        "{i}The screen showed static, and I felt myself go cold.{/i}"
+        return
+
+    label Leon15b:
+        mc "Aden, I think you should go for it. If you want to try out for the soccer team, you should try out for the soccer team!"
+        a "Really, [mc_name]?"
+        mc "Who knows? Maybe he’ll surprise you."
+        scene interrogation_room with fade_to_black
+        l "Aden and [mc_name] really hit it off. She eventually started falling for him."
+        l "I had to silently cede her over to another person. It broke my fucking heart."
+        cl "Oh, so she was actually dating Aden?"
+        l "I don't know if it was ever entirely official, but basically, yeah."
+        cl "Were they together the night of Reg's party?"
+        l "Yeah."
+        cl "So, what happened?"
+        l "..."
+        l "You know what happened."
+        cl "..."
+        cl "I know."
+        cl "And I am so so sorry."
+        "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
+        "{i}The screen showed static, and I felt myself go cold.{/i}"
+        return
+
+    label Leon15c:
+        mc "Let's go to a sit-down place."
+        "{l}Leon blushed.{/i}"
+        l "Oh... okay."
+        mc "I just need to go home to change into something nicer, and then we can go. Sounds good?"
+        l "Sounds great!"
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "It was a really nice dinner and movie. However, I didn't feel anything. It just felt like we were going as friends."
+        l "It was at that point that I realized that's all we were going to be. She didn't like me the way I liked her."
+        l "I don't know how I didn't notice at the time, but she was actually starting to fall for Serpens. I had to cede her to another person and it broke my fucking heart."
+        cl "Oh, so she was actually dating Serpens?"
+        l "I don't know if it was ever entirely official, but basically, yeah."
+        cl "Were they together the night of Reg's party?"
+        l "Yeah."
+        cl "So, what happened?"
+        l "..."
+        l "You know what happened."
+        cl "..."
+        cl "I know."
+        cl "And I am so so sorry."
+        "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
+        "{i}The screen showed static, and I felt myself go cold.{/i}"
+        return
+
+    label Leon15d:
+        mc "I'd like to see the rom-com."
+        "{i}Brian clicked his tongue and shook his head.{/i}"
+        b "I expected more from you, [mc_name]."
+        "{i}He smiled and gently tapped my arm with the back of his hand.{/i}"
+        b "Kidding."
+        r "Let's stop sucking each other's dicks and go buy our tickets before we're late to the movie!"
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "It movie, but I didn't feel anything. It just felt like we were going as friends."
+        l "It was at that point that I realized that's all we were going to be. She didn't like me the way I liked her."
+        l "I don't know how I didn't notice at the time, but she was actually starting to fall for Reg. Ironic, considering his comment before we went to buy tickets.
+        l "I had to cede her to another person and it broke my fucking heart."
+        cl "Oh, so she was actually dating Reg?"
+        l "I don't know if it was ever entirely official, but basically, yeah."
+        cl "Were they together the night of Reg's party?"
+        l "Yeah."
+        cl "So, what happened?"
+        l "..."
+        l "You know what happened."
+        cl "..."
+        cl "I know."
+        cl "And I am so so sorry."
+        "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
+        "{i}The screen showed static, and I felt myself go cold.{/i}"
+        return
+
+    label Leon15e:
+        mc "Well, actually Leon... I came to watch Aden play."
+        l "Oh, you--- you did?"
+        l "I'm sorry, I was being pretty presumptuous I guess. Oh, boy, so embarrassing..."
+        "{i}Leon shifted nervously from foot to foot while a smile spread across Aden's face.{/i}"
+        l "Well, um, I'm gonna go ahead and go home. Both of you, drive safe!"
+        l "{size=-10}God, so embarrassing...{/size}"
+        scene interrogation_room with fade_to_black
+        show leon neutral at center
+        l "I figured out in the most embarrassing way, that she didn't like me how I liked her. She only saw me as a friend."
+        l "It was at that point that I realized that's all we were going to be. We would never be together."
+        l "I don't know how I didn't notice at the time, but she was actually starting to fall for Nate. I had to cede her to another person and it broke my fucking heart."
+        cl "Oh, so she was actually dating Nate?"
+        l "I don't know if it was ever entirely official, but basically, yeah."
+        cl "Were they together the night of Reg's party?"
+        l "Yeah."
+        cl "So, what happened?"
+        l "..."
+        l "You know what happened."
+        cl "..."
+        cl "I know."
+        cl "And I am so so sorry."
+        "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
+        "{i} The screen showed static, and I felt myself go cold.{/i}"
+        return
+
 
 
 
