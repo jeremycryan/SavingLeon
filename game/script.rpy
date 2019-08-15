@@ -3114,7 +3114,7 @@ label start:
         return
 
     label Leon15a:
-       mc "I'll take a caramel macchiato. I've never had one, so I'm curious how it tastes."
+        mc "I'll take a caramel macchiato. I've never had one, so I'm curious how it tastes."
         b "Excellent choice! I'll need to hear your opinion once you've tried it."
         mc "I'll let you know before we leave!"
         b "Actually... let me talk to my boss. He might let me take my break a little early today so I can hang out with you for 15 minutes. Gimme a few minutes."
@@ -3233,7 +3233,7 @@ label start:
         show leon neutral at center
         l "It movie, but I didn't feel anything. It just felt like we were going as friends."
         l "It was at that point that I realized that's all we were going to be. She didn't like me the way I liked her."
-        l "I don't know how I didn't notice at the time, but she was actually starting to fall for Reg. Ironic, considering his comment before we went to buy tickets.
+        l "I don't know how I didn't notice at the time, but she was actually starting to fall for Reg. Ironic, considering his comment before we went to buy tickets."
         l "I had to cede her to another person and it broke my fucking heart."
         cl "Oh, so she was actually dating Reg?"
         l "I don't know if it was ever entirely official, but basically, yeah."

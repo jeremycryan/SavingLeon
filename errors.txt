@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 3119: expected statement.
-    {i}You are Leon Hewett So. {/i}
-                             ^
-
-File "game/script.rpy", line 3120: expected statement.
-    {i}You are The One We Lost. {/i}
-                              ^
+File "game/script.rpy", line 3118: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    b "Excellent choice! I'll need to hear your opinion once you've tried it."
+    ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Wed Aug 14 20:53:40 2019
+Wed Aug 14 21:40:11 2019
