@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 3118: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    b "Excellent choice! I'll need to hear your opinion once you've tried it."
-    ^
+File "game/ending_gal.rpy", line 46: u'img' is not a keyword argument or valid child for the imagebutton statement.
+    imagebutton img action Hide("endings_close", dissolve)
+                   ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Wed Aug 14 21:40:11 2019
+Wed Aug 14 23:38:38 2019

@@ -311,6 +311,8 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
+        textbutton _("Endings") action ShowMenu("endings")
+
         textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:

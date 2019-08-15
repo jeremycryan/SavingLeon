@@ -669,6 +669,7 @@ label start:
         cl "Speaking of... do you know anything about [mc_name]'s current whereabouts?"
         a "No. I haven't seen her since the party."
         cl "Okay. Thanks for your cooperation, and we will be in contact if necessary."
+        $persistent.endings_left[1] = True
         return
 
     label Aden15a:
@@ -699,6 +700,7 @@ label start:
         a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
+        $persistent.endings_left[0] = True
         return
 
     label Aden15b:
@@ -724,6 +726,7 @@ label start:
         a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
+        $persistent.endings_left[0] = True
         return
 
     label Aden15c:
@@ -765,6 +768,7 @@ label start:
         a "Wait, there's no way she did it! She's w---"
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
+        $persistent.endings_left[0] = True
         return
 
     label Aden15d:
@@ -786,6 +790,7 @@ label start:
         cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
         a "Are we or [mc_name] in trouble?"
         cl "You aren't. She might be."
+        $persistent.endings_left[0] = True
         return
 
     label Aden15e:
@@ -811,6 +816,7 @@ label start:
         cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
         a "Are we or [mc_name] in trouble?"
         cl "You aren't. She might be."
+        $persistent.endings_left[0] = True
         return
 
     label Aden15f:
@@ -842,6 +848,7 @@ label start:
         cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
         a "Am I or [mc_name] in trouble?"
         cl "You aren't. She might be."
+        $persistent.endings_left[0] = True
         return
 
     label Reg2:
@@ -1467,6 +1474,7 @@ label start:
         cl "Do you know anything about the current whereabouts of [mc_name]?"
         r "I do not."
         cl "Thank you, Mr. Na. No further questions."
+        $persistent.endings_right[1] = True
         return
 
     label Reg15a:
@@ -1496,6 +1504,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15b:
@@ -1530,6 +1539,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15ci:
@@ -1554,6 +1564,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15cii:
@@ -1573,6 +1584,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15d:
@@ -1603,6 +1615,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15e:
@@ -1638,6 +1651,7 @@ label start:
         r "Thanks for wasting my time, it was my pleasure."
         hide reg with moveoutright
         cl "He's definitely a charmer."
+        $persistent.endings_right[0] = True
         return
 
     label Reg15f:
@@ -1687,6 +1701,7 @@ label start:
         r "This isn't happening..."
         hide reg neutral with dissolve
         r "This isn't happening..."
+        $persistent.endings_right[0] = True
         return
 
     label Brian2:
@@ -2358,6 +2373,7 @@ label start:
         b "No."
         cl "Okay, thank you Mr. Giang. I have no further questions. I appreciate your openess and honesty."
         b "I was my pleasure. Besides... nothing good ever came out of someone hiding their feelings."
+        $persistent.endings_left[3] = True
         return
 
     label Brian15a:
@@ -2386,6 +2402,7 @@ label start:
         cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
+        $persistent.endings_left[2] = True
         return
 
     label Brian15b:
@@ -2418,6 +2435,7 @@ label start:
         cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
+        $persistent.endings_left[2] = True
         return
 
     label Brian15c:
@@ -2440,6 +2458,7 @@ label start:
         cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
+        $persistent.endings_left[2] = True
         return
 
     label Brian15d:
@@ -2460,6 +2479,7 @@ label start:
         cl "[mc_name] remains without an alibi. Can anyone verify your location that evening?"
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
+        $persistent.endings_left[2] = True
         return
 
     label Brian15e:
@@ -2519,6 +2539,7 @@ label start:
         b "I didn't do it! You have to believe me! We were friends! We were---"
         cl "Thank you for your time, Mr. Giang. You will be hearing from us shortly."
         cl "Please escort him out."
+        $persistent.endings_left[2] = True
         return
 
     label Leon2:
@@ -3105,6 +3126,7 @@ label start:
         "{i}You are Leon Hewett So.{/i}"
         "{i}You are The One We Lost.{/i}"
         scene black with fade_to_black
+        $persistent.endings_right[5] = True
         return
 
     label Leon15a:
@@ -3168,6 +3190,7 @@ label start:
         cl "And I am so so sorry."
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
+        $persistent.endings_right[4] = True
         return
 
     label Leon15b:
@@ -3189,6 +3212,7 @@ label start:
         cl "And I am so so sorry."
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
+        $persistent.endings_right[4] = True
         return
 
     label Leon15c:
@@ -3214,6 +3238,7 @@ label start:
         cl "And I am so so sorry."
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
+        $persistent.endings_right[4] = True
         return
 
     label Leon15d:
@@ -3241,6 +3266,7 @@ label start:
         cl "And I am so so sorry."
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
+        $persistent.endings_right[4] = True
         return
 
     label Leon15e:
@@ -3267,6 +3293,7 @@ label start:
         cl "And I am so so sorry."
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i} The screen showed static, and I felt myself go cold.{/i}"
+        $persistent.endings_right[4] = True
         return
 
 

@@ -1,32 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1514, in script
-    "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-Exception: Say has image attributes (u'Kelsie',), but there's no image tag associated with the speaking character.
+TypeError: 'unicode' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1514, in script
-    "{i}There's a woman with a name tag reading "Kelsie" behind the counter. I could ask her if Brian is around anywhere, or I could just cut my losses and walk back to the soccer field and ask one of the soccer guys for help.{/i}"
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1334, in say
-    renpy.store.say(who, what, *args, **kwargs)
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1075, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 942, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\jryan\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 868, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes (u'Kelsie',), but there's no image tag associated with the speaking character.
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\ast.py", line 912, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\python.py", line 2004, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\ui.py", line 295, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\core.py", line 2699, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\core.py", line 3510, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\transition.py", line 47, in event
+    return self.new_widget.event(ev, x, y, st)  # E1101
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\screen.py", line 707, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\behavior.py", line 946, in event
+    return handle_click(self.clicked)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\behavior.py", line 881, in handle_click
+    rv = run(action)
+  File "C:\Users\empod\Downloads\renpy-7.2.0-sdk\renpy\display\behavior.py", line 320, in run
+    return action(*args, **kwargs)
+TypeError: 'unicode' object is not callable
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 SavingLeon 1.0
-Tue Aug 13 19:43:24 2019
+Wed Aug 14 23:41:26 2019
