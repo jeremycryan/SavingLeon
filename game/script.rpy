@@ -247,9 +247,7 @@ label start:
             "Try out for soccer":
                 jump Aden4
             "Stay in band":
-                "He does band"
-                return
-                #	Jump to correct spot
+                jump Aden15a
 
     label Aden4:
         mc "Aden, I think you should go for it. If you want to try out for the soccer team, you should try out for the soccer team!"
@@ -330,9 +328,7 @@ label start:
             "Practice with Aden":
                 jump Aden6
             "Go home with Serpens":
-                "You ride home"
-                return
-                #	Jump to correct spot
+                jump Aden15b
 
     label Aden6:
         mc "I will stay and help you practice, Aden."
@@ -422,8 +418,7 @@ label start:
             "Love is worth it.":
                 jump Aden8
             "Love isn't worth all the trouble.":
-                #   Jump to correct place
-                return
+                jump Aden15c
 
     label Aden8:
         mc "Love is totally worth it."
@@ -500,8 +495,7 @@ label start:
             "Actually, I came to see Aden":
                 jump Aden10
             "Don't correct him":
-                #   Jump to correct place
-                return
+                jump Aden15d
 
     label Aden10:
         mc "Well, actually Leon... I came to watch Aden play."
