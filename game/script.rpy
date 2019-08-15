@@ -36,18 +36,18 @@ init python:
 
 define gui.text_font = "Candara.ttf"
 
-define a = Character("Aden", image="aden", callback=partial(bounce_callback, "aden"))
-define r = Character("Reg", image="reg", callback=partial(bounce_callback, "reg"))
-define l = Character("Leon", image="leon", callback=partial(bounce_callback, "leon"))
-define n = Character("Nate", image="nate", callback=partial(bounce_callback, "nate"))
-define s = Character("Serpens", image="serpens", callback=partial(bounce_callback, "serpens"))
-define b = Character("Brian", image="brian", callback=partial(bounce_callback, "brian"))
-define boy = Character("Boy", image="aden", callback=partial(bounce_callback, "aden"))
-define cl = Character("Court Lady")
-define mc = Character("[mc_name]")
-define coach = Character("Coach")
-define teacher = Character("Teacher")
-define kelsie = Character("Kelsie")
+define a = Character("Aden", image="aden", callback=partial(bounce_callback, "aden"), color="#CA85EA")
+define r = Character("Reg", image="reg", callback=partial(bounce_callback, "reg"), color="#EF4F5F")
+define l = Character("Leon", image="leon", callback=partial(bounce_callback, "leon"), color="#FFFFFF")
+define n = Character("Nate", image="nate", callback=partial(bounce_callback, "nate"), color="#6CDD78")
+define s = Character("Serpens", image="serpens", callback=partial(bounce_callback, "serpens"), color="#8693E8")
+define b = Character("Brian", image="brian", callback=partial(bounce_callback, "brian"), color="#EDED80")
+define boy = Character("Boy", image="aden", callback=partial(bounce_callback, "aden"), color="#CA85EA")
+define cl = Character("Court Lady", color="#BFBFBF")
+define mc = Character("[mc_name]", color="#E285E2")
+define coach = Character("Coach", color="#BFBFBF")
+define teacher = Character("Teacher", color="#BFBFBF")
+define kelsie = Character("Kelsie", color="#BFBFBF")
 
 define fade_to_black = Fade(0.5, 1.0, 0.5)
 
@@ -131,8 +131,15 @@ label start:
                     "Sorry, that doesn't exist yet."
                     jump tape_menu
                 "Receipt":
-                    "Sorry, that doesn't exist yet."
-                    jump tape_menu
+                    jump credits
+
+    label credits:
+        $ credits_speed = 45
+        scene black
+        show credits at Move((0.5, 1.0), (0.5, -2.95), credits_speed,
+                      xanchor=0.5, yanchor=0)
+        with Pause(credits_speed+3)
+        jump intro
 
     label Aden2:
         scene interrogation_room with fade_to_black
