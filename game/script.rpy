@@ -198,7 +198,7 @@ label start:
             linear 0.5 leftish
         show reg neutral at center with moveinright
         show nate neutral at rightish behind reg with moveinright
-        "{i}Suddenly, two boys in athletic attire had appeared. One of them had put Leon in a headlock that he was struggling to escape from, and the other was slowly shaking his head in both humor and disappointment{/i}"
+        "{i}Suddenly, two boys in athletic attire had appeared. One of them had put Leon in a headlock that he was struggling to escape from, and the other was slowly shaking his head in both humor and disappointment.{/i}"
         l "Guys, knock it off!"
         "{i}Leon skillfully escaped from the hold.{/i}"
         l "You're gonna make me drop my unreasonably priced cookie!"
@@ -537,6 +537,323 @@ label start:
         a "His dads were both surgeons back in South Korea, so here in the states they have this huuuuge house. Perfect for awesome parties!"
         cl "Mr. Li, can we focus on what happened when Reginald invited you to his party?"
         a "Oh, yeah. Of course."
+        jump Aden11
+
+    label Aden11:
+        scene soccer_field with fade_to_black
+        show aden at leftish
+        show reg at rightish
+        r "Hey, Aden... nice playing today."
+        a "Thanks! I had so much fun!"
+        r "Uh... I wanted to say... sorry for the things I said the day of tryouts. That was pretty uncool of me."
+        a "Oh, that's okay! I appreciate your apology though!"
+        r "You've certainly proven me wrong."
+        "{i}Reg started to walk away, then paused and looked back over his shoulder. {/i}"
+        r "Uh, I know you're not officially on the varsity team, but do you want to come to the party I'm throwing for the varsity team?"
+        a "What?! Really?! Yeah, I'd love to!!!"
+        r "Great! It's on April 27. You're allowed a plus one."
+        a "Thanks, Reg!"
+        hide reg with moveoutright
+        show aden:
+            linear 0.3 center
+        a "Did you see that?! I just got invited to a party! And it's a varsity team party!"
+        mc "I saw! Good for you, man."
+        a "You'll be my plus one, right?"
+        mc "Well..."
+        menu:
+            "Be Aden's plus one to the party?"
+            "Yes":
+                jump Aden12
+            "No":
+                jump Aden15e
+
+    label Aden12:
+        mc "Sure, I'll go with you!"
+        a "Awesome! It's a date!"
+        "{i}Aden suddenly realized what he's said. His eyes widened and his cheeks flushed.{/i}"
+        a "I didn't mean--- sorry, I just---"
+        mc "Aden..."
+        a "Yeah?"
+        mc "... it's a date."
+        "{i}I smiled and felt my face get hot. Aden blushed back at me.{/i}
+        a "Uh, okay... a date it is then!"
+        "{i}Suddenly, Aden's face turned serious.{/i}"
+        a "Oh, no..."
+        mc "What's wrong?"
+        a "What about Leon?"
+        mc "What do you mean?"
+        a "He is really into you."
+        mc "I don't know about that---"
+        a "It would probably kill him to see you go with me."
+        mc "Really?"
+        "{i}Aden blushed.{/i}"
+        a "I mean... it would kill me if you went with him."
+        "{i}I blushed back, but forced myself to focus on the situation at hand.{/i}"
+        mc "I hadn't even thought about that."
+        a "I can't hurt him like that."
+        mc "So... should we not go together."
+        a "No, we can still go together. I just have to make sure Leon isn't there."
+        mc "What???"
+        a "Don't worry, I'll take care of it!"
+        mc "I really don't think this is a good idea..."
+        "{i}Aden ignored me.{/i}"
+        a "Hey, you wanna grab a drink at Coffee Waves?"
+        mc "Uh, I'm Leon's ride home so I can't today. Hey Aden..."
+        mc "Don't do anything irrational."
+        a "I won't! See you this weekend."
+        mc "..."
+        mc "I can't wait."
+        show interrogation_room with fade_to_black
+        show aden neutral at center
+        a "I was so excited! My first ever date! It was going to be so awesome!"
+        a "But... Leon. I thought back to Brian's story and I came up with a plan that was perfect! I could be with the girl I liked but without hurting my friend!"
+        cl "What was the plan?"
+        a "I would text Leon the day of the party to tell him that Reg had to reschedule the party so I was helping him pass on the news."
+        a "Leon would skip, believing that the party was not happening, and I could go with mc without worrying about him seeing!"
+        cl "..."
+        a "I had his best interests in mind! I swear, I couldn't have known how it would turn out."
+        a "I never wanted my friend to be hurt... this was the only way I could think to no break his heart."
+        cl "So, what happened the night of the party?"
+        a "Tragedy."
+        cl "Can you tell me about it."
+        a "..."
+        cl "I know it's tough, but I need to understand all the events leading up to the homicide."
+        a "It started out beautifully..."
+        jump Aden13
+
+    label Aden13:
+        scene house_party_night
+        "{i}Base thumping, people dancing, the smell of the booze Brian brought filling the air. The varisty soccer team sure knows how to party!{/i}"
+        show aden neutral at center
+        a "Ugh, this punch tastes aweful! Have you tried it?"
+        mc "Aden, that has alcohol in it."
+        a "What? But that's illegal!"
+        "{i}He frantically dumped his drink in the garbage.{/i}"
+        a "They should have some soda or something..."
+        mc "Hey, Aden..."
+        a "Huh?"
+        mc "I haven't seen Leon yet... you didn't do anything did you?"
+        a "Uh..."
+        "{i}I suddenly spotted Leon come through the front door, a look of irritation on his face. {/i}"
+        a "Oh, look! He just got here!"
+        "{i}Leon caught Aden's eye and started making his way through the crowd in our direction. {/i}"
+        a "mc, we should go."
+        mc "What did you---"
+        "{i}Before I could protest, Aden had grabbed my hand and pulled me up the stairs and into an empty bedroom. {/i}"
+        scene bedroom with fade_to_black
+        show aden neutral at center
+        "{i}The lights were off and Aden's hand was over my mouth. Through the crack  under the door, I way Leon's shadow appear, hesitate, then head back down the stairs. {/i}"
+        "{i}Aden breathed a sigh of relief and removed his hand from my mouth. He was standing so close to me I could feel his breath gently on my neck. {/i}"
+        "{i}As my eyes adjusted to the darkness, I could see him staring into my eyes with an unreadable expression. A moment passed as I felt my heart flutter. {/i}"
+        "{i}Suddenly Aden no longer looked like a child of 15 full of naïvety and ignorance, but like a man of passion and kindness. I suddenly saw him as someone I could see myself falling in love with.{/i}"
+        menu:
+            "Kiss him":
+                jump Aden14
+            "Encourage him to make up with Leon":
+                jump Aden15f
+
+    label Aden14:
+        "{i}I leaned my head toward him slowly and pressed my lips against his. He tensed up with shock for a moment, then let himself relax into it. {/i}"
+        "{i}His hands tentatively cupped my face, then wandered to my lower back. For a moment that felt like eternity, we remained there. Then he slowly pulled away. {/i}"
+        a "...that... was my first kiss."
+        mc "...mine, too."
+        "{i} He pulled me close again, and we continued exploring, carefully, these sensations that were new to us both.{/i}"
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        cl "Did you and mc have sexual intercourse that night?"
+        a "Objection: relevance? Sustained."
+        cl "Aden, for the last time this is not a courtroom. You also cannot object because you are not a lawyer. You also cannot sustain your own objection because you are not a judge."
+        a "..."
+        cl "Nonetheless, I will allow you not to answer that question. What happened after that?"
+        a "We were in that bedroom for a while, and when we returned to the party, everyone had started to hear bits and pieces about what happened."
+        cl "About what happened between you and [mc_name]?"
+        a "No, of course not! About... you know..."
+        cl "The death of your friend."
+        a "Yeah."
+        cl "So, you were with mc while the crime occurred?"
+        a "Yes."
+        cl "And can anyone else verify this?"
+        a "Sure... just about anyone at the party can tell you we went upstairs together and came back down later. Plus, Reg's place has a security camera on the outside of the house, so we couldn't have realistically snuck out the window or anything ."
+        cl "Okay. I have no further questions at this time. Mr. Li, thank you for your time."
+        a "Are [mc_name] or I in trouble?"
+        cl "I am not at liberty to discuss anything more at this time."
+        a "Oh, okay."
+        cl "Speaking of... do you know anything about [mc_name]'s current whereabouts?"
+        a "No. I haven't seen her since the party."
+        cl "Okay. Thanks for your cooperation, and we will be in contact if necessary."
+        return
+
+    label Aden15a:
+        mc "You should keep up with the saxophone! With talent like yours, you could really go somewhere."
+        a "But soccer looks like so much fun…"
+        mc "It would be such a shame for you to deprive the world of your music."
+        a "…"
+        "{i}Defeated, Aden began erasing his name from the sign up sheet. Then, without a word, he disappeared down the hallway.{/i}"
+        hide aden with moveoutright
+        show interrogation_room with fade_to_black
+        show aden neutral at center
+        cl "So, you {i}weren’t{/i} on the soccer team?"
+        a "…no. I wasn’t."
+        a "It’s like I was for the few glorious seconds my name was on that sheet, but… not really."
+        cl "So, how did you know [mc_name]?"
+        a "That was it. We interacted the day of the soccer tryouts and that’s it. We didn’t talk after that."
+        cl "And you say it was… \"transformative\"? Can you explain?"
+        a "I had been bored with band, but after that day I was resolved to put everything I had into my playing. And then a few months later… I made it into the All State Band!"
+        cl "But, just to be clear, you were not on the soccer team and you did not have any further interaction with [mc_name]?"
+        a "That’s right!"
+        cl "Were you present at Reginald Na’s party on April 27, 2019? "
+        a "No. "
+        cl "And were you with [mc_name] the evening of April 27, 2019?"
+        a "No."
+        cl "Were you with anyone the evening of April 27, 2019?"
+        a "No, I don’t think so."
+        cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
+        a "Wait, there’s no way she did it! She’s w---"
+        cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
+        a "…there’s no way… is there?"
+        return
+
+    label Aden15b:
+        mc "I have a lot of homework to do, so I’m gonna just catch a ride with Serpens."
+        a "Oh, okay… well maybe another time!"
+        mc "Yeah. Maybe another time."
+        show interrogation_room with fade_to_black
+        a "We never did end up practicing together. In fact, we barely saw each other at all after that day."
+        a "I’d still consider us friends though! She was always nice to me when we passed each other in the hall."
+        cl "So, the two of you never had a relationship that could be considered something more than friends?"
+        a "What? No, of course not. I mean, she’s kinda cute but…"
+        cl "But what?"
+        a "But she clearly wasn’t interested in me."
+        cl "So I assume you were not with her on the night of April 27, 2019? "
+        a "The night of Reg’s party? No, not at all! I wasn’t even invited because I wasn’t on the varsity team."
+        cl "Oh, so you weren’t at the party at all?"
+        a "No."
+        cl "Where were you the evening of April 27, 2019?"
+        a "At home studying."
+        cl "Were you with anyone, or did anyone know where you were?"
+        a "No, I was alone. My parents were out for the evening."
+        cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
+        a "Wait, there’s no way she did it! She’s w---"
+        cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
+        a "…there’s no way… is there?"
+        return
+
+    label Aden15c:
+        mc "I agree with Brian. Love is a pain."
+        b "Yeah, she gets it! And if I’m being honest… she {i}can{/i} get it."
+        a "Brian, don’t be gross!"
+        b "What do you say [mc_name]? You wanna spend a night not falling in love with me?"
+        a "Brian, stop!"
+        b "I’m joking, I’m joking! You’re too sensitive Aden."
+        b "If you want my advice, try going after a girl just for the thrill. Don’t worry about love or romance."
+        b "Just.{w=0.5} Thrill."
+        a "I don't know..."
+        b "Just for once, shut your brain off and let your instincts drive. Just take what you want and forget about the consequences, just---"
+        "{i}Suddenly Aden’s hands had grabbed my face and his lips were pressed to mine. I instinctively pushed him off and he fell to the ground.{/i}"
+        b "Woah, Aden! That’s not…"
+        "{i}Aden scrambled to his feet, his face red from embarrassment. I was too shocked to speak.{/i}"
+        a "[mc_name]..."
+        b "Dude…"
+        a "..."
+        hide aden with moveoutleft
+        "{i}Aden frantically grabbed his soccer equipment and sprinted away.{/i}"
+        b "I can’t help but feel slightly responsible."
+        mc "That was shit advice, Brian."
+        b "Yeah, most of my advice is."
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        a "…she didn’t call after that. We stopped practicing. "
+        cl "Did you have any interaction after that day?"
+        a "No, not really. I was so embarrassed I mostly tried to avoid her!"
+        cl "So you were not with [mc_name] the evening of April 27, 2019?"
+        a "The night of Reg’s party? No, not at all! I wasn’t even invited because I wasn’t on the varsity team."
+        cl "Oh, so you weren’t at the party at all?"
+        a "No."
+        cl "Where were you the evening of April 27, 2019?"
+        a "At home studying."
+        cl "Were you with anyone, or did anyone know where you were?"
+        a "No, I was alone. My parents were out for the evening."
+        cl "Thank you, Mr. Li, we have everything we need. [mc_name] remains without an alibi the night of the crime."
+        a "Wait, there’s no way she did it! She’s w---"
+        cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
+        a "…there’s no way… is there?"
+        return
+
+    label Aden15d:
+        mc "I'm always happy to come see you play, Leon."
+        "{i}Leon blushed slightly. Aden looked at me in confusion. {/i}"
+        l "Thanks."
+        "{i}The look of confusion on Aden's face was slowly replaced with a look of betrayal, then disappointment. He looked down at his feet and wandered off into the cheering crowd. {/i}"
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        a "I couldn't believe it! I actually thought she had come to see me... what a letdown."
+        cl "Had your relationship changed the next time you saw her?"
+        a "That was actually the last time I saw her."
+        cl "Oh, so you didn't go to Reg's party?"
+        a "I did, but she wasn't there. I would have invited her but..."
+        cl "I understand. Do you have any reason to believe you know where she was the night of the party?"
+        a "I have no idea."
+        cl "And can anyone verify your location that night?"
+        a "Sure. Brian, Reg, Nate... pretty much anyone on the varsity soccer team."
+        cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
+        a "Are we or [mc_name] in trouble?"
+        cl "You aren't. She might be."
+        return
+
+    label Aden15e:
+        mc "Uh, no, I'm sorry."
+        "{i}Aden dropped his eyes in disappointment. {/i}"
+        mc "I'm so sorry i just... I don't see you as someone I would date."
+        mc "Not that there's anything wrong with you! I  just don't feel that way."
+        a "It's okay, I understand."
+        "{i}Aden looked close to tears. {/i}"
+        mc "Let's still be friends!"
+        "{i}Aden ignored me and disappeared into the cheering crowd. {/i}"
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        a "I couldn't believe it! I actually thought she may have liked me... what a letdown."
+        cl "Had your relationship changed the next time you saw her?"
+        a "That was actually the last time I saw her."
+        cl "Oh, so you didn't go to Reg's party?"
+        a "I did, but she wasn't there."
+        cl "I understand. Do you have any reason to believe you know where she was the night of the party?"
+        a "I have no idea."
+        cl "And can anyone verify your location that night?"
+        a "Sure. Brian, Reg, Nate... pretty much anyone on the varsity soccer team."
+        cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
+        a "Are we or [mc_name] in trouble?"
+        cl "You aren't. She might be."
+        return
+
+    label Aden15f:
+        mc "I think you should go make up with Leon."
+        a "Huh? Right now?"
+        mc "Yeah. You two are friends. I hate to see you at odds."
+        a "But..."
+        mc "We can come back to this afterward."
+        "{i}Aden pulled away from me silently.{/i}"
+        mc "...is everything alright?"
+        a "...not really, [mc_name]. I... I thought maybe you liked me, but... this whole night you've been talking about Leon."
+        mc "What? No, I---"
+        a "I get it. He's older and more mature, and you guys have been friends since you were super young."
+        mc "Aden, it's not like that---"
+        a "I'm sorry, [mc_name], but I just need to be alone with my thoughts, okay?"
+        "{i}I reached toward him, but he shied away. Devastated, I walked toward the door. {/i}"
+        mc "Aden---"
+        a "Please. Just go."
+        scene interrogation_room with fade_to_black
+        show aden neutral at center
+        a "That was my first heartbreak. I thought she liked me, but the whole time she was thinking about Leon."
+        a "I ended up staying in that bedroom for hours. By the time I went back downstairs, people had started getting texts about what happened."
+        cl "Did you see [mc_name] again that night?
+        a "No. When I came out of the bedroom, she was gone."
+        cl "I understand. Do you know where she went?"
+        a "I have no idea."
+        cl "And can anyone verify your location that night?"
+        a "Sure. Brian, Reg, Nate... pretty much anyone on the varsity soccer team. They all saw me go upstairs and come down later. And Reg's house has security cameras so I would have been caught if I tried sneaking out the window while I was up there."
+        cl "Okay, thank you for your time, Mr. Li. I think I've asked all the questions I need to."
+        a "Am I or [mc_name] in trouble?"
+        cl "You aren't. She might be."
         return
 
     label Reg2:
