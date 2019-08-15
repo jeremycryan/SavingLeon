@@ -128,21 +128,21 @@ label start:
                     jump Aden2
                 "Tape: Na, Reginald - deposition":
                     if persistent.endings_right[1]:
-                            "{i}This tape appears to have been played already.{/i}"
-                            menu:
-                                "Rewind tape":
-                                    jump Aden2
-                                "Choose another tape":
-                                    jump intro
+                        "{i}This tape appears to have been played already.{/i}"
+                        menu:
+                            "Rewind tape":
+                                jump Reg2
+                            "Choose another tape":
+                                jump intro
                     jump Reg2
                 "Tape: Giang, Brian - deposition":
                     if persistent.endings_left[3]:
-                            "{i}This tape appears to have been played already.{/i}"
-                            menu:
-                                "Rewind tape":
-                                    jump Aden2
-                                "Choose another tape":
-                                    jump intro
+                        "{i}This tape appears to have been played already.{/i}"
+                        menu:
+                            "Rewind tape":
+                                jump Brian2
+                            "Choose another tape":
+                                jump intro
                     jump Brian2
                 "Tape: Dio, Serpens - deposition":
                     "Sorry, that doesn't exist yet."
