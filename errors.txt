@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 87: expected menuitem
-    if mc_name is "playtest":
-    ^
+File "game/script.rpy", line 701: expected statement.
+    renpy.pause(4.0, hard=True)
+                               ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Wed Aug 14 23:28:55 2019
+Thu Aug 15 00:57:44 2019

@@ -118,10 +118,31 @@ label start:
         label tape_menu:
             menu:
                 "Tape: Li, Aden - deposition":
+                    if persistent.endings_left[1]:
+                        "{i}This tape appears to have been played already.{/i}"
+                        menu:
+                            "Rewind tape":
+                                jump Aden2
+                            "Choose another tape":
+                                jump intro
                     jump Aden2
                 "Tape: Na, Reginald - deposition":
+                    if persistent.endings_right[1]:
+                            "{i}This tape appears to have been played already.{/i}"
+                            menu:
+                                "Rewind tape":
+                                    jump Aden2
+                                "Choose another tape":
+                                    jump intro
                     jump Reg2
                 "Tape: Giang, Brian - deposition":
+                    if persistent.endings_left[3]:
+                            "{i}This tape appears to have been played already.{/i}"
+                            menu:
+                                "Rewind tape":
+                                    jump Aden2
+                                "Choose another tape":
+                                    jump intro
                     jump Brian2
                 "Tape: Dio, Serpens - deposition":
                     "Sorry, that doesn't exist yet."
@@ -697,6 +718,8 @@ label start:
         a "No. I haven't seen her since the party."
         cl "Okay. Thanks for your cooperation, and we will be in contact if necessary."
         $persistent.endings_left[1] = True
+        scene aden_good_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15a:
@@ -729,6 +752,8 @@ label start:
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15b:
@@ -757,6 +782,8 @@ label start:
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15c:
@@ -800,6 +827,8 @@ label start:
         cl "In addition, Aden Li remains without an alibi the night of the crime. Mr. Li, thank you for your cooperation. You will be escorted out shortly."
         a "...there's no way... is there?"
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15d:
@@ -823,6 +852,8 @@ label start:
         a "Are we or [mc_name] in trouble?"
         cl "You aren't. She might be."
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15e:
@@ -850,6 +881,8 @@ label start:
         a "Are we or [mc_name] in trouble?"
         cl "You aren't. She might be."
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Aden15f:
@@ -883,6 +916,8 @@ label start:
         a "Am I or [mc_name] in trouble?"
         cl "You aren't. She might be."
         $persistent.endings_left[0] = True
+        scene aden_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg2:
@@ -926,6 +961,7 @@ label start:
 
     label Reg3:
         scene classroom with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}Fifteen minutes into AP Calculus and the seat next to mine was empty once again. A couple times a week, the seat is occupied by a senior with dyed red hair and a bad attitude{/i}."
         "{i}The rest of the time it's empty while the senior is playing hooky.{/i}"
         teacher "Can anyone answer number 3b from the homework? Nobody?"
@@ -1143,9 +1179,10 @@ label start:
         a "...fine."
         hide aden
         hide serpens
+        hide leon
         with moveoutleft
-        show leon:
-            linear 0.5 leftish
+        show reg:
+            linear 0.3 center
         r "Thanks a bunch, [mc_name]."
         mc "It's not a problem, but I feel kinda bad about Aden---"
         r "Hey, don't worry about him. He'll be fine. The actual team, on the other hand, needs all the help we can get if we're gonna stand a chance at state."
@@ -1523,6 +1560,8 @@ label start:
         r "I do not."
         cl "Thank you, Mr. Na. No further questions."
         $persistent.endings_right[1] = True
+        scene reg_good_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15a:
@@ -1554,6 +1593,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15b:
@@ -1590,6 +1631,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15ci:
@@ -1616,6 +1659,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15cii:
@@ -1637,6 +1682,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15d:
@@ -1669,6 +1716,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15e:
@@ -1706,6 +1755,8 @@ label start:
         hide reg with moveoutright
         cl "He's definitely a charmer."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Reg15f:
@@ -1757,6 +1808,8 @@ label start:
         hide reg neutral with dissolve
         r "This isn't happening..."
         $persistent.endings_right[0] = True
+        scene reg_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian2:
@@ -1785,6 +1838,7 @@ label start:
 
     label Brian3:
         scene classroom with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}{cps=8}Briiiiiiiing.{/cps}{/i}"
         "{i}The bell announcing the beginning of lunch period woke me from a half-snooze. As I began putting my belongings into my backpack. I felt a hand on my shoulder.{/i}"
         show leon neutral at center
@@ -2408,6 +2462,7 @@ label start:
         "{i}I nodded and let Brian lead me out the back door and to his car.{/i}"
         scene car_interior with fade_to_black
         show brian neutral at center
+        play music "romantic.wav" fadein 1.0 fadeout 1.0
         "{i}Brian was in the driver's seat and I had shotgun.{/i}"
         mc "Where to?"
         b "I was thinking... we stay right here."
@@ -2444,6 +2499,8 @@ label start:
         cl "Okay, thank you Mr. Giang. I have no further questions. I appreciate your openess and honesty."
         b "I was my pleasure. Besides... nothing good ever came out of someone hiding their feelings."
         $persistent.endings_left[3] = True
+        scene brian_good_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian15a:
@@ -2474,6 +2531,8 @@ label start:
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
         $persistent.endings_left[2] = True
+        scene brian_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian15b:
@@ -2508,6 +2567,8 @@ label start:
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
         $persistent.endings_left[2] = True
+        scene brian_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian15c:
@@ -2532,6 +2593,8 @@ label start:
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
         $persistent.endings_left[2] = True
+        scene brian_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian15d:
@@ -2554,6 +2617,8 @@ label start:
         b "Yeah. I was hanging with Reg and Nate most of the night, so either of them."
         cl "Okay, thank you Mr. Giang. No further questions at this point."
         $persistent.endings_left[2] = True
+        scene brian_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Brian15e:
@@ -2615,6 +2680,8 @@ label start:
         cl "Thank you for your time, Mr. Giang. You will be hearing from us shortly."
         cl "Please escort him out."
         $persistent.endings_left[2] = True
+        scene brian_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon2:
@@ -2644,6 +2711,7 @@ label start:
 
     label Leon3:
         scene classroom with fade_to_black
+        play music "hallway.wav" fadein 1.0 fadeout 1.0
         "{i}{cps=8}Briiiiiiiing.{/cps}{/i}"
         "{i}The bell announcing the beginning of lunch period woke me from a half-snooze. As I began putting my belongings into my backpack. I felt a hand on my shoulder.{/i}"
         show leon neutral at center
@@ -2763,6 +2831,7 @@ label start:
         hide leon with moveoutleft
         scene interrogation_room with fade_to_black
         play music "deposition_room.wav" fadein 1.0 fadeout 1.0
+        show leon neutral at center
         cl "The two of you were really close."
         l "Yeah. We were."
         cl "And you thought she might have liked you romantically?"
@@ -3010,7 +3079,7 @@ label start:
                 jump Leon15d
 
     label Leon10:
-        m "Let's watch a scary movie."
+        mc "Let's watch a scary movie."
         b "Hell, yeah!"
         "{i}Brian fist bumped me.{/i}"
         b "This is gonna be awesome."
@@ -3218,6 +3287,8 @@ label start:
         "{i}You are The One We Lost.{/i}"
         scene black with fade_to_black
         $persistent.endings_right[5] = True
+        scene leon_good_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon15a:
@@ -3283,6 +3354,8 @@ label start:
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
         $persistent.endings_right[4] = True
+        scene leon_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon15b:
@@ -3307,6 +3380,8 @@ label start:
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
         $persistent.endings_right[4] = True
+        scene leon_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon15c:
@@ -3334,6 +3409,8 @@ label start:
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
         $persistent.endings_right[4] = True
+        scene leon_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon15d:
@@ -3363,6 +3440,8 @@ label start:
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i}The screen showed static, and I felt myself go cold.{/i}"
         $persistent.endings_right[4] = True
+        scene leon_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
     label Leon15e:
@@ -3391,6 +3470,8 @@ label start:
         "{i}Suddenly I heard a snap and the VHS of Leon's deposition began spitting shiny black tape.{/i}"
         "{i} The screen showed static, and I felt myself go cold.{/i}"
         $persistent.endings_right[4] = True
+        scene leon_bad_ending with fade_to_black
+        $renpy.pause(4.0, hard=True)
         return
 
 
